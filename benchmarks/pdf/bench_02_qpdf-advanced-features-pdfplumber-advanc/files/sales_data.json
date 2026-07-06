@@ -1,0 +1,10 @@
+{
+  "report_title": "Quarterly Sales Report",
+  "quarters": ["Q1", "Q2", "Q3", "Q4"],
+  "products": [
+    {"name": "Widgets",    "sales": [120, 135, 142, 158]},
+    {"name": "Gadgets",    "sales": [85,  92,  98,  105]},
+    {"name": "Gizmos",     "sales": [200, 210, 195, 220]},
+    {"name": "Doohickeys", "sales": [60,  75,  80,  90]}
+  ]
+}

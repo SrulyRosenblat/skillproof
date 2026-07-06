@@ -1,0 +1,23 @@
+[
+  {
+    "id": "P1",
+    "publication": "TechCrunch",
+    "title": "Acme Inc's Project Helios Launch Signals a New Era for Enterprise AI",
+    "date": "2026-07-02",
+    "url": "https://techcrunch.com/2026/acme-helios-launch"
+  },
+  {
+    "id": "P2",
+    "publication": "Forbes",
+    "title": "Acme Inc Named a Best Place to Work 2026",
+    "date": "2026-07-03",
+    "url": "https://forbes.com/2026/acme-best-places-to-work"
+  },
+  {
+    "id": "P3",
+    "publication": "Austin Business Journal",
+    "title": "Acme Inc Files Commercial Real Estate Permit for New Office",
+    "date": "2026-06-30",
+    "url": "https://austinbusinessjournal.com/2026/acme-real-estate-permit"
+  }
+]

@@ -1,0 +1,32 @@
+schema_version: 1
+id: bench_03_instructions-tools-available
+skill_name: internal-comms
+title: Company-wide FAQ digest from Slack, email, and docs
+capability: Identify genuinely company-wide FAQs (vs. single-person/team noise) by
+  synthesizing across Slack, email, and document sources, then answer them with grounded
+  facts, source attribution, and explicit hedging when leadership hasn't officially
+  resolved a question.
+difficulty: medium
+provenance:
+  cluster_id: 2
+  cluster_label: Instructions / Tools Available
+  chunk_ids:
+  - examples/faq-answers.md#instructions
+  - examples/faq-answers.md#tools-available
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: false
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T18:15:57.825580Z'
+  codex_attempts: 1
+authoring:
+  backend: claude
+  model: sonnet

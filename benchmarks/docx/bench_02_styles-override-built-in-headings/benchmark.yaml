@@ -1,0 +1,27 @@
+schema_version: 1
+id: bench_02_styles-override-built-in-headings
+skill_name: docx
+title: Repair Built-in Heading Styles in a DOCX
+capability: Override the built-in Heading1 and Heading2 style definitions in a DOCX
+  so existing heading paragraphs pick up the required formatting and outline metadata
+  document-wide.
+difficulty: medium
+provenance:
+  cluster_id: 3
+  cluster_label: Styles (Override Built-in Headings)
+  chunk_ids:
+  - SKILL.md#docx-creation-editing-and-analysis-creating-new-documents-styles-override-built-in-headings
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: true
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T16:21:21.245016Z'
+  codex_attempts: 2

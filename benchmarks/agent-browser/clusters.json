@@ -1,0 +1,52 @@
+{
+  "skill_name": "agent-browser",
+  "skill_path": "/Users/srulyrosenblat/Developer/skill_auto_benchmark/skills/agent-browser",
+  "embedding_provider": "openrouter",
+  "embedding_model": "google/gemini-embedding-2",
+  "n_chunks": 2,
+  "k_selected": 2,
+  "all_clusters": [
+    {
+      "cluster_id": 0,
+      "label": "agent-browser",
+      "chunk_ids": [
+        "SKILL.md#agent-browser"
+      ],
+      "centroid_distance_score": 0.1912
+    },
+    {
+      "cluster_id": 1,
+      "label": "Specialized skills",
+      "chunk_ids": [
+        "SKILL.md#agent-browser-specialized-skills"
+      ],
+      "centroid_distance_score": 0.1912
+    }
+  ],
+  "selected_cluster_ids": [
+    0,
+    1
+  ],
+  "chunks": [
+    {
+      "id": "SKILL.md#agent-browser",
+      "source_file": "SKILL.md",
+      "heading_path": [
+        "agent-browser"
+      ],
+      "text": "# agent-browser\n\nFast browser automation CLI for AI agents. Chrome/Chromium via CDP with accessibility-tree snapshots and compact `@eN` element refs.\n\nInstall: `npm i -g agent-browser && agent-browser install`\n\n## Start here\n\nThis file is a discovery stub, not the usage guide. Before running any `agent-browser` command, load the actual workflow content from the CLI:\n\n```bash\nagent-browser skills get core             # start here — workflows, common patterns, troubleshooting\nagent-browser skills get core --full      # include full command reference and templates\n```\n\nThe CLI serves skill content that always matches the installed version, so instructions never go stale. The content in this stub cannot change between releases, which is why it just points at `skills get core`.",
+      "token_estimate": 195
+    },
+    {
+      "id": "SKILL.md#agent-browser-specialized-skills",
+      "source_file": "SKILL.md",
+      "heading_path": [
+        "agent-browser",
+        "Specialized skills"
+      ],
+      "text": "## Specialized skills\n\nLoad a specialized skill when the task falls outside browser web pages:\n\n```bash\nagent-browser skills get electron          # Electron desktop apps (VS Code, Slack, Discord, Figma, ...)\nagent-browser skills get slack             # Slack workspace automation\nagent-browser skills get dogfood           # Exploratory testing / QA / bug hunts\nagent-browser skills get vercel-sandbox    # agent-browser inside Vercel Sandbox microVMs\nagent-browser skills get agentcore         # AWS Bedrock AgentCore cloud browsers\n```\n\nRun `agent-browser skills list` to see everything available on the installed version.\n\n## Why agent-browser\n\n- Fast native Rust CLI, not a Node.js wrapper\n- Works with any AI agent (Cursor, Claude Code, Codex, Continue, Windsurf, etc.)\n- Chrome/Chromium via CDP with no Playwright or Puppeteer dependency\n- Accessibility-tree snapshots with element refs for reliable interaction\n- Sessions, authentication vault, state persistence, video recording\n- Specialized skills for Electron apps, Slack, exploratory testing, cloud providers\n\n## Observability Dashboard\n\nThe dashboard runs independently of browser sessions on port 4848 and can also be opened through a proxied or forwarded URL such as `https://dashboard.agent-browser.localhost`. Agents should stay on the dashboard origin: session tabs, status, and stream traffic are proxied internally, so session ports do not need to be exposed.",
+      "token_estimate": 357
+    }
+  ],
+  "created_at": "2026-07-06T19:40:35.218144Z"
+}

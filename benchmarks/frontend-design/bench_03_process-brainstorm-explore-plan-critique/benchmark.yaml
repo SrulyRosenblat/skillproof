@@ -1,0 +1,35 @@
+schema_version: 1
+id: bench_03_process-brainstorm-explore-plan-critique
+skill_name: frontend-design
+title: Brainstorm, self-critique, and revise a design plan before building
+capability: Tests whether the agent produces a documented two-pass design process
+  (initial token plan, substantive self-critique that revises at least one generic
+  choice, and a final plan) and then builds a page whose colors, type, and signature
+  element are actually derived from the revised plan rather than the first draft.
+difficulty: medium
+provenance:
+  cluster_id: 2
+  cluster_label: 'Process: brainstorm, explore, plan, critique, build, critique again'
+  chunk_ids:
+  - SKILL.md#frontend-design-process-brainstorm-explore-plan-critique-build-critique-again
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: false
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T20:07:19.278142Z'
+  codex_attempts: 1
+authoring:
+  backend: claude
+  model: sonnet
+  tokens_in: 67
+  tokens_out: 49123
+  cost_usd: 1.96714
+  attempts: 1

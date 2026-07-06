@@ -1,0 +1,32 @@
+{
+  "plans": [
+    {
+      "id": "r1",
+      "primary_query": "playwright e2e testing",
+      "alternative_query": "flaky end-to-end test helpers",
+      "check_sources": ["vercel-labs/agent-skills", "ComposioHQ/awesome-claude-skills"]
+    },
+    {
+      "id": "r2",
+      "primary_query": "kubernetes deploy",
+      "alternative_query": "ci-cd pipeline kubernetes",
+      "check_sources": ["ComposioHQ/awesome-claude-skills", "vercel-labs/agent-skills"]
+    },
+    {
+      "id": "r3",
+      "primary_query": "pr review automation",
+      "alternative_query": "code quality lint checklist",
+      "check_sources": ["vercel-labs/agent-skills", "ComposioHQ/awesome-claude-skills"]
+    },
+    {
+      "id": "r4",
+      "primary_query": "changelog generator",
+      "alternative_query": "release notes from commits",
+      "check_sources": ["ComposioHQ/awesome-claude-skills", "vercel-labs/agent-skills"]
+    },
+    {
+      "id": "r5",
+      "no_match_response": "I searched the registry but couldn't find an existing package for generating personalized per-customer birthday haikus — this is specific enough to our support workflow that nothing pre-built covers it. I'm happy to help you build this directly, right now, using the product/customer data you already have. Since we'll likely want to reuse this exact workflow for future campaigns, once we've got it working I'd suggest packaging it up as our own custom skill with `npx skills init birthday-haiku` so it's easy to install and reuse next time instead of rebuilding it from scratch."
+    }
+  ]
+}

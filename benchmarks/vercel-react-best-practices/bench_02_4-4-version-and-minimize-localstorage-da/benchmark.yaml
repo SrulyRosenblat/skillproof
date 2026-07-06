@@ -1,0 +1,43 @@
+schema_version: 1
+id: bench_02_4-4-version-and-minimize-localstorage-da
+skill_name: vercel-react-best-practices
+title: Harden a versioned, cached, flicker-free localStorage preferences module
+capability: Tests whether the agent versions and minimizes localStorage keys/data,
+  wraps storage access in error handling, caches repeated reads in memory, and produces
+  a synchronous pre-hydration bootstrap script to avoid theme flicker.
+difficulty: medium
+provenance:
+  cluster_id: 2
+  cluster_label: 4.4 Version and Minimize localStorage Data / 6.5 Prevent Hydration
+    Mismatch Without Flickering / 7.5 Cache Storage API Calls
+  chunk_ids:
+  - AGENTS.md#react-best-practices-4-client-side-data-fetching-4-4-version-and-minimize-localstorage-data
+  - AGENTS.md#react-best-practices-6-rendering-performance-6-5-prevent-hydration-mismatch-without-flickering
+  - AGENTS.md#react-best-practices-7-javascript-performance-7-5-cache-storage-api-calls
+  - rules/client-localstorage-schema.md#top
+  - rules/client-localstorage-schema.md#version-and-minimize-localstorage-data
+  - rules/js-cache-storage.md#top
+  - rules/js-cache-storage.md#cache-storage-api-calls
+  - rules/rendering-hydration-no-flicker.md#top
+  - rules/rendering-hydration-no-flicker.md#prevent-hydration-mismatch-without-flickering
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: false
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T19:52:00.104484Z'
+  codex_attempts: 1
+authoring:
+  backend: claude
+  model: sonnet
+  tokens_in: 35
+  tokens_out: 37201
+  cost_usd: 1.347258
+  attempts: 1

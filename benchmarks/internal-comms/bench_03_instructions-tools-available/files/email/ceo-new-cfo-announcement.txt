@@ -1,0 +1,19 @@
+From: Alicia Moreno, CEO <ceo@acmerobotics.example>
+To: all-employees@acmerobotics.example
+Date: 2026-06-25
+Subject: Welcome our new CFO, Jordan Kim
+
+Team,
+
+I'm thrilled to share that Jordan Kim will be joining Acme Robotics as our new Chief
+Financial Officer, effective July 15, 2026. Jordan spent the last six years scaling
+finance teams at two hardware startups and will report directly to me.
+
+For now, there are no changes to how budget approvals or purchase requests work.
+Jordan will spend the first month meeting with team leads across Finance, Ops, and
+Product before proposing any process changes, and any updates will be communicated
+company-wide before they take effect.
+
+Please join me in giving Jordan a warm welcome.
+
+Alicia

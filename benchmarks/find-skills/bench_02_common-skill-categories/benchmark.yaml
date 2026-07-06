@@ -1,0 +1,35 @@
+schema_version: 1
+id: bench_02_common-skill-categories
+skill_name: find-skills
+title: Triage requests into skill-registry search plans
+capability: Given a batch of feature requests, produce specific (not generic) keyword
+  search queries with alternate terminology, name well-known broad source repositories
+  to check first, and correctly execute the no-skills-found fallback protocol (acknowledge,
+  offer direct help, suggest packaging the work as a reusable skill).
+difficulty: medium
+provenance:
+  cluster_id: 1
+  cluster_label: Common Skill Categories
+  chunk_ids:
+  - SKILL.md#find-skills-common-skill-categories
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: false
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T19:51:05.302550Z'
+  codex_attempts: 1
+authoring:
+  backend: claude
+  model: sonnet
+  tokens_in: 49
+  tokens_out: 29211
+  cost_usd: 1.232855
+  attempts: 1

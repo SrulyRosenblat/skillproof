@@ -1,0 +1,27 @@
+schema_version: 1
+id: bench_05_lists-never-use-unicode-bullets-tab-stop
+skill_name: docx
+title: Repair Fake Lists and Tab-Aligned Lines
+capability: Convert typed bullets, manual numbers, and text separators in a DOCX into
+  real Word list numbering and tab-stop structures.
+difficulty: medium
+provenance:
+  cluster_id: 0
+  cluster_label: Lists (NEVER use unicode bullets) / Tab Stops
+  chunk_ids:
+  - SKILL.md#docx-creation-editing-and-analysis-creating-new-documents-lists-never-use-unicode-bullets
+  - SKILL.md#docx-creation-editing-and-analysis-creating-new-documents-tab-stops
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: true
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T16:41:14.408862Z'
+  codex_attempts: 1

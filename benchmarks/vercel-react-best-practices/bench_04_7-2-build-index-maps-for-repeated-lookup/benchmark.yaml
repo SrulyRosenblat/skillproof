@@ -1,0 +1,58 @@
+schema_version: 1
+id: bench_04_7-2-build-index-maps-for-repeated-lookup
+skill_name: vercel-react-best-practices
+title: Index maps, combined iterations, and length-first comparison
+capability: Tests whether the agent replaces repeated array.find() lookups with a
+  Map, combines multiple filter passes into one, and checks array length before an
+  expensive sort-based comparison, verified by instrumenting live execution rather
+  than reading source.
+difficulty: medium
+provenance:
+  cluster_id: 7
+  cluster_label: 7.2 Build Index Maps for Repeated Lookups / 7.6 Combine Multiple
+    Array Iterations / 7.8 Early Length Check for Array Comparisons
+  chunk_ids:
+  - AGENTS.md#react-best-practices-7-javascript-performance-7-2-build-index-maps-for-repeated-lookups
+  - AGENTS.md#react-best-practices-7-javascript-performance-7-6-combine-multiple-array-iterations
+  - AGENTS.md#react-best-practices-7-javascript-performance-7-8-early-length-check-for-array-comparisons
+  - AGENTS.md#react-best-practices-7-javascript-performance-7-9-early-return-from-functions
+  - AGENTS.md#react-best-practices-7-javascript-performance-7-11-use-flatmap-to-map-and-filter-in-one-pass
+  - AGENTS.md#react-best-practices-7-javascript-performance-7-12-use-loop-for-min-max-instead-of-sort
+  - rules/js-cache-function-results.md#top
+  - rules/js-cache-property-access.md#top
+  - rules/js-combine-iterations.md#top
+  - rules/js-combine-iterations.md#combine-multiple-array-iterations
+  - rules/js-early-exit.md#top
+  - rules/js-early-exit.md#early-return-from-functions
+  - rules/js-flatmap-filter.md#top
+  - rules/js-flatmap-filter.md#use-flatmap-to-map-and-filter-in-one-pass
+  - rules/js-hoist-regexp.md#top
+  - rules/js-index-maps.md#top
+  - rules/js-index-maps.md#build-index-maps-for-repeated-lookups
+  - rules/js-length-check-first.md#top
+  - rules/js-length-check-first.md#early-length-check-for-array-comparisons
+  - rules/js-min-max-loop.md#top
+  - rules/js-min-max-loop.md#use-loop-for-min-max-instead-of-sort
+  - rules/js-set-map-lookups.md#top
+  - rules/js-tosorted-immutable.md#top
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: false
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T20:04:10.949100Z'
+  codex_attempts: 1
+authoring:
+  backend: claude
+  model: sonnet
+  tokens_in: 63
+  tokens_out: 37913
+  cost_usd: 1.755636
+  attempts: 1

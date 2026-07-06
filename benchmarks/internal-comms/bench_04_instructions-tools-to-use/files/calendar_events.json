@@ -1,0 +1,36 @@
+[
+  {
+    "id": "C1",
+    "title": "Q3 Company All-Hands",
+    "date": "2026-07-03",
+    "attendee_count": 1180,
+    "attached_docs": [
+      {"title": "Q3 Strategy Deck", "link": "https://drive.acmeinc.com/doc/q3-strategy-deck"}
+    ]
+  },
+  {
+    "id": "C2",
+    "title": "Quarterly Product Roadmap Review",
+    "date": "2026-07-02",
+    "attendee_count": 640,
+    "attached_docs": [
+      {"title": "H2 2026 Roadmap", "link": "https://drive.acmeinc.com/doc/roadmap-h2-2026"}
+    ]
+  },
+  {
+    "id": "C3",
+    "title": "Backend Platform Weekly Sync",
+    "date": "2026-06-30",
+    "attendee_count": 9,
+    "attached_docs": []
+  },
+  {
+    "id": "C4",
+    "title": "Board of Directors Prep",
+    "date": "2026-07-04",
+    "attendee_count": 4,
+    "attached_docs": [
+      {"title": "Confidential Board Deck", "link": "https://drive.acmeinc.com/doc/confidential-board-deck"}
+    ]
+  }
+]

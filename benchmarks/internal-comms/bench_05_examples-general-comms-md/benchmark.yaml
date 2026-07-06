@@ -1,0 +1,32 @@
+schema_version: 1
+id: bench_05_examples-general-comms-md
+skill_name: internal-comms
+title: 'One-off internal announcement: lead with the ask, match company style'
+capability: Given an unordered fact dump and past company announcements, draft a one-off
+  internal announcement (not a 3P update, newsletter, or FAQ) that leads with the
+  required action and deadline before background context, matches the demonstrated
+  company style/sign-off convention, includes the relevant reference links, and omits
+  irrelevant source detail.
+difficulty: medium
+provenance:
+  cluster_id: 4
+  cluster_label: examples/general-comms.md
+  chunk_ids:
+  - examples/general-comms.md#top
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: false
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T18:30:09.922412Z'
+  codex_attempts: 1
+authoring:
+  backend: claude
+  model: sonnet

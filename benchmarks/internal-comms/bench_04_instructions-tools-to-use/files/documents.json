@@ -1,0 +1,29 @@
+[
+  {
+    "id": "D1",
+    "title": "Company Vision 2027",
+    "author": "Maria Chen, CEO",
+    "date": "2026-06-30",
+    "views": 980,
+    "link": "https://drive.acmeinc.com/doc/company-vision-2027",
+    "description": "Our long-term vision and product bets for the next three years."
+  },
+  {
+    "id": "D2",
+    "title": "New Austin Office Opening Guide",
+    "author": "Head of Workplace",
+    "date": "2026-07-01",
+    "views": 430,
+    "link": "https://drive.acmeinc.com/doc/austin-office-guide",
+    "description": "Everything you need to know about our new Austin office opening next month."
+  },
+  {
+    "id": "D3",
+    "title": "Backend Infra Runbook v3",
+    "author": "Sam Diaz",
+    "date": "2026-07-01",
+    "views": 14,
+    "link": "https://drive.acmeinc.com/doc/backend-infra-runbook-v3",
+    "description": "Internal runbook for the backend infra on-call rotation."
+  }
+]

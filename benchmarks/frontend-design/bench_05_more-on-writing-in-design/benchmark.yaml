@@ -1,0 +1,36 @@
+schema_version: 1
+id: bench_05_more-on-writing-in-design
+skill_name: frontend-design
+title: Translate engineering notes into user-facing UI copy
+capability: Tests whether the agent writes end-user-facing UI copy (button/confirmation
+  pairs, an error message, an empty state) that translates system-side jargon into
+  plain language, keeps the same action name consistent across a flow, and treats
+  errors and empty states as specific, actionable moments rather than generic or apologetic
+  filler.
+difficulty: medium
+provenance:
+  cluster_id: 4
+  cluster_label: More on writing in design
+  chunk_ids:
+  - SKILL.md#frontend-design-more-on-writing-in-design
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: false
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T20:31:45.376711Z'
+  codex_attempts: 3
+authoring:
+  backend: claude
+  model: sonnet
+  tokens_in: 121
+  tokens_out: 50174
+  cost_usd: 3.392849
+  attempts: 3

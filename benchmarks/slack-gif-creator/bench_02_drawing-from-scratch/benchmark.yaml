@@ -1,0 +1,35 @@
+schema_version: 1
+id: bench_02_drawing-from-scratch
+skill_name: slack-gif-creator
+title: Spinning star emoji GIF drawn from scratch with PIL primitives
+capability: Tests whether the agent can draw a precise custom shape (a 10-vertex star)
+  from scratch using PIL ImageDraw primitives (polygon math, fill/outline/width) and
+  animate it frame-by-frame into a Slack-ready looping GIF, rather than relying on
+  emoji fonts or pre-packaged graphics.
+difficulty: medium
+provenance:
+  cluster_id: 1
+  cluster_label: Drawing from Scratch
+  chunk_ids:
+  - SKILL.md#slack-gif-creator-drawing-graphics-drawing-from-scratch
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: true
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T19:07:01.384555Z'
+  codex_attempts: 3
+authoring:
+  backend: claude
+  model: sonnet
+  tokens_in: 67
+  tokens_out: 21078
+  cost_usd: 1.999072
+  attempts: 1

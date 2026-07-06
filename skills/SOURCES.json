@@ -1,0 +1,13 @@
+{
+  "pdf": {"repo": "https://github.com/anthropics/skills", "org": "Anthropic"},
+  "docx": {"repo": "https://github.com/anthropics/skills", "org": "Anthropic"},
+  "internal-comms": {"repo": "https://github.com/anthropics/skills", "org": "Anthropic"},
+  "brand-guidelines": {"repo": "https://github.com/anthropics/skills", "org": "Anthropic"},
+  "mcp-builder": {"repo": "https://github.com/anthropics/skills", "org": "Anthropic"},
+  "webapp-testing": {"repo": "https://github.com/anthropics/skills", "org": "Anthropic"},
+  "web-artifacts-builder": {"repo": "https://github.com/anthropics/skills", "org": "Anthropic"},
+  "frontend-design": {"repo": "https://github.com/anthropics/skills", "org": "Anthropic"},
+  "find-skills": {"repo": "https://github.com/vercel-labs/skills", "org": "Vercel Labs"},
+  "vercel-react-best-practices": {"repo": "https://github.com/vercel-labs/agent-skills", "org": "Vercel Labs"},
+  "agent-browser": {"repo": "https://github.com/vercel-labs/agent-browser", "org": "Vercel Labs"}
+}

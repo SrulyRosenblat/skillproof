@@ -1,0 +1,26 @@
+schema_version: 1
+id: bench_03_making-graphics-look-good
+skill_name: slack-gif-creator
+title: Polish a Slack Badge GIF
+capability: Turn a flat starter animation into a polished Slack emoji GIF using gradient
+  depth, layered shapes, thick outlines, and contrasting detail.
+difficulty: medium
+provenance:
+  cluster_id: 2
+  cluster_label: Making Graphics Look Good
+  chunk_ids:
+  - SKILL.md#slack-gif-creator-drawing-graphics-making-graphics-look-good
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: true
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T16:26:00.656962Z'
+  codex_attempts: 1

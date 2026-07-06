@@ -1,0 +1,34 @@
+schema_version: 1
+id: bench_02_specialized-skills
+skill_name: agent-browser
+title: Load the right agent-browser specialized skill for a non-web-page target
+capability: Recognizes that the default agent-browser workflow only covers browser
+  web pages, and discovers and loads the correct named specialized skill (out of several
+  available) before automating a non-web-page target like a native desktop app.
+difficulty: medium
+provenance:
+  cluster_id: 1
+  cluster_label: Specialized skills
+  chunk_ids:
+  - SKILL.md#agent-browser-specialized-skills
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: false
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T20:03:19.743304Z'
+  codex_attempts: 1
+authoring:
+  backend: claude
+  model: sonnet
+  tokens_in: 61
+  tokens_out: 45361
+  cost_usd: 2.00731
+  attempts: 1

@@ -1,0 +1,28 @@
+{
+  "brand": "Ember & Ash",
+  "story": "Founded in 2019 by two former line cooks, Ember & Ash makes hot sauce in a converted shipping container behind a Portland warehouse. Every batch is hand-bottled and hand-labeled, 40 bottles at a time.",
+  "sauces": [
+    {
+      "name": "Verde",
+      "heat_label": "Mild",
+      "scoville": "1,200 SHU",
+      "base": "tomatillo, serrano, lime",
+      "notes": "Bright and grassy with a quick, clean finish - built for eggs and fish tacos."
+    },
+    {
+      "name": "Rojo",
+      "heat_label": "Medium",
+      "scoville": "8,500 SHU",
+      "base": "fresno chile, roasted garlic, smoked paprika",
+      "notes": "Slow-building warmth with a smoky sweetness that lingers under the heat."
+    },
+    {
+      "name": "Negro",
+      "heat_label": "Fierce",
+      "scoville": "94,000 SHU",
+      "base": "ghost pepper, black garlic, charred onion",
+      "notes": "A brief sweetness gives way to a wall of heat that doesn't let go."
+    }
+  ],
+  "sales_note": "These three are sold individually, year-round, based on how much heat a customer wants for a given dish - not as a boxed set or a tasting flight, and not in any particular order. A customer who likes Rojo has no reason to ever try Negro."
+}

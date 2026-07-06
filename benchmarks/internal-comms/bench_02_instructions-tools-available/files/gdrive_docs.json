@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Q3 Search Roadmap Review",
+    "author": "Priya Shah",
+    "date": "2026-06-13",
+    "views": 450,
+    "summary": "Team plans to begin migrating to the new vector index over the next two weeks to cut infra costs by 20%. Kickoff design review scheduled for June 18."
+  },
+  {
+    "title": "Random brainstorm notes",
+    "author": "Intern",
+    "date": "2026-06-14",
+    "views": 3,
+    "summary": "Some scratch ideas about font choices for the internal wiki, not reviewed by the team."
+  },
+  {
+    "title": "2025 Search Retrospective",
+    "author": "Dana Kim",
+    "date": "2025-12-01",
+    "views": 900,
+    "summary": "Year-end retrospective on search quality wins from last year."
+  }
+]

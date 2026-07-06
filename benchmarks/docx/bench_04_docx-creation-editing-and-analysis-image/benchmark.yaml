@@ -1,0 +1,27 @@
+schema_version: 1
+id: bench_04_docx-creation-editing-and-analysis-image
+skill_name: docx
+title: Embed a PNG into an existing DOCX package
+capability: Edit an existing DOCX by embedding an image through the required OOXML
+  media, relationship, content-type, and document.xml changes.
+difficulty: medium
+provenance:
+  cluster_id: 5
+  cluster_label: DOCX creation, editing, and analysis / Images
+  chunk_ids:
+  - SKILL.md#docx-creation-editing-and-analysis
+  - SKILL.md#docx-creation-editing-and-analysis-xml-reference-images
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: true
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T16:33:38.221768Z'
+  codex_attempts: 1

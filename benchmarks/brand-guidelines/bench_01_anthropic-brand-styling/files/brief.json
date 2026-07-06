@@ -1,0 +1,29 @@
+{
+  "title": "Claude Code Launch Checklist",
+  "subtitle": "Operational guardrails for every release",
+  "sections": [
+    {
+      "heading": "Brand Inputs",
+      "bullets": [
+        "Use official colors",
+        "Preserve readable hierarchy"
+      ]
+    },
+    {
+      "heading": "Review Gates",
+      "bullets": [
+        "Check typography by size",
+        "Validate contrast on every panel"
+      ]
+    },
+    {
+      "heading": "Release Signals",
+      "bullets": [
+        "Cycle accents consistently",
+        "Ship one polished asset"
+      ]
+    }
+  ],
+  "quote": "Good defaults reduce review time.",
+  "attribution": "Anthropic launch principle"
+}

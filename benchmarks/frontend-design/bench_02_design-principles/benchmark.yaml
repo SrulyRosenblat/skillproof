@@ -1,0 +1,38 @@
+schema_version: 1
+id: bench_02_design-principles
+skill_name: frontend-design
+title: Hero thesis, deliberate typography, and non-decorative structure for a non-sequential
+  product set
+capability: Given a product brief for three items explicitly not sold as a ranked
+  set or sequence, the model must ground the hero in the brand's own material rather
+  than a generic tagline, pair distinct display/body typefaces deliberately, and label
+  the items by information that is actually true of each one (e.g. its heat level)
+  instead of defaulting to numbered/step markers that imply an order the content does
+  not have.
+difficulty: medium
+provenance:
+  cluster_id: 1
+  cluster_label: Design principles
+  chunk_ids:
+  - SKILL.md#frontend-design-design-principles
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: false
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T19:56:51.202937Z'
+  codex_attempts: 1
+authoring:
+  backend: claude
+  model: sonnet
+  tokens_in: 67
+  tokens_out: 42160
+  cost_usd: 1.886759
+  attempts: 1

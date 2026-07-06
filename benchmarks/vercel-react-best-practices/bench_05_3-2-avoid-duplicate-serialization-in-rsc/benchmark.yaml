@@ -1,0 +1,47 @@
+schema_version: 1
+id: bench_05_3-2-avoid-duplicate-serialization-in-rsc
+skill_name: vercel-react-best-practices
+title: Trim duplicate and unused fields from an RSC-to-client payload
+capability: Given a server-side render function whose props payload duplicates data
+  via precomputed derived arrays and includes full records for fields the client never
+  reads, refactor it to send each piece of data exactly once and only the fields actually
+  used by the client.
+difficulty: medium
+provenance:
+  cluster_id: 8
+  cluster_label: 3.2 Avoid Duplicate Serialization in RSC Props / 3.6 Minimize Serialization
+    at RSC Boundaries / rules/async-suspense-boundaries.md
+  chunk_ids:
+  - AGENTS.md#react-best-practices-3-server-side-performance-3-2-avoid-duplicate-serialization-in-rsc-props
+  - AGENTS.md#react-best-practices-3-server-side-performance-3-6-minimize-serialization-at-rsc-boundaries
+  - rules/async-suspense-boundaries.md#top
+  - rules/client-event-listeners.md#top
+  - rules/client-swr-dedup.md#top
+  - rules/rendering-hydration-suppress-warning.md#top
+  - rules/server-cache-react.md#top
+  - rules/server-dedup-props.md#top
+  - rules/server-dedup-props.md#avoid-duplicate-serialization-in-rsc-props
+  - rules/server-parallel-fetching.md#top
+  - rules/server-serialization.md#top
+  - rules/server-serialization.md#minimize-serialization-at-rsc-boundaries
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: false
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T20:10:27.535592Z'
+  codex_attempts: 1
+authoring:
+  backend: claude
+  model: sonnet
+  tokens_in: 33
+  tokens_out: 32953
+  cost_usd: 1.2057
+  attempts: 1

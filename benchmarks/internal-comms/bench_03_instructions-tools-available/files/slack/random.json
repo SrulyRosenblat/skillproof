@@ -1,0 +1,22 @@
+{
+  "channel": "#random",
+  "member_count": 480,
+  "messages": [
+    {
+      "author": "Alex Nguyen (Support)",
+      "timestamp": "2026-06-24T19:45:00Z",
+      "text": "Random personal question - does anyone know if unused PTO rolls over into next year? Just trying to plan a trip for myself.",
+      "reactions": {"thumbsup": 2},
+      "thread_replies": [
+        {"author": "Leah Fischer (People)", "text": "I believe it does up to a cap, but check with People team directly for your specific balance."}
+      ]
+    },
+    {
+      "author": "Trevor James (Ops)",
+      "timestamp": "2026-06-26T08:30:00Z",
+      "text": "Anyone want to grab the extra bagels in the Ops kitchen before they go stale? First come first serve.",
+      "reactions": {"thumbsup": 3},
+      "thread_replies": []
+    }
+  ]
+}

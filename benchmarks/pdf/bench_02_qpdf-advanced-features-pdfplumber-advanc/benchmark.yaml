@@ -1,0 +1,37 @@
+schema_version: 1
+id: bench_02_qpdf-advanced-features-pdfplumber-advanc
+skill_name: pdf
+title: Styled Sales Report Table with ReportLab
+capability: Generate a PDF report containing a computed data table styled with a distinct
+  header background, banded/bordered grid lines, and correct row/column totals using
+  reportlab's Table and TableStyle, rather than plain unstyled text.
+difficulty: medium
+provenance:
+  cluster_id: 1
+  cluster_label: qpdf Advanced Features / pdfplumber Advanced Features / reportlab
+    Advanced Features
+  chunk_ids:
+  - reference.md#pdf-processing-advanced-reference-advanced-command-line-operations-qpdf-advanced-features
+  - reference.md#pdf-processing-advanced-reference-advanced-python-techniques-pdfplumber-advanced-features
+  - reference.md#pdf-processing-advanced-reference-advanced-python-techniques-reportlab-advanced-features
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: true
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T18:52:04.675720Z'
+  codex_attempts: 1
+authoring:
+  backend: claude
+  model: sonnet
+  tokens_in: 87
+  tokens_out: 27552
+  cost_usd: 1.616183
+  attempts: 1

@@ -1,0 +1,55 @@
+schema_version: 1
+id: bench_01_table-of-contents-1-1-check-cheap-condit
+skill_name: vercel-react-best-practices
+title: Skip expensive async calls when a cheaper check already decides the outcome
+capability: Reorder async logic so expensive deps calls (feature flags, user data,
+  permissions) are only awaited when a cheap synchronous or earlier-determined condition
+  hasn't already settled the result, without changing any return value.
+difficulty: medium
+provenance:
+  cluster_id: 0
+  cluster_label: Table of Contents / 1.1 Check Cheap Conditions Before Async Flags
+    / 1.2 Defer Await Until Needed
+  chunk_ids:
+  - AGENTS.md#react-best-practices-table-of-contents--part2
+  - AGENTS.md#react-best-practices-1-eliminating-waterfalls-1-1-check-cheap-conditions-before-async-flags
+  - AGENTS.md#react-best-practices-1-eliminating-waterfalls-1-2-defer-await-until-needed
+  - AGENTS.md#react-best-practices-1-eliminating-waterfalls-1-3-dependency-based-parallelization
+  - AGENTS.md#react-best-practices-1-eliminating-waterfalls-1-4-prevent-waterfall-chains-in-api-routes
+  - AGENTS.md#react-best-practices-1-eliminating-waterfalls-1-6-strategic-suspense-boundaries
+  - AGENTS.md#react-best-practices-3-server-side-performance-3-7-parallel-data-fetching-with-component-composition
+  - AGENTS.md#react-best-practices-3-server-side-performance-3-8-parallel-nested-data-fetching
+  - rules/async-api-routes.md#top
+  - rules/async-api-routes.md#prevent-waterfall-chains-in-api-routes
+  - rules/async-cheap-condition-before-await.md#top
+  - rules/async-cheap-condition-before-await.md#check-cheap-conditions-before-async-flags
+  - rules/async-defer-await.md#top
+  - rules/async-defer-await.md#defer-await-until-needed
+  - rules/async-dependencies.md#top
+  - rules/async-dependencies.md#dependency-based-parallelization
+  - rules/async-parallel.md#top
+  - rules/async-suspense-boundaries.md#strategic-suspense-boundaries
+  - rules/server-parallel-fetching.md#parallel-data-fetching-with-component-composition
+  - rules/server-parallel-nested-fetching.md#top
+  - rules/server-parallel-nested-fetching.md#parallel-nested-data-fetching
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: false
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T19:45:24.234166Z'
+  codex_attempts: 1
+authoring:
+  backend: claude
+  model: sonnet
+  tokens_in: 39
+  tokens_out: 23023
+  cost_usd: 1.087911
+  attempts: 1

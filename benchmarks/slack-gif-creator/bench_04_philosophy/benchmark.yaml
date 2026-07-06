@@ -1,0 +1,27 @@
+schema_version: 1
+id: bench_04_philosophy
+skill_name: slack-gif-creator
+title: Inspiration-Only Orb GIF
+capability: Create a Slack-ready GIF from scratch with PIL primitives while treating
+  an uploaded image as inspiration only rather than reusing its pixels or relying
+  on emoji/text rendering.
+difficulty: medium
+provenance:
+  cluster_id: 3
+  cluster_label: Philosophy
+  chunk_ids:
+  - SKILL.md#slack-gif-creator-philosophy
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: true
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T16:30:01.897191Z'
+  codex_attempts: 1

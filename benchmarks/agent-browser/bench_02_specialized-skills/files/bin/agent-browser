@@ -1,0 +1,296 @@
+#!/usr/bin/env python3
+"""Mock browser-automation CLI used for the benchmark. Invoke as:
+    python3 bin/agent-browser <args...>
+"""
+import sys
+import os
+import json
+
+STATE_PATH = os.path.join(os.getcwd(), ".agent_browser_state.json")
+
+SKILL_NAMES = ["electron", "slack", "dogfood", "vercel-sandbox", "agentcore"]
+
+STUB_MESSAGE = """agent-browser: browser automation CLI (mock)
+
+This is a discovery stub, not the usage guide.
+Before running any agent-browser command, load the actual workflow content:
+
+  python3 bin/agent-browser skills get core
+
+If your target isn't a browser web page (e.g. a native desktop app, a chat
+workspace, an exploratory QA pass, or a cloud sandbox/browser provider), a
+specialized skill may be required instead of (or in addition to) core. Run:
+
+  python3 bin/agent-browser skills list
+
+to see everything available.
+"""
+
+CORE_DOC = """agent-browser core workflow
+=============================
+Commands:
+  open <path>              Load a local HTML page and compute its accessibility tree.
+  snapshot                 Print the current page's accessibility tree with @eN refs.
+  act <ref> click          Click the element with the given ref (e.g. @e3).
+  act <ref> fill <text>    Fill the element with the given ref with <text>.
+
+This workflow only understands ordinary browser web pages (local HTML files
+or URLs). It cannot attach to native desktop application windows.
+"""
+
+SKILLS_LIST = """Available specialized skills:
+  electron          Electron desktop apps (VS Code, Slack, Discord, Figma, ...)
+  slack             Slack workspace automation
+  dogfood           Exploratory testing / QA / bug hunts
+  vercel-sandbox    agent-browser inside Vercel Sandbox microVMs
+  agentcore         AWS Bedrock AgentCore cloud browsers
+
+Run `agent-browser skills get <name>` to load one.
+"""
+
+ELECTRON_DOC = """agent-browser electron workflow
+=================================
+For Electron-based desktop applications (VS Code, Slack, Discord, Figma, and
+similar apps), browser web page commands (open/snapshot/act) do not apply.
+Use the window-oriented commands instead:
+
+Commands:
+  window attach <app-name>       Attach to a running Electron app's main window
+                                  and compute its UI tree.
+  window tree                    Print the current window's UI tree with @eN refs.
+  window do <ref> click          Click or toggle the element with the given ref.
+  window do <ref> fill <text>    Fill the element with the given ref with <text>.
+
+Workflow:
+  1. window attach <app-name> to connect to the running desktop app.
+  2. window tree to see interactive elements and their @eN refs.
+  3. window do <ref> click to toggle checkboxes/buttons.
+  4. window tree again after actions that change window state.
+"""
+
+SLACK_DOC = """agent-browser slack workflow
+==============================
+Covers posting messages, reading channels, reacting to messages, and other
+Slack *workspace* automation (via the Slack web client), as distinct from
+testing the Slack desktop application shell itself (use `electron` for that).
+Not applicable to this task.
+"""
+
+DOGFOOD_DOC = """agent-browser dogfood workflow
+================================
+Guidance for open-ended exploratory testing / QA / bug-hunt passes with no
+fixed script to follow. Not applicable to this task.
+"""
+
+VERCEL_SANDBOX_DOC = """agent-browser vercel-sandbox workflow
+========================================
+Guidance for running agent-browser inside Vercel Sandbox microVMs (e.g. CI
+jobs that spin up an ephemeral sandbox per pull request). Not applicable to
+this task.
+"""
+
+AGENTCORE_DOC = """agent-browser agentcore workflow
+==================================
+Guidance for driving a managed cloud browser running on AWS Bedrock
+AgentCore. Not applicable to this task.
+"""
+
+SKILL_DOCS = {
+    "electron": ELECTRON_DOC,
+    "slack": SLACK_DOC,
+    "dogfood": DOGFOOD_DOC,
+    "vercel-sandbox": VERCEL_SANDBOX_DOC,
+    "agentcore": AGENTCORE_DOC,
+}
+
+
+def load_state():
+    if os.path.exists(STATE_PATH):
+        with open(STATE_PATH) as f:
+            return json.load(f)
+    return {"loaded": {}, "attached_app": None, "elements": []}
+
+
+def save_state(state):
+    with open(STATE_PATH, "w") as f:
+        json.dump(state, f)
+
+
+def cmd_skills(args, state):
+    if args[:2] == ["get", "core"]:
+        state["loaded"]["core"] = True
+        save_state(state)
+        print(CORE_DOC)
+        return
+    if len(args) >= 2 and args[0] == "get" and args[1] in SKILL_DOCS:
+        name = args[1]
+        state["loaded"][name] = True
+        save_state(state)
+        print(SKILL_DOCS[name])
+        return
+    if args[:1] == ["list"]:
+        print(SKILLS_LIST)
+        return
+    print(STUB_MESSAGE)
+
+
+def cmd_open(args, state):
+    if not state.get("loaded", {}).get("core"):
+        print(
+            "Error: workflow not loaded yet. Run `agent-browser skills get core` first.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+    if not args:
+        print("Usage: open <path>", file=sys.stderr)
+        sys.exit(1)
+    path = args[0]
+    print(f"Error: no such file: {path}", file=sys.stderr)
+    sys.exit(1)
+
+
+def cmd_snapshot(args, state):
+    print("Error: no page loaded. Use `open <path>` first.", file=sys.stderr)
+    sys.exit(1)
+
+
+def cmd_act(args, state):
+    print("Error: no page loaded. Use `open <path>` first.", file=sys.stderr)
+    sys.exit(1)
+
+
+def require_electron(state):
+    if not state.get("loaded", {}).get("electron"):
+        print(
+            "Error: electron skill not loaded. Run `agent-browser skills get electron` first.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+
+def load_task_queue():
+    with open("data/task_queue.json") as f:
+        return json.load(f)
+
+
+def build_elements(tasks):
+    elements = [{"role": "heading", "label": "TaskFlow Desktop — My Tasks", "task": None, "checked": False}]
+    for task in tasks:
+        if task["status"] == "pending":
+            elements.append(
+                {"role": "checkbox", "label": task["title"], "task": task, "checked": False}
+            )
+        else:
+            elements.append(
+                {"role": "text", "label": f"{task['title']} ({task['status']})", "task": task, "checked": False}
+            )
+    elements.append({"role": "button", "label": "Sync", "task": None, "checked": False})
+    return elements
+
+
+def cmd_window(args, state):
+    require_electron(state)
+    if not args:
+        print("Usage: window attach <app-name> | window tree | window do <ref> <action> [text]", file=sys.stderr)
+        sys.exit(1)
+    sub, rest = args[0], args[1:]
+    if sub == "attach":
+        if not rest:
+            print("Usage: window attach <app-name>", file=sys.stderr)
+            sys.exit(1)
+        app = rest[0]
+        if app != "taskflow":
+            print(f"Error: no running app named '{app}'", file=sys.stderr)
+            sys.exit(1)
+        tasks = load_task_queue()
+        state["attached_app"] = app
+        state["elements"] = build_elements(tasks)
+        save_state(state)
+        print(f"Attached to '{app}'. Run `window tree` to see the UI tree.")
+    elif sub == "tree":
+        if not state.get("attached_app"):
+            print("Error: no app attached. Use `window attach <app-name>` first.", file=sys.stderr)
+            sys.exit(1)
+        lines = [f"Window: {state['attached_app']}", "UI tree:"]
+        for i, el in enumerate(state["elements"], start=1):
+            ref = f"@e{i}"
+            if el["role"] == "checkbox":
+                mark = "checked" if el["checked"] else "unchecked"
+                lines.append(f'{ref} checkbox "{el["label"]}" ({mark})')
+            elif el["role"] == "button":
+                lines.append(f'{ref} button "{el["label"]}"')
+            elif el["role"] == "heading":
+                lines.append(f'{ref} heading "{el["label"]}"')
+            else:
+                lines.append(f'{ref} text "{el["label"]}"')
+        print("\n".join(lines))
+    elif sub == "do":
+        if not state.get("attached_app"):
+            print("Error: no app attached. Use `window attach <app-name>` first.", file=sys.stderr)
+            sys.exit(1)
+        if len(rest) < 2:
+            print("Usage: window do <ref> click | window do <ref> fill <text>", file=sys.stderr)
+            sys.exit(1)
+        ref, action = rest[0], rest[1]
+        try:
+            idx = int(ref.replace("@e", "")) - 1
+        except ValueError:
+            idx = -1
+        if idx < 0 or idx >= len(state["elements"]):
+            print(f"Error: unknown ref {ref}", file=sys.stderr)
+            sys.exit(1)
+        el = state["elements"][idx]
+        if action != "click":
+            print(f"Error: unsupported action '{action}' for {ref}", file=sys.stderr)
+            sys.exit(1)
+        if el["role"] == "checkbox":
+            el["checked"] = not el["checked"]
+            save_state(state)
+            print(f'{"Checked" if el["checked"] else "Unchecked"} {ref} ("{el["label"]}").')
+        elif el["role"] == "button" and el["label"] == "Sync":
+            checked = [e for e in state["elements"] if e["role"] == "checkbox" and e["checked"]]
+            if len(checked) == 0:
+                print("Error: no task checked. Check exactly one task before syncing.", file=sys.stderr)
+                sys.exit(1)
+            if len(checked) > 1:
+                print("Error: more than one task checked. Check exactly one task before syncing.", file=sys.stderr)
+                sys.exit(1)
+            task = checked[0]["task"]
+            sync_code = f"{task['id'].upper()}-{task['priority_rank']}{len(task['title']):02d}"
+            state["elements"] = [
+                {"role": "heading", "label": "Sync Complete", "task": None, "checked": False},
+                {"role": "text", "label": f"Completed task: {task['title']}", "task": None, "checked": False},
+                {"role": "text", "label": f"Sync code: {sync_code}", "task": None, "checked": False},
+            ]
+            save_state(state)
+            print(f"Clicked {ref}. Run `window tree` to see the result.")
+        else:
+            print(f"Clicked {ref}. Nothing happened.")
+    else:
+        print(f"Error: unknown window subcommand '{sub}'", file=sys.stderr)
+        sys.exit(1)
+
+
+def main():
+    args = sys.argv[1:]
+    state = load_state()
+    if not args or args[0] in ("--help", "-h", "help"):
+        print(STUB_MESSAGE)
+        return
+    cmd, rest = args[0], args[1:]
+    if cmd == "skills":
+        cmd_skills(rest, state)
+    elif cmd == "open":
+        cmd_open(rest, state)
+    elif cmd == "snapshot":
+        cmd_snapshot(rest, state)
+    elif cmd == "act":
+        cmd_act(rest, state)
+    elif cmd == "window":
+        cmd_window(rest, state)
+    else:
+        print(STUB_MESSAGE)
+
+
+if __name__ == "__main__":
+    main()

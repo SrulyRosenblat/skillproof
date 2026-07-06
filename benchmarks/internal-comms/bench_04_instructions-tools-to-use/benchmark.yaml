@@ -1,0 +1,38 @@
+schema_version: 1
+id: bench_04_instructions-tools-to-use
+skill_name: internal-comms
+title: 'Company newsletter: triage multi-source signals into a sectioned, we-voiced
+  update'
+capability: Given raw exports from Slack, Email, Calendar, Documents, and external
+  press, produce a company-wide newsletter that surfaces only company-wide-significant
+  items (high-engagement announcements, executive/company-wide messages, well-attended
+  meetings with attached docs, widely-viewed docs, press coverage), links to them,
+  organizes them into labeled sections, and writes in first-person-plural voice.
+difficulty: medium
+provenance:
+  cluster_id: 3
+  cluster_label: Instructions / Tools to use
+  chunk_ids:
+  - examples/company-newsletter.md#instructions
+  - examples/company-newsletter.md#tools-to-use
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: false
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T18:24:10.414649Z'
+  codex_attempts: 1
+authoring:
+  backend: claude
+  model: sonnet
+  tokens_in: 57
+  tokens_out: 42028
+  cost_usd: 1.727223
+  attempts: 1

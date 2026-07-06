@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Warble Press — homepage draft v3</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #1a1a1a;
+    background: #fdfdfb;
+  }
+  *:focus { outline: none; }
+  #page-wrap { width: 1200px; margin: 0 auto; }
+
+  .hero.rainbow-bg {
+    position: relative;
+    padding: 90px 40px;
+    overflow: hidden;
+    background: linear-gradient(120deg, #ff2fb3, #39ff14, #00e5ff, #fff700);
+    background-size: 400% 400%;
+    animation: rainbowShift 6s ease infinite;
+    text-align: center;
+  }
+  @keyframes rainbowShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .bounce-logo {
+    display: inline-block;
+    font-size: 2.6rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 3px 3px 0 #1a1a1a;
+    animation: bounce 1.2s ease-in-out infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-18px); }
+  }
+
+  .hero p.subhead {
+    color: #1a1a1a;
+    font-size: 1.2rem;
+    max-width: 640px;
+    margin: 20px auto 0;
+    background: rgba(255,255,255,0.75);
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+  .ticker-marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    background: #00121a;
+    color: #00e5ff;
+    padding: 10px 0;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  .ticker-track {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scrollTicker 14s linear infinite;
+  }
+  @keyframes scrollTicker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  main { padding: 48px 40px; }
+
+  .about p { font-size: 1.05rem; line-height: 1.7; max-width: 700px; }
+
+  .confetti-burst {
+    position: relative;
+    height: 70px;
+    margin: 24px 0;
+  }
+  .confetti-piece {
+    position: absolute;
+    top: -20px;
+    width: 10px;
+    height: 10px;
+    animation: confettiFall 2.4s ease-in infinite;
+  }
+  .confetti-piece:nth-child(1) { left: 5%;  background: #ff2fb3; animation-delay: 0s; }
+  .confetti-piece:nth-child(2) { left: 18%; background: #39ff14; animation-delay: 0.3s; }
+  .confetti-piece:nth-child(3) { left: 31%; background: #00e5ff; animation-delay: 0.6s; }
+  .confetti-piece:nth-child(4) { left: 44%; background: #fff700; animation-delay: 0.9s; }
+  .confetti-piece:nth-child(5) { left: 57%; background: #ff2fb3; animation-delay: 1.2s; }
+  .confetti-piece:nth-child(6) { left: 70%; background: #39ff14; animation-delay: 1.5s; }
+  .confetti-piece:nth-child(7) { left: 83%; background: #00e5ff; animation-delay: 1.8s; }
+  .confetti-piece:nth-child(8) { left: 94%; background: #fff700; animation-delay: 2.1s; }
+  @keyframes confettiFall {
+    0%   { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(70px) rotate(360deg); opacity: 0; }
+  }
+
+  .glow-pulse-cta {
+    display: inline-block;
+    background: #ff2fb3;
+    color: #fff;
+    border: none;
+    padding: 16px 34px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    text-decoration: none;
+    animation: pulseGlow 1.5s ease-in-out infinite;
+  }
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 8px 2px #ff2fb3; }
+    50%      { box-shadow: 0 0 26px 12px #39ff14; }
+  }
+
+  footer {
+    padding: 32px 40px 48px;
+    color: #555;
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+  <div id="page-wrap">
+    <section class="hero rainbow-bg">
+      <span class="bounce-logo">WARBLE PRESS</span>
+      <p class="subhead">
+        Independent vinyl pressing, founded in 2016 in Providence, Rhode Island.
+        We cut every lacquer by hand on a 1978 Scully lathe before it ever touches a stamper.
+      </p>
+    </section>
+
+    <div class="ticker-marquee">
+      <span class="ticker-track">
+        NOW PRESSING FOR 40+ INDEPENDENT LABELS &nbsp;&nbsp;✦&nbsp;&nbsp; UP TO 500 RECORDS A DAY &nbsp;&nbsp;✦&nbsp;&nbsp; 6-WEEK TURNAROUND &nbsp;&nbsp;✦&nbsp;&nbsp; 100 RECORD MINIMUM RUN &nbsp;&nbsp;✦&nbsp;&nbsp;
+      </span>
+    </div>
+
+    <main>
+      <section class="about">
+        <h2>What we press</h2>
+        <p>
+          Warble Press has run three lacquer lathes out of a converted mill building in
+          Providence, Rhode Island since 2016. We press up to 500 records a day across two
+          shifts, with a 6-week turnaround from lacquer cut to finished box. Every order
+          starts at a 100 record minimum run, and we mix over 30 custom vinyl color blends
+          in-house so no two labels' pressings look alike.
+        </p>
+      </section>
+
+      <div class="confetti-burst" aria-hidden="true">
+        <span class="confetti-piece"></span>
+        <span class="confetti-piece"></span>
+        <span class="confetti-piece"></span>
+        <span class="confetti-piece"></span>
+        <span class="confetti-piece"></span>
+        <span class="confetti-piece"></span>
+        <span class="confetti-piece"></span>
+        <span class="confetti-piece"></span>
+      </div>
+
+      <a class="glow-pulse-cta" href="mailto:press@warblepress.example">Get a quote</a>
+    </main>
+
+    <footer>
+      <p>Warble Press &middot; Providence, RI &middot; press@warblepress.example</p>
+    </footer>
+  </div>
+</body>
+</html>

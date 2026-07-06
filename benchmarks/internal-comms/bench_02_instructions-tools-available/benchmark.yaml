@@ -1,0 +1,36 @@
+schema_version: 1
+id: bench_02_instructions-tools-available
+skill_name: internal-comms
+title: '3P update: gather signal from Slack/Drive/Email/Calendar exports'
+capability: Given raw exports from Slack, Google Drive, Email, and Calendar, produce
+  a strictly-formatted 3P (Progress/Plans/Problems) update that surfaces the high-signal,
+  on-topic, in-window items and omits low-engagement, off-topic, recurring, or out-of-window
+  noise.
+difficulty: medium
+provenance:
+  cluster_id: 1
+  cluster_label: Instructions / Tools Available
+  chunk_ids:
+  - examples/3p-updates.md#instructions
+  - examples/3p-updates.md#tools-available
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: false
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T18:02:16.725649Z'
+  codex_attempts: 1
+authoring:
+  backend: claude
+  model: sonnet
+  tokens_in: 49
+  tokens_out: 25306
+  cost_usd: 1.11452
+  attempts: 1

@@ -1,0 +1,90 @@
+[
+  {
+    "id": "S1",
+    "channel": "#announcements",
+    "channel_members": 1240,
+    "author": "Maria Chen (CEO)",
+    "date": "2026-07-01",
+    "text": "We just completed the full rollout of Project Helios to every customer segment — our biggest product launch this year! Huge thanks to everyone who made this happen.",
+    "reactions": 342,
+    "thread_replies": 58,
+    "permalink": "https://acmeinc.slack.com/archives/C01ANNOUNCE/p1000001001"
+  },
+  {
+    "id": "S2",
+    "channel": "#announcements",
+    "channel_members": 1240,
+    "author": "Priya Nair (Head of People)",
+    "date": "2026-07-02",
+    "text": "We're thrilled to welcome 45 new teammates who joined us across our SF, Austin, and Berlin offices this month!",
+    "reactions": 210,
+    "thread_replies": 34,
+    "permalink": "https://acmeinc.slack.com/archives/C01ANNOUNCE/p1000001002"
+  },
+  {
+    "id": "S3",
+    "channel": "#announcements",
+    "channel_members": 1240,
+    "author": "David Kim (VP Engineering)",
+    "date": "2026-07-03",
+    "text": "The recording from this week's Q3 All-Hands is now posted — thank you all for the great questions!",
+    "reactions": 150,
+    "thread_replies": 20,
+    "permalink": "https://acmeinc.slack.com/archives/C01ANNOUNCE/p1000001003"
+  },
+  {
+    "id": "S4",
+    "channel": "#announcements",
+    "channel_members": 1240,
+    "author": "Sofia Reyes (Head of Product)",
+    "date": "2026-07-03",
+    "text": "We launched Acme Copilot, our new AI-powered assistant, to 100% of Enterprise customers this week!",
+    "reactions": 265,
+    "thread_replies": 41,
+    "permalink": "https://acmeinc.slack.com/archives/C01ANNOUNCE/p1000001004"
+  },
+  {
+    "id": "S5",
+    "channel": "#announcements",
+    "channel_members": 1240,
+    "author": "Owen Brooks (CFO)",
+    "date": "2026-07-04",
+    "text": "We closed our Series D funding round this week — $120M to accelerate growth across product and go-to-market. Thank you to every team that got us here.",
+    "reactions": 400,
+    "thread_replies": 90,
+    "permalink": "https://acmeinc.slack.com/archives/C01ANNOUNCE/p1000001005"
+  },
+  {
+    "id": "S6",
+    "channel": "#eng-backend-infra",
+    "channel_members": 42,
+    "author": "Sam Diaz",
+    "date": "2026-07-02",
+    "text": "Fixed the Redis connection leak that was causing latency spikes in the checkout cache layer.",
+    "reactions": 5,
+    "thread_replies": 1,
+    "permalink": "https://acmeinc.slack.com/archives/C02BACKEND/p1000002006"
+  },
+  {
+    "id": "S7",
+    "channel": "#sales-west",
+    "channel_members": 85,
+    "author": "Jordan Lee",
+    "date": "2026-07-01",
+    "text": "Closed the Meridian Health deal — biggest ACV of the quarter for our team!",
+    "reactions": 22,
+    "thread_replies": 6,
+    "permalink": "https://acmeinc.slack.com/archives/C03SALESWEST/p1000003007"
+  },
+  {
+    "id": "S8",
+    "channel": "#random",
+    "channel_members": 1100,
+    "author": "Anonymous Squirrel",
+    "date": "2026-07-03",
+    "text": "Who else's dog joined their standup this morning lol",
+    "reactions": 410,
+    "thread_replies": 75,
+    "permalink": "https://acmeinc.slack.com/archives/C04RANDOM/p1000004008"
+  }
+]

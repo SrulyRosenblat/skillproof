@@ -1,0 +1,266 @@
+#!/usr/bin/env python3
+"""Mock browser-automation CLI used for the benchmark. Invoke as:
+    python3 bin/agent-browser <args...>
+"""
+import sys
+import os
+import json
+from html.parser import HTMLParser
+
+STATE_PATH = os.path.join(os.getcwd(), ".agent_browser_state.json")
+
+STUB_MESSAGE = """agent-browser: browser automation CLI (mock)
+
+This is a discovery stub, not the usage guide.
+Before running any agent-browser command, load the actual workflow content:
+
+  python3 bin/agent-browser skills get core
+"""
+
+CORE_DOC = """agent-browser core workflow
+=============================
+Commands:
+  open <path>              Load a local HTML page and compute its accessibility tree.
+  snapshot                 Print the current page's accessibility tree with @eN refs.
+  act <ref> click          Click the element with the given ref (e.g. @e3).
+  act <ref> fill <text>    Fill the element with the given ref with <text>.
+
+Workflow:
+  1. open <path> to load a page.
+  2. snapshot to see interactive elements and their @eN refs.
+  3. act <ref> fill "..." to fill text fields, act <ref> click to activate buttons.
+  4. snapshot again after actions that change the page, to see the new state.
+"""
+
+FULL_EXTRA = """
+Notes:
+  - Refs are only stable for the currently loaded page; re-run snapshot after
+    a navigation to get fresh refs.
+  - fill overwrites any existing value on a textbox.
+  - Clicking a submit-like button evaluates the form and may navigate to a new
+    page state.
+"""
+
+
+def load_state():
+    if os.path.exists(STATE_PATH):
+        with open(STATE_PATH) as f:
+            return json.load(f)
+    return {"core_loaded": False, "page": None, "elements": [], "values": {}}
+
+
+def save_state(state):
+    with open(STATE_PATH, "w") as f:
+        json.dump(state, f)
+
+
+def require_core(state):
+    if not state.get("core_loaded"):
+        print(
+            "Error: workflow not loaded yet. Run `agent-browser skills get core` first.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+
+def cmd_skills(args, state):
+    if args[:2] == ["get", "core"]:
+        state["core_loaded"] = True
+        save_state(state)
+        print(CORE_DOC)
+        if "--full" in args:
+            print(FULL_EXTRA)
+        return
+    print(STUB_MESSAGE)
+
+
+class _PageParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.labels = {}
+        self.elements = []
+        self._current_label_for = None
+        self._label_text_parts = []
+        self._current_element = None
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if tag == "label":
+            self._current_label_for = attrs.get("for")
+            self._label_text_parts = []
+        elif tag == "input":
+            self.elements.append({"tag": "input", "attrs": attrs, "text": ""})
+        elif tag in ("button", "a", "textarea"):
+            self._current_element = {"tag": tag, "attrs": attrs, "text": ""}
+            self.elements.append(self._current_element)
+
+    def handle_endtag(self, tag):
+        if tag == "label" and self._current_label_for is not None:
+            self.labels[self._current_label_for] = "".join(self._label_text_parts).strip()
+            self._current_label_for = None
+        elif tag in ("button", "a", "textarea"):
+            self._current_element = None
+
+    def handle_data(self, data):
+        if self._current_label_for is not None:
+            self._label_text_parts.append(data)
+        if self._current_element is not None:
+            self._current_element["text"] += data
+
+
+def parse_page(path):
+    with open(path) as f:
+        html = f.read()
+    parser = _PageParser()
+    parser.feed(html)
+    elements = []
+    for el in parser.elements:
+        tag, attrs = el["tag"], el["attrs"]
+        if tag in ("input", "textarea"):
+            label = None
+            if attrs.get("id") and attrs["id"] in parser.labels:
+                label = parser.labels[attrs["id"]]
+            if not label:
+                label = attrs.get("name", "field")
+            role = "textbox"
+        elif tag == "button":
+            label = el["text"].strip() or "button"
+            role = "button"
+        else:
+            label = el["text"].strip() or attrs.get("href", "link")
+            role = "link"
+        elements.append({"role": role, "label": label})
+    return elements
+
+
+def cmd_open(args, state):
+    require_core(state)
+    if not args:
+        print("Usage: open <path>", file=sys.stderr)
+        sys.exit(1)
+    path = args[0]
+    if not os.path.exists(path):
+        print(f"Error: no such file: {path}", file=sys.stderr)
+        sys.exit(1)
+    elements = parse_page(path)
+    state["page"] = "portal"
+    state["elements"] = elements
+    state["values"] = {}
+    save_state(state)
+    print(f"Opened {path}. Run `snapshot` to see the accessibility tree.")
+
+
+def render_snapshot(state):
+    page = state.get("page")
+    lines = [f"Page: {page}", "Accessibility snapshot:"]
+    for i, el in enumerate(state["elements"], start=1):
+        ref = f"@e{i}"
+        if el["role"] == "textbox":
+            val = state["values"].get(ref)
+            if val:
+                lines.append(f'{ref} textbox "{el["label"]}" = "{val}"')
+            else:
+                lines.append(f'{ref} textbox "{el["label"]}" (empty)')
+        elif el["role"] == "button":
+            lines.append(f'{ref} button "{el["label"]}"')
+        elif el["role"] == "text":
+            lines.append(f'{ref} text "{el["label"]}"')
+        elif el["role"] == "heading":
+            lines.append(f'{ref} heading "{el["label"]}"')
+        else:
+            lines.append(f'{ref} {el["role"]} "{el["label"]}"')
+    return "\n".join(lines)
+
+
+def cmd_snapshot(args, state):
+    require_core(state)
+    if not state.get("page"):
+        print("Error: no page loaded. Use `open <path>` first.", file=sys.stderr)
+        sys.exit(1)
+    print(render_snapshot(state))
+
+
+def load_directory():
+    with open("data/employee_directory.json") as f:
+        return json.load(f)
+
+
+def cmd_act(args, state):
+    require_core(state)
+    if not state.get("page"):
+        print("Error: no page loaded. Use `open <path>` first.", file=sys.stderr)
+        sys.exit(1)
+    if len(args) < 2:
+        print("Usage: act <ref> click | act <ref> fill <text>", file=sys.stderr)
+        sys.exit(1)
+    ref, action = args[0], args[1]
+    try:
+        idx = int(ref.replace("@e", "")) - 1
+    except ValueError:
+        idx = -1
+    if idx < 0 or idx >= len(state["elements"]):
+        print(f"Error: unknown ref {ref}", file=sys.stderr)
+        sys.exit(1)
+    el = state["elements"][idx]
+    if action == "fill":
+        if el["role"] != "textbox":
+            print(f"Error: {ref} is not fillable", file=sys.stderr)
+            sys.exit(1)
+        text = " ".join(args[2:])
+        state["values"][ref] = text
+        save_state(state)
+        print(f'Filled {ref} with "{text}"')
+    elif action == "click":
+        if el["role"] != "button":
+            print(f"Error: {ref} is not clickable", file=sys.stderr)
+            sys.exit(1)
+        if state["page"] == "portal" and el["label"].lower() == "submit":
+            directory = load_directory()
+            name = state["values"].get("@e1", "").strip()
+            code = state["values"].get("@e2", "").strip()
+            record = directory.get(name)
+            if record and record["access_code"] == code:
+                confirmation = code[::-1] + "-" + record["employee_id"][-2:]
+                state["page"] = "confirmation"
+                state["elements"] = [
+                    {"role": "heading", "label": "Login Successful"},
+                    {"role": "text", "label": f"Confirmation Code: {confirmation}"},
+                ]
+            else:
+                state["page"] = "login-error"
+                state["elements"] = [
+                    {"role": "heading", "label": "Login Failed"},
+                    {"role": "text", "label": "Invalid employee name or access code."},
+                    {"role": "button", "label": "Back to Login"},
+                ]
+            state["values"] = {}
+            save_state(state)
+            print(f"Clicked {ref}. Run `snapshot` to see the result.")
+        else:
+            print(f"Clicked {ref}. Nothing happened.")
+    else:
+        print(f"Error: unknown action {action}", file=sys.stderr)
+        sys.exit(1)
+
+
+def main():
+    args = sys.argv[1:]
+    state = load_state()
+    if not args or args[0] in ("--help", "-h", "help"):
+        print(STUB_MESSAGE)
+        return
+    cmd, rest = args[0], args[1:]
+    if cmd == "skills":
+        cmd_skills(rest, state)
+    elif cmd == "open":
+        cmd_open(rest, state)
+    elif cmd == "snapshot":
+        cmd_snapshot(rest, state)
+    elif cmd == "act":
+        cmd_act(rest, state)
+    else:
+        print(STUB_MESSAGE)
+
+
+if __name__ == "__main__":
+    main()

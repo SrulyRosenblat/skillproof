@@ -1,0 +1,29 @@
+{
+  "requests": [
+    {
+      "id": "r1",
+      "from": "Dana (QA)",
+      "text": "Our Playwright end-to-end test suite is flaky and everyone on the team keeps rewriting the same wait-for-element helpers. Before we build our own utilities from scratch, I'd like to know if there's an existing package of ready-made guidance or helpers for this."
+    },
+    {
+      "id": "r2",
+      "from": "Marcus (Platform)",
+      "text": "We need our services to deploy to our Kubernetes cluster automatically whenever main is updated, but nobody on the team has set up a pipeline like this before. Is there a pre-built package of guidance for this we could pull in instead of figuring it out from zero?"
+    },
+    {
+      "id": "r3",
+      "from": "Priya (Eng Manager)",
+      "text": "I want every pull request in our repo to get an automated first-pass review for code quality issues before a human looks at it. Rather than writing our own review checklist, is there something off-the-shelf we could install?"
+    },
+    {
+      "id": "r4",
+      "from": "Tomás (Docs)",
+      "text": "Every release, someone has to manually comb through commit history to write the changelog, and it's always inconsistent. Is there an existing package that already knows how to do this well?"
+    },
+    {
+      "id": "r5",
+      "from": "Wendy (Support)",
+      "text": "For our customer birthday emails, I'd love something that writes a unique, personalized haiku about each customer's favorite product every single time. Can we grab an existing package for that, or is this too specific to us?"
+    }
+  ]
+}

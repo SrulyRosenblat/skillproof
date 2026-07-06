@@ -1,0 +1,23 @@
+[
+  {
+    "from": "Dana Kim",
+    "subject": "Vector index outage postmortem",
+    "date": "2026-06-10",
+    "replies": 18,
+    "body": "We lost 2 hours of search availability on Tuesday due to a shard failure in the vector index. Root cause was a memory leak. The team is currently short two open engineering reqs, which is slowing down our incident response and roadmap work."
+  },
+  {
+    "from": "Newsletter Bot",
+    "subject": "This Week in Snacks",
+    "date": "2026-06-11",
+    "replies": 0,
+    "body": "Check out the new snacks in the break room this week!"
+  },
+  {
+    "from": "Priya Shah",
+    "subject": "Old vendor contract renewal",
+    "date": "2026-05-15",
+    "replies": 2,
+    "body": "Reminder that the search vendor contract renewal was completed last quarter."
+  }
+]

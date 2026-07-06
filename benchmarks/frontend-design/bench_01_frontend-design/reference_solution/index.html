@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kioku Tea Society — one farm, one season, one box</title>
+<style>
+  :root {
+    --moss: #2f3b2a;
+    --paper: #f2ede2;
+    --clay: #a8632f;
+    --ink: #1c1a15;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    line-height: 1.6;
+  }
+  header.hero {
+    background: var(--moss);
+    color: var(--paper);
+    padding: 5rem 1.5rem 4rem;
+    text-align: center;
+  }
+  header.hero .eyebrow {
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: #cdd6b8;
+    font-family: -apple-system, Helvetica, Arial, sans-serif;
+  }
+  header.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    margin: 1rem auto 1.5rem;
+    max-width: 18ch;
+  }
+  header.hero p.sub {
+    max-width: 46ch;
+    margin: 0 auto;
+    color: #dfe3d1;
+    font-size: 1.1rem;
+  }
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  section {
+    padding: 3.5rem 0;
+    border-bottom: 1px solid #d9d0bb;
+  }
+  section:last-of-type { border-bottom: none; }
+  section h2 {
+    font-size: 1.6rem;
+    color: var(--clay);
+    margin-bottom: 1rem;
+  }
+  .farm-card {
+    background: #fff;
+    border: 1px solid #e4dcc7;
+    border-radius: 4px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .farm-card dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.4rem 1rem;
+    font-family: -apple-system, Helvetica, Arial, sans-serif;
+    font-size: 0.95rem;
+  }
+  .farm-card dt { color: #6b6455; }
+  .steps {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+    display: grid;
+    gap: 1rem;
+  }
+  .steps li {
+    padding-left: 1rem;
+    border-left: 3px solid var(--clay);
+  }
+  .cta {
+    text-align: center;
+    padding: 4rem 1.5rem;
+    background: var(--clay);
+    color: #fff;
+  }
+  .cta h2 { color: #fff; }
+  .cta a.button {
+    display: inline-block;
+    margin-top: 1rem;
+    background: var(--ink);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.9rem 2rem;
+    border-radius: 999px;
+    font-family: -apple-system, Helvetica, Arial, sans-serif;
+    font-weight: 600;
+  }
+  footer {
+    text-align: center;
+    padding: 2rem 1.5rem 3rem;
+    font-size: 0.85rem;
+    color: #7a7362;
+  }
+  a.button:focus-visible, a:focus-visible {
+    outline: 3px solid var(--clay);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    header.hero h1 { animation: rise 0.7s ease-out; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="eyebrow">Kioku Tea Society</div>
+  <h1>One farm. One season. One box, brewed the way the farmer brews it.</h1>
+  <p class="sub">Every month we ship a single-origin green tea from one named
+  family farm in Uji, Kyoto — plus a brewing card written by the person who
+  grew the leaves.</p>
+</header>
+
+<main>
+
+  <section>
+    <h2>What actually shows up at your door</h2>
+    <p>Most tea subscriptions are a sampler: five foil packets, a printed
+    insert, a QR code to a page you'll never visit. Kioku ships one tea at a
+    time, in a quantity meant to be brewed daily for a month, from one farm
+    that we name outright. You'll know it's the Hayashi family's first
+    spring flush, not "premium sencha, origin: Japan."</p>
+    <div class="farm-card">
+      <p style="margin-top:0;"><strong>This month's shipment</strong></p>
+      <dl>
+        <dt>Farm</dt><dd>Hayashi Farm, Uji, Kyoto — third generation, 1.4 hectares</dd>
+        <dt>Tea</dt><dd>Gyokuro, first flush, shaded 21 days before harvest</dd>
+        <dt>Arrives with</dt><dd>A brewing card handwritten by Kenji Hayashi</dd>
+        <dt>Enough for</dt><dd>About 30 servings, brewed the way the card describes</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section>
+    <h2>For people who switched to good coffee, and are ready to switch again</h2>
+    <p>This isn't written for people who already keep a gaiwan on the
+    counter. It's for the reader who upgraded their coffee order two years
+    ago — grinds beans at home now, knows their roaster's name — and has
+    started to feel like coffee is doing a job rather than being a ritual.
+    If you've noticed yourself wanting something slower in the morning, and
+    you're the kind of person who reads the label on a good bottle of olive
+    oil, this is built for you.</p>
+  </section>
+
+  <section>
+    <h2>Why one farm, not a rotating sampler</h2>
+    <p>A single farm means a single point of accountability. When the
+    Hayashis have a difficult harvest, we say so on the brewing card instead
+    of quietly swapping in filler leaves. When you brew it wrong the first
+    time, the card tells you the water temperature that farm actually uses,
+    not a generic 175°F that applies to no tea in particular. Over a year of
+    boxes, you build a map of specific hillsides in Kyoto, not a vague sense
+    that you "like sencha."</p>
+    <ul class="steps">
+      <li>We call the farm before each shipment and ask what's actually ready to ship this month.</li>
+      <li>The farmer writes the brewing card themselves — temperature, steep time, and one line about the season.</li>
+      <li>We ship within a week of that call, so the leaves haven't been sitting in a warehouse.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What it costs to keep this going</h2>
+    <p>A month of Kioku is $34, shipped free within Japan and at cost
+    everywhere else. You can pause before any shipment — we'll ask the farm
+    to hold your leaves rather than charge you for tea that sits in transit.
+    Cancel any time; there's no contract, because a farm relationship isn't
+    something you should have to be locked into.</p>
+  </section>
+
+</main>
+
+<div class="cta">
+  <h2>Start with the Hayashi farm's spring flush</h2>
+  <p>Your first box ships this week if you join before Sunday.</p>
+  <a class="button" href="#">Get this month's box</a>
+</div>
+
+<footer>
+  Kioku Tea Society — sourced one farm at a time, from Uji, Kyoto.
+</footer>
+
+</body>
+</html>

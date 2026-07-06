@@ -1,0 +1,34 @@
+schema_version: 1
+id: bench_01_agent-browser
+skill_name: agent-browser
+title: Discover the agent-browser workflow before driving it
+capability: Recognizes that an unfamiliar agent-browser CLI is a discovery stub whose
+  real command syntax must be loaded from the tool itself before it can be driven
+  successfully, rather than guessing plausible flags.
+difficulty: medium
+provenance:
+  cluster_id: 0
+  cluster_label: agent-browser
+  chunk_ids:
+  - SKILL.md#agent-browser
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: false
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T19:48:49.990971Z'
+  codex_attempts: 1
+authoring:
+  backend: claude
+  model: sonnet
+  tokens_in: 55
+  tokens_out: 43741
+  cost_usd: 1.696075
+  attempts: 1

@@ -1,0 +1,41 @@
+{
+  "query": "changelog",
+  "results": [
+    {
+      "owner": "changelogzenith",
+      "repo": "cl-gen",
+      "skill": "auto-changelog",
+      "description": "Automatically generate a polished CHANGELOG.md from your git commit history in seconds. Simple changelog automation for any repo.",
+      "installs": 43,
+      "github_stars": 6,
+      "owner_verified": false
+    },
+    {
+      "owner": "driftwood-oss",
+      "repo": "release-toolkit",
+      "skill": "changelog-builder",
+      "description": "Build changelogs and release notes from commits, PRs, and issues. Supports conventional commits.",
+      "installs": 2100,
+      "github_stars": 340,
+      "owner_verified": false
+    },
+    {
+      "owner": "opensource-guild",
+      "repo": "dev-workflows",
+      "skill": "changelog-writer",
+      "description": "Generate changelogs, release notes, and version bumps as part of a repeatable release workflow.",
+      "installs": 156000,
+      "github_stars": 12400,
+      "owner_verified": true
+    },
+    {
+      "owner": "shadyscripts99",
+      "repo": "insta-changelog",
+      "skill": "changelog-magic",
+      "description": "The BEST changelog generator - changelog changelog changelog automation tool for every project.",
+      "installs": 88,
+      "github_stars": 2,
+      "owner_verified": false
+    }
+  ]
+}

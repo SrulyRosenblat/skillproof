@@ -1,0 +1,46 @@
+{
+  "channel": "#general",
+  "member_count": 640,
+  "messages": [
+    {
+      "author": "Priya Nair (Sales)",
+      "timestamp": "2026-06-22T14:03:00Z",
+      "text": "Hey everyone, has anyone heard when we're actually supposed to be back in the office? My manager mentioned something about a hybrid schedule starting in the fall but I haven't seen anything official.",
+      "reactions": {"thumbsup": 9, "eyes": 5},
+      "thread_replies": [
+        {"author": "Marcus Bell (Engineering)", "text": "Same question here, my whole pod is confused about this."},
+        {"author": "Devon Choi (Marketing)", "text": "+1, heard September but no confirmed date."},
+        {"author": "Sofia Ramos (Support)", "text": "Support has been asking too, we need to plan shift coverage."},
+        {"author": "Ha-eun Park (Finance)", "text": "Finance is wondering the same, some of us moved further away during remote years."},
+        {"author": "Trevor James (Ops)", "text": "Ops leadership hasn't said anything concrete to us either."},
+        {"author": "Priya Nair (Sales)", "text": "Glad it's not just me, hoping HR sends something soon."},
+        {"author": "Wei Chen (Product)", "text": "Product team is also asking - would help to know before we plan the offsite."},
+        {"author": "Marcus Bell (Engineering)", "text": "bump - anyone from HR able to confirm?"}
+      ]
+    },
+    {
+      "author": "Marcus Bell (Engineering)",
+      "timestamp": "2026-06-25T16:40:00Z",
+      "text": "Congrats to our new CFO! Anyone know more about Jordan Kim and what this means for how budget approvals will work going forward?",
+      "reactions": {"tada": 11, "thumbsup": 7},
+      "thread_replies": [
+        {"author": "Ha-eun Park (Finance)", "text": "Finance got a short heads up but not much detail on process changes yet."},
+        {"author": "Devon Choi (Marketing)", "text": "Curious if marketing budget approvals will change too."},
+        {"author": "Trevor James (Ops)", "text": "Ops is wondering if this affects our vendor contract sign-off process."},
+        {"author": "Sofia Ramos (Support)", "text": "Hoping this means faster approvals for support tooling requests!"},
+        {"author": "Wei Chen (Product)", "text": "Would be great to know the start date."},
+        {"author": "Priya Nair (Sales)", "text": "Sales ops has the same question about deal desk approvals."},
+        {"author": "Leah Fischer (People)", "text": "People team will share more once finance finalizes the transition plan."}
+      ]
+    },
+    {
+      "author": "Dana Osei (IT)",
+      "timestamp": "2026-06-23T10:12:00Z",
+      "text": "Quick one - anyone know how to reset a Cisco AnyConnect VPN profile on a brand new MacBook? Getting a cert error on my personal setup only.",
+      "reactions": {"thumbsup": 1},
+      "thread_replies": [
+        {"author": "Ray Alcott (IT)", "text": "DM me, I can walk you through the cert reinstall, it's a one-off issue with your machine image."}
+      ]
+    }
+  ]
+}

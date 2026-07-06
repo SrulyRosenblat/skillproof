@@ -1,0 +1,26 @@
+schema_version: 1
+id: bench_01_anthropic-brand-styling
+skill_name: brand-guidelines
+title: Anthropic SVG Brand Poster
+capability: Apply Anthropic brand colors, typography thresholds, and accent-shape
+  color cycling to a fixed-layout SVG deliverable.
+difficulty: medium
+provenance:
+  cluster_id: 0
+  cluster_label: Anthropic Brand Styling
+  chunk_ids:
+  - SKILL.md#anthropic-brand-styling
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: false
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T16:03:56.062500Z'
+  codex_attempts: 1

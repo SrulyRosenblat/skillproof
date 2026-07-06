@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aria — a lever espresso machine you pull yourself</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <span class="wordmark">ARIA</span>
+    <nav>
+      <a href="#waitlist">Join the waitlist</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <h1>The pressure comes from your arm, not a pump.</h1>
+        <p class="subline">
+          Aria is a fully manual lever espresso machine. No pump, no PID
+          controller — you pull a spring lever by hand and build the
+          9 bar of pressure yourself, shot by shot.
+        </p>
+      </div>
+      <button
+        class="lever"
+        type="button"
+        data-signature="lever-pull"
+        aria-label="See the lever move toward 9 bar"
+      >
+        <span class="lever-arm"></span>
+        <span class="lever-handle">walnut</span>
+        <span class="gauge">
+          <span class="gauge-marker"></span>
+          <span class="gauge-label">9 bar</span>
+        </span>
+      </button>
+    </section>
+
+    <section class="features">
+      <article class="feature">
+        <h2>Hand-pulled, every time</h2>
+        <p>
+          A spring lever means the shot's pressure curve is shaped by how
+          you pull it — fast for a bright cup, slow and steady for a
+          heavier one. The machine doesn't decide that for you.
+        </p>
+      </article>
+      <article class="feature">
+        <h2>Brass, steel, walnut</h2>
+        <p>
+          Brushed brass fittings and a matte black steel body sit under a
+          walnut lever handle, shaped over several revisions to fit the
+          palm through hundreds of pulls.
+        </p>
+      </article>
+      <article class="feature">
+        <h2>No electronics to fail</h2>
+        <p>
+          A passive thermosiphon boiler holds temperature without a PID
+          loop. Fewer parts that can go wrong, and nothing to update.
+        </p>
+      </article>
+    </section>
+
+    <section class="waitlist" id="waitlist">
+      <h2>200 units, hand-assembled, shipping Q3</h2>
+      <p>$2,400. Leave your email and we'll write when your build slot opens.</p>
+      <form action="mailto:hello@ariamachine.co" method="post" enctype="text/plain">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        <button type="submit">Join the waitlist</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Aria Machine Co. — built by hand, one lever at a time.</p>
+  </footer>
+</body>
+</html>

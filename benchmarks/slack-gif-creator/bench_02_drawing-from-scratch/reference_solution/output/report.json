@@ -1,0 +1,10 @@
+{
+  "canvas_size": [
+    128,
+    128
+  ],
+  "fps": 10,
+  "frame_count": 12,
+  "duration_seconds": 1.2,
+  "rotation_degrees_per_frame": 30
+}

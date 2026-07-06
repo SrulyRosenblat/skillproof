@@ -1,0 +1,35 @@
+schema_version: 1
+id: bench_01_frontend-design
+skill_name: frontend-design
+title: Ground an underspecified subscription brief in a concrete subject
+capability: Given a design brief that does not pin down what the product, audience,
+  or subject actually is, the model must invent one concrete subject, its audience,
+  and the page's single job, and then build the landing page's actual content around
+  that specific subject rather than generic, subject-agnostic copy.
+difficulty: medium
+provenance:
+  cluster_id: 0
+  cluster_label: Frontend Design
+  chunk_ids:
+  - SKILL.md#frontend-design
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: false
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T19:47:56.138432Z'
+  codex_attempts: 1
+authoring:
+  backend: claude
+  model: sonnet
+  tokens_in: 63
+  tokens_out: 34412
+  cost_usd: 1.473156
+  attempts: 1

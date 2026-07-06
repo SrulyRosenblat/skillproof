@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Search Platform Product Review",
+    "date": "2026-06-18",
+    "recurring": false,
+    "attendees": ["Dana Kim", "Priya Shah", "VP Eng"],
+    "description": "Review the vector index migration plan and timeline with leadership."
+  },
+  {
+    "title": "Search Platform Weekly Standup",
+    "date": "2026-06-16",
+    "recurring": true,
+    "attendees": ["team"],
+    "description": "Recurring standup, routine status check-in."
+  },
+  {
+    "title": "Search Platform Weekly Standup",
+    "date": "2026-06-09",
+    "recurring": true,
+    "attendees": ["team"],
+    "description": "Recurring standup, routine status check-in."
+  },
+  {
+    "title": "Legacy Infra Sunset Party",
+    "date": "2026-05-22",
+    "recurring": false,
+    "attendees": ["team"],
+    "description": "One-off social event from last month, unrelated to the current sprint."
+  }
+]

@@ -1,0 +1,6 @@
+[
+  {"id": "t1", "title": "Draft investor update", "priority_rank": 2, "status": "pending"},
+  {"id": "t2", "title": "Prepare quarterly report", "priority_rank": 1, "status": "pending"},
+  {"id": "t3", "title": "Renew office lease", "priority_rank": 3, "status": "pending"},
+  {"id": "t4", "title": "Update onboarding checklist", "priority_rank": 1, "status": "done"}
+]

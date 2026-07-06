@@ -1,0 +1,34 @@
+{
+  "channel": "#product-team",
+  "member_count": 210,
+  "messages": [
+    {
+      "author": "Wei Chen (Product)",
+      "timestamp": "2026-07-02T11:20:00Z",
+      "text": "I know this is on a lot of people's minds - is the Atlas launch still happening in August? Sales keeps asking me and I don't have a firm answer to give them.",
+      "reactions": {"eyes": 14, "thumbsup": 8},
+      "thread_replies": [
+        {"author": "Priya Nair (Sales)", "text": "Yeah we have customers asking us directly, need something to tell them."},
+        {"author": "Devon Choi (Marketing)", "text": "Marketing has launch assets scheduled around the August date, need to know if that changes."},
+        {"author": "Sofia Ramos (Support)", "text": "Support is staffing up for the launch week, timing matters a lot for us."},
+        {"author": "Trevor James (Ops)", "text": "Ops needs the real date to finalize shipping partner contracts."},
+        {"author": "Marcus Bell (Engineering)", "text": "From eng side, the LIDAR sensor supplier has been a mess lately so I wouldn't be shocked if it slipped."},
+        {"author": "Ha-eun Park (Finance)", "text": "Finance is also watching this for revenue forecasting."},
+        {"author": "Wei Chen (Product)", "text": "Will post here as soon as I hear anything official from leadership."},
+        {"author": "Leah Fischer (People)", "text": "Recruiting has been telling candidates about the August launch too, would be good to align messaging."},
+        {"author": "Dana Osei (IT)", "text": "IT needs the date to plan the war room support rotation."},
+        {"author": "Ray Alcott (IT)", "text": "Same, please keep us posted."},
+        {"author": "Priya Nair (Sales)", "text": "bumping this, still no update?"}
+      ]
+    },
+    {
+      "author": "Sam Torres (Engineering)",
+      "timestamp": "2026-06-28T09:05:00Z",
+      "text": "Can someone review PR #482 when they get a chance - just a small CSS fix on the settings page.",
+      "reactions": {},
+      "thread_replies": [
+        {"author": "Marcus Bell (Engineering)", "text": "On it, will look after standup."}
+      ]
+    }
+  ]
+}

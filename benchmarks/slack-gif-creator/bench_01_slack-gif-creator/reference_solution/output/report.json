@@ -1,0 +1,11 @@
+{
+  "source_image": "/workspace/files/uploaded_badge.png",
+  "output_gif": "/workspace/output/badge_bounce.gif",
+  "canvas_size": [
+    128,
+    128
+  ],
+  "fps": 10,
+  "frame_count": 12,
+  "duration_seconds": 1.2
+}

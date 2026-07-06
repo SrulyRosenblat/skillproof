@@ -1,0 +1,58 @@
+schema_version: 1
+id: bench_03_4-1-deduplicate-global-event-listeners-4
+skill_name: vercel-react-best-practices
+title: Deduplicate, passivize, and narrow-trigger shared global browser listeners
+capability: Tests whether the agent shares a single underlying window listener across
+  many concurrent keyboard-shortcut registrations (ref-counted teardown/re-attach),
+  attaches a scroll-tracking wheel listener as passive so it doesn't block scrolling,
+  and fires viewport mode-change callbacks only on genuine boundary crossings rather
+  than on every value update.
+difficulty: medium
+provenance:
+  cluster_id: 3
+  cluster_label: 4.1 Deduplicate Global Event Listeners / 4.2 Use Passive Event Listeners
+    for Scrolling Performance / 5.7 Narrow Effect Dependencies
+  chunk_ids:
+  - AGENTS.md#react-best-practices-4-client-side-data-fetching-4-1-deduplicate-global-event-listeners
+  - AGENTS.md#react-best-practices-4-client-side-data-fetching-4-2-use-passive-event-listeners-for-scrolling-performance
+  - AGENTS.md#react-best-practices-5-re-render-optimization-5-7-narrow-effect-dependencies
+  - AGENTS.md#react-best-practices-5-re-render-optimization-5-8-put-interaction-logic-in-event-handlers
+  - AGENTS.md#react-best-practices-8-advanced-patterns-8-1-do-not-put-effect-events-in-dependency-arrays
+  - AGENTS.md#react-best-practices-8-advanced-patterns-8-2-initialize-app-once-not-per-mount
+  - AGENTS.md#react-best-practices-8-advanced-patterns-8-3-store-event-handlers-in-refs
+  - AGENTS.md#react-best-practices-8-advanced-patterns-8-4-useeffectevent-for-stable-callback-refs
+  - rules/advanced-effect-event-deps.md#top
+  - rules/advanced-effect-event-deps.md#do-not-put-effect-events-in-dependency-arrays
+  - rules/advanced-event-handler-refs.md#top
+  - rules/advanced-event-handler-refs.md#store-event-handlers-in-refs
+  - rules/advanced-init-once.md#top
+  - rules/advanced-init-once.md#initialize-app-once-not-per-mount
+  - rules/advanced-use-latest.md#top
+  - rules/advanced-use-latest.md#useeffectevent-for-stable-callback-refs
+  - rules/client-event-listeners.md#deduplicate-global-event-listeners
+  - rules/client-passive-event-listeners.md#use-passive-event-listeners-for-scrolling-performance
+  - rules/rerender-dependencies.md#top
+  - rules/rerender-dependencies.md#narrow-effect-dependencies
+  - rules/rerender-move-effect-to-event.md#top
+  - rules/rerender-move-effect-to-event.md#put-interaction-logic-in-event-handlers
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: false
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T19:56:49.497761Z'
+  codex_attempts: 1
+authoring:
+  backend: claude
+  model: sonnet
+  tokens_in: 37
+  tokens_out: 25675
+  cost_usd: 1.226499
+  attempts: 1

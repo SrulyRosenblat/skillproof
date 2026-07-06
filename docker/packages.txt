@@ -1,0 +1,29 @@
+# Single source of truth for what's installed in the sandbox image.
+# This file is baked into the Dockerfile AND quoted verbatim to Codex so
+# generated tasks/graders only depend on what actually exists.
+
+[system]
+bash
+coreutils
+git
+jq
+ripgrep
+poppler-utils
+
+[python]  # Python 3.12
+pytest==8.3.4
+numpy==2.2.1
+pandas==2.2.3
+pypdf==5.1.0
+reportlab==4.2.5
+openpyxl==3.1.5
+python-docx==1.1.2
+pyyaml==6.0.2
+pillow==11.1.0
+beautifulsoup4==4.12.3
+lxml==5.3.0
+requests==2.32.3
+
+[node]  # Node 20 (for web/MCP skills)
+node
+npm

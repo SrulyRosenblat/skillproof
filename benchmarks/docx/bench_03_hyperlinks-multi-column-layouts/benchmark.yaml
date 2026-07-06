@@ -1,0 +1,27 @@
+schema_version: 1
+id: bench_03_hyperlinks-multi-column-layouts
+skill_name: docx
+title: Create a Hyperlinked Two-Column Brief
+capability: Create a DOCX that uses real external and internal hyperlinks together
+  with a controlled multi-column section layout and a forced next-column break.
+difficulty: medium
+provenance:
+  cluster_id: 1
+  cluster_label: Hyperlinks / Multi-Column Layouts
+  chunk_ids:
+  - SKILL.md#docx-creation-editing-and-analysis-creating-new-documents-hyperlinks
+  - SKILL.md#docx-creation-editing-and-analysis-creating-new-documents-multi-column-layouts
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: true
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T16:27:18.929581Z'
+  codex_attempts: 1

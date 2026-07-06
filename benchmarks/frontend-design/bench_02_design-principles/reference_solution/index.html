@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ember &amp; Ash — Hot Sauce, Hand-Bottled in Portland</title>
+<style>
+  :root {
+    --char: #241a15;
+    --ember: #c4491f;
+    --ash: #e9e2d6;
+    --paper: #f6f1e8;
+    --line: rgba(36, 26, 21, 0.18);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--char);
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 1.05;
+  }
+
+  p {
+    font-family: 'Lora', Georgia, serif;
+  }
+
+  #hero {
+    padding: 6rem 6vw 5rem;
+    background: var(--char);
+    color: var(--ash);
+    border-bottom: 6px solid var(--ember);
+  }
+
+  #hero h1 {
+    font-size: clamp(2rem, 5vw, 3.6rem);
+    max-width: 18ch;
+    margin: 0 0 1.25rem;
+    color: var(--paper);
+  }
+
+  #hero .hero-sub {
+    max-width: 52ch;
+    color: rgba(233, 226, 214, 0.82);
+    font-size: 1.05rem;
+  }
+
+  #hero .hero-mark {
+    display: inline-block;
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    color: var(--ember);
+    margin-bottom: 1.5rem;
+  }
+
+  main {
+    padding: 4.5rem 6vw 5rem;
+  }
+
+  .section-label {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--ember);
+    margin: 0 0 2.5rem;
+    max-width: 60ch;
+  }
+
+  .flavor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+  }
+
+  .flavor-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    padding: 2rem 1.75rem 2.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .flavor-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 6px;
+    background: var(--card-accent, var(--ember));
+  }
+
+  .flavor-card.verde { --card-accent: #6b7f3a; }
+  .flavor-card.rojo { --card-accent: #c4491f; }
+  .flavor-card.negro { --card-accent: #241a15; }
+
+  .heat-tag {
+    align-self: flex-start;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--card-accent, var(--ember));
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+  }
+
+  .flavor-card h2 {
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    margin: 0;
+    letter-spacing: 0.01em;
+  }
+
+  .scoville {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 0.95rem;
+    color: #6b5d52;
+  }
+
+  .scoville strong {
+    color: var(--char);
+  }
+
+  .base {
+    font-size: 0.9rem;
+    color: #6b5d52;
+    margin: 0;
+  }
+
+  .flavor-card p.notes {
+    margin: 0.25rem 0 0;
+    font-size: 1rem;
+  }
+
+  footer {
+    padding: 2.5rem 6vw 3rem;
+    font-size: 0.85rem;
+    color: #6b5d52;
+    border-top: 1px solid var(--line);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header id="hero">
+  <span class="hero-mark">Est. 2019 &middot; Portland, Oregon</span>
+  <h1>Ember &amp; Ash bottles its heat by hand, forty at a time, in a shipping container behind a Portland warehouse.</h1>
+  <p class="hero-sub">Founded by two former line cooks who wanted a kitchen no landlord could take away, Ember &amp; Ash still runs every batch through the same converted container - hand-cooked, hand-bottled, hand-labeled.</p>
+</header>
+
+<main>
+  <p class="section-label">Three sauces, each built for a different amount of heat you actually want on the plate - pick the one that matches your dish, not a set to work through.</p>
+
+  <div class="flavor-grid">
+
+    <article class="flavor-card verde">
+      <span class="heat-tag">Mild</span>
+      <h2>Verde</h2>
+      <p class="scoville">Tomatillo, serrano, lime &middot; <strong>1,200 SHU</strong></p>
+      <p class="notes">Bright and grassy with a quick, clean finish - built for eggs and fish tacos.</p>
+    </article>
+
+    <article class="flavor-card rojo">
+      <span class="heat-tag">Medium</span>
+      <h2>Rojo</h2>
+      <p class="scoville">Fresno chile, roasted garlic, smoked paprika &middot; <strong>8,500 SHU</strong></p>
+      <p class="notes">Slow-building warmth with a smoky sweetness that lingers under the heat.</p>
+    </article>
+
+    <article class="flavor-card negro">
+      <span class="heat-tag">Fierce</span>
+      <h2>Negro</h2>
+      <p class="scoville">Ghost pepper, black garlic, charred onion &middot; <strong>94,000 SHU</strong></p>
+      <p class="notes">A brief sweetness gives way to a wall of heat that doesn't let go.</p>
+    </article>
+
+  </div>
+</main>
+
+<footer>
+  Ember &amp; Ash &middot; hand-bottled behind a Portland warehouse &middot; sold one bottle at a time, no sets.
+</footer>
+
+</body>
+</html>

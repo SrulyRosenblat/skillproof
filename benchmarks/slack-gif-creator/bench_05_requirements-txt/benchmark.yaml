@@ -1,0 +1,26 @@
+schema_version: 1
+id: bench_05_requirements-txt
+skill_name: slack-gif-creator
+title: Infer Slack GIF Runtime Dependencies
+capability: Determine and encode the correct runtime Python dependencies for a Slack
+  GIF project, including PyPI package-name mappings and the ffmpeg backend package.
+difficulty: medium
+provenance:
+  cluster_id: 4
+  cluster_label: requirements.txt
+  chunk_ids:
+  - requirements.txt#top
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: true
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T16:32:07.827149Z'
+  codex_attempts: 1

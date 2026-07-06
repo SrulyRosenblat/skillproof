@@ -1,0 +1,95 @@
+{
+  "heading_font": "Poppins, Arial, sans-serif",
+  "body_font": "Lora, Georgia, serif",
+  "main_colors": {
+    "dark": "#141413",
+    "light": "#faf9f5",
+    "mid_gray": "#b0aea5",
+    "light_gray": "#e8e6dc"
+  },
+  "accent_cycle": [
+    "#d97757",
+    "#6a9bcc",
+    "#788c5d"
+  ],
+  "text_elements": [
+    {
+      "text": "Claude Code Launch Checklist",
+      "font_size": 44,
+      "font_family": "Poppins, Arial, sans-serif",
+      "fill": "#faf9f5"
+    },
+    {
+      "text": "Operational guardrails for every release",
+      "font_size": 20,
+      "font_family": "Lora, Georgia, serif",
+      "fill": "#faf9f5"
+    },
+    {
+      "text": "Brand Inputs",
+      "font_size": 28,
+      "font_family": "Poppins, Arial, sans-serif",
+      "fill": "#141413"
+    },
+    {
+      "text": "Use official colors",
+      "font_size": 18,
+      "font_family": "Lora, Georgia, serif",
+      "fill": "#141413"
+    },
+    {
+      "text": "Preserve readable hierarchy",
+      "font_size": 18,
+      "font_family": "Lora, Georgia, serif",
+      "fill": "#141413"
+    },
+    {
+      "text": "Review Gates",
+      "font_size": 28,
+      "font_family": "Poppins, Arial, sans-serif",
+      "fill": "#141413"
+    },
+    {
+      "text": "Check typography by size",
+      "font_size": 18,
+      "font_family": "Lora, Georgia, serif",
+      "fill": "#141413"
+    },
+    {
+      "text": "Validate contrast on every panel",
+      "font_size": 18,
+      "font_family": "Lora, Georgia, serif",
+      "fill": "#141413"
+    },
+    {
+      "text": "Release Signals",
+      "font_size": 28,
+      "font_family": "Poppins, Arial, sans-serif",
+      "fill": "#141413"
+    },
+    {
+      "text": "Cycle accents consistently",
+      "font_size": 18,
+      "font_family": "Lora, Georgia, serif",
+      "fill": "#141413"
+    },
+    {
+      "text": "Ship one polished asset",
+      "font_size": 18,
+      "font_family": "Lora, Georgia, serif",
+      "fill": "#141413"
+    },
+    {
+      "text": "Good defaults reduce review time.",
+      "font_size": 30,
+      "font_family": "Poppins, Arial, sans-serif",
+      "fill": "#faf9f5"
+    },
+    {
+      "text": "Anthropic launch principle",
+      "font_size": 18,
+      "font_family": "Lora, Georgia, serif",
+      "fill": "#faf9f5"
+    }
+  ]
+}

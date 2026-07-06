@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Warble Press — independent vinyl pressing since 2016</title>
+<style>
+  :root {
+    --ink: #1c1a17;
+    --paper: #f6f3ee;
+    --groove: #b03a2e;
+    --line: #d8d2c6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Iowan Old Style', 'Georgia', serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+  }
+  a, button {
+    font: inherit;
+    color: inherit;
+  }
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid var(--groove);
+    outline-offset: 3px;
+  }
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  header.hero {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.78rem;
+    color: var(--groove);
+    margin: 0 0 18px;
+  }
+  h1 {
+    font-size: clamp(2.1rem, 5vw, 3.1rem);
+    line-height: 1.15;
+    margin: 0 0 20px;
+    max-width: 14ch;
+  }
+  .hero p.subhead {
+    font-size: 1.15rem;
+    max-width: 52ch;
+    margin: 0;
+    color: #4a463f;
+  }
+
+  /* --- signature: a single hand-cut lacquer groove that spirals inward on load --- */
+  #lathe-groove {
+    --size: 220px;
+    width: var(--size);
+    height: var(--size);
+    margin: 40px 0 0;
+    border-radius: 50%;
+    background:
+      repeating-radial-gradient(
+        circle at center,
+        var(--ink) 0px,
+        var(--ink) 1.4px,
+        transparent 1.4px,
+        transparent 6px
+      );
+    position: relative;
+    transform: scale(0.2) rotate(-160deg);
+    opacity: 0;
+    animation: cutGroove 1.4s cubic-bezier(0.2, 0.7, 0.2, 1) 0.15s forwards;
+  }
+  #lathe-groove::after {
+    content: "";
+    position: absolute;
+    inset: 42%;
+    background: var(--groove);
+    border-radius: 50%;
+  }
+  @keyframes cutGroove {
+    to { transform: scale(1) rotate(0deg); opacity: 1; }
+  }
+
+  main { padding: 8px 0 0; }
+
+  section.about {
+    padding: 48px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  section.about h2 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #6b6659;
+    margin: 0 0 18px;
+  }
+  section.about p {
+    max-width: 62ch;
+    font-size: 1.05rem;
+  }
+
+  .facts {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 40px 0;
+    margin: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .facts dd {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.6rem;
+    margin: 0;
+    color: var(--groove);
+  }
+  .facts dt {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6b6659;
+    margin: 6px 0 0;
+  }
+
+  .cta-row {
+    padding: 48px 0 64px;
+  }
+  .quote-link {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.02rem;
+    border-radius: 3px;
+    text-decoration: none;
+  }
+  .quote-link:hover { background: var(--groove); }
+
+  footer {
+    padding: 28px 0 48px;
+    color: #6b6659;
+    font-size: 0.88rem;
+  }
+
+  @media (max-width: 600px) {
+    header.hero { padding: 48px 0 36px; }
+    .facts { grid-template-columns: repeat(2, 1fr); gap: 24px 16px; }
+    #lathe-groove { --size: 160px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #lathe-groove {
+      animation: none;
+      transform: none;
+      opacity: 1;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <p class="eyebrow">Independent vinyl pressing &middot; Providence, RI</p>
+      <h1>Warble Press</h1>
+      <p class="subhead">
+        Founded in 2016, we cut every lacquer by hand on a 1978 Scully lathe before
+        it ever touches a stamper.
+      </p>
+      <div id="lathe-groove" data-signature="true" aria-hidden="true"></div>
+    </header>
+
+    <main>
+      <section class="about">
+        <h2>What we press</h2>
+        <p>
+          Warble Press has run three lacquer lathes out of a converted mill building
+          in Providence, Rhode Island since 2016. Every order starts at a 100 record
+          minimum run, and we mix over 30 custom vinyl color blends in-house so no
+          two labels' pressings look alike.
+        </p>
+      </section>
+
+      <dl class="facts">
+        <div>
+          <dd>2016</dd>
+          <dt>Founded</dt>
+        </div>
+        <div>
+          <dd>500/day</dd>
+          <dt>Press capacity</dt>
+        </div>
+        <div>
+          <dd>6 weeks</dd>
+          <dt>Turnaround</dt>
+        </div>
+        <div>
+          <dd>100</dd>
+          <dt>Minimum run</dt>
+        </div>
+      </dl>
+
+      <div class="cta-row">
+        <a class="quote-link" href="mailto:press@warblepress.example">Get a quote</a>
+      </div>
+    </main>
+
+    <footer>
+      <p>Warble Press &middot; Providence, RI &middot; press@warblepress.example</p>
+    </footer>
+  </div>
+</body>
+</html>

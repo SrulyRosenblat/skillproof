@@ -1,0 +1,17 @@
+{
+  "archive_action": {
+    "button_label": "Archive folder",
+    "confirmation_message": "Folder archived. Your team can still see its files, but the folder will stop updating."
+  },
+  "remove_member_action": {
+    "button_label": "Remove member",
+    "confirmation_message": "Member removed. They no longer have access to this folder."
+  },
+  "upload_error": {
+    "message": "This file is larger than the 300 MB limit for this folder. Try uploading a smaller file, or compress it first."
+  },
+  "empty_folder_state": {
+    "heading": "This folder is empty",
+    "body": "Upload your first file to start sharing it with your team."
+  }
+}

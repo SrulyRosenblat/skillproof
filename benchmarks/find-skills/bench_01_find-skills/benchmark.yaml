@@ -1,0 +1,34 @@
+schema_version: 1
+id: bench_01_find-skills
+skill_name: find-skills
+title: Verify skill quality before recommending, don't trust keyword relevance
+capability: Given raw skill-registry search results, pick the trustworthy, high-adoption
+  skill (installs, GitHub stars, verified publisher) instead of the keyword-stuffed
+  but low-quality decoy, and present it in the required format.
+difficulty: medium
+provenance:
+  cluster_id: 0
+  cluster_label: Find Skills
+  chunk_ids:
+  - SKILL.md#find-skills
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: false
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T19:44:55.566809Z'
+  codex_attempts: 1
+authoring:
+  backend: claude
+  model: sonnet
+  tokens_in: 35
+  tokens_out: 23856
+  cost_usd: 0.954679
+  attempts: 1

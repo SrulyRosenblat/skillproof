@@ -1,0 +1,27 @@
+schema_version: 1
+id: bench_01_when-to-use-this-skill-how-to-use-this-s
+skill_name: internal-comms
+title: Choose the Right Internal Comms Guide
+capability: Select the correct internal communication guideline for a request and
+  produce an output that follows that guide.
+difficulty: medium
+provenance:
+  cluster_id: 0
+  cluster_label: When to use this skill / How to use this skill
+  chunk_ids:
+  - SKILL.md#when-to-use-this-skill
+  - SKILL.md#how-to-use-this-skill
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: false
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T16:45:05.016256Z'
+  codex_attempts: 1

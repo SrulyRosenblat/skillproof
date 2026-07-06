@@ -1,0 +1,52 @@
+[
+  {
+    "id": "E1",
+    "from": "Maria Chen, CEO",
+    "to_description": "All Employees",
+    "recipient_count": 1290,
+    "date": "2026-07-01",
+    "subject": "Our Q3 Strategy and Priorities",
+    "body": "As we close out this quarter, I want to share where we're focusing our energy for Q3: doubling down on enterprise expansion, accelerating Project Helios adoption, and investing in platform reliability. See the attached deck for the full breakdown.",
+    "link": "https://mail.acmeinc.com/thread/q3-strategy-2026"
+  },
+  {
+    "id": "E2",
+    "from": "Maria Chen, CEO",
+    "to_description": "All Employees",
+    "recipient_count": 1290,
+    "date": "2026-07-03",
+    "subject": "Welcoming Jordan Alvarez as Our New Chief Product Officer",
+    "body": "I'm excited to share that Jordan Alvarez is joining us as our new Chief Product Officer, effective next month. Jordan previously led product at two high-growth SaaS companies and will be a huge addition to our leadership team.",
+    "link": "https://mail.acmeinc.com/thread/welcome-jordan-alvarez"
+  },
+  {
+    "id": "E3",
+    "from": "People Team",
+    "to_description": "All Employees",
+    "recipient_count": 1290,
+    "date": "2026-07-02",
+    "subject": "Introducing Our New Employee Stock Purchase Plan",
+    "body": "We're rolling out a new Employee Stock Purchase Plan starting next month, giving everyone the chance to invest directly in Acme's future at a discount. Enrollment details to follow.",
+    "link": "https://mail.acmeinc.com/thread/stock-purchase-plan-launch"
+  },
+  {
+    "id": "E4",
+    "from": "IT Operations",
+    "to_description": "All Employees",
+    "recipient_count": 1290,
+    "date": "2026-07-01",
+    "subject": "Scheduled Network Maintenance This Weekend",
+    "body": "VPN access will be intermittent this Saturday from 10pm-2am PT while we perform scheduled network maintenance.",
+    "link": "https://mail.acmeinc.com/thread/network-maintenance-july"
+  },
+  {
+    "id": "E5",
+    "from": "Engineering Manager, Payments",
+    "to_description": "Payments Team",
+    "recipient_count": 11,
+    "date": "2026-07-02",
+    "subject": "Sprint 42 Planning Notes",
+    "body": "Notes from today's Sprint 42 planning session are attached. Please review your assigned tickets before standup tomorrow.",
+    "link": "https://mail.acmeinc.com/thread/sprint-42-notes"
+  }
+]

@@ -1,0 +1,35 @@
+schema_version: 1
+id: bench_04_restraint-and-self-critique
+skill_name: frontend-design
+title: Cut a deliberately over-decorated draft down to one signature moment
+capability: Given a homepage draft with five competing bold effects and three planted
+  accessibility/responsiveness bugs, the model must remove all but one of the decorative
+  effects, fix the mobile/keyboard-focus/reduced-motion quality floor, preserve the
+  real content, and document what it cut and kept.
+difficulty: medium
+provenance:
+  cluster_id: 3
+  cluster_label: Restraint and self-critique
+  chunk_ids:
+  - SKILL.md#frontend-design-restraint-and-self-critique
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: false
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T20:16:40.837612Z'
+  codex_attempts: 1
+authoring:
+  backend: claude
+  model: sonnet
+  tokens_in: 63
+  tokens_out: 44943
+  cost_usd: 1.992294
+  attempts: 1

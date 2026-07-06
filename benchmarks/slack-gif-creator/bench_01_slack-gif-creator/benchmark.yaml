@@ -1,0 +1,26 @@
+schema_version: 1
+id: bench_01_slack-gif-creator
+skill_name: slack-gif-creator
+title: Create a Slack emoji GIF from an uploaded badge
+capability: Use the Slack GIF builder workflow to turn an uploaded PNG into a Slack-optimized
+  emoji GIF without redrawing the source image.
+difficulty: medium
+provenance:
+  cluster_id: 0
+  cluster_label: Slack GIF Creator
+  chunk_ids:
+  - SKILL.md#slack-gif-creator
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: true
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T16:07:51.563367Z'
+  codex_attempts: 2

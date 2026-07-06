@@ -1,0 +1,2094 @@
+{
+ "generated": "2026-07-06T19:00Z",
+ "skills": {
+  "brand-guidelines": {
+   "description": "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply.",
+   "benchmarks": [
+    {
+     "id": "bench_01_anthropic-brand-styling",
+     "status": "validated",
+     "title": "Anthropic SVG Brand Poster",
+     "capability": "Apply Anthropic brand colors, typography thresholds, and accent-shape color cycling to a fixed-layout SVG deliverable.",
+     "difficulty": "medium",
+     "attempts": 1,
+     "authoring": {}
+    }
+   ],
+   "runs": [
+    {
+     "run_id": "20260706-160416-0165be",
+     "trials": 1,
+     "models": [
+      "moonshotai/kimi-k2.7-code",
+      "deepseek/deepseek-v4-flash",
+      "qwen/qwen3.6-35b-a3b"
+     ],
+     "results": [
+      {
+       "benchmark": "bench_01_anthropic-brand-styling",
+       "model": "deepseek/deepseek-v4-flash",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 6.0,
+        "mean_tokens_in": 23223.0,
+        "mean_tokens_out": 6993.0,
+        "mean_wall_seconds": 74.2,
+        "total_cost_usd": 0.003077
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 16.0,
+        "mean_tokens_in": 99978.0,
+        "mean_tokens_out": 17367.0,
+        "mean_wall_seconds": 211.2,
+        "total_cost_usd": 0.010846
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_01_anthropic-brand-styling",
+       "model": "moonshotai/kimi-k2.7-code",
+       "with": 1.0,
+       "without": 0.0,
+       "uplift": 1.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 9.0,
+        "mean_tokens_in": 37932.0,
+        "mean_tokens_out": 3900.0,
+        "mean_wall_seconds": 58.3,
+        "total_cost_usd": 0.028462
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 30.0,
+        "mean_tokens_in": 240751.0,
+        "mean_tokens_out": 1171.0,
+        "mean_wall_seconds": 129.1,
+        "total_cost_usd": 0.062838
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_01_anthropic-brand-styling",
+       "model": "qwen/qwen3.6-35b-a3b",
+       "with": 1.0,
+       "without": 0.0,
+       "uplift": 1.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 22319.0,
+        "mean_tokens_out": 4901.0,
+        "mean_wall_seconds": 83.5,
+        "total_cost_usd": 0.00805
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 9.0,
+        "mean_tokens_in": 39287.0,
+        "mean_tokens_out": 6673.0,
+        "mean_wall_seconds": 169.9,
+        "total_cost_usd": 0.012173
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      }
+     ]
+    }
+   ],
+   "n_chunks": 1,
+   "k_selected": 1,
+   "embedding": "google/gemini-embedding-2"
+  },
+  "docx": {
+   "description": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterhea",
+   "benchmarks": [
+    {
+     "id": "bench_01_step-2-edit-xml-tracked-changes-comments",
+     "status": "validated",
+     "title": "Tracked OOXML replacement with nested comment reply",
+     "capability": "Edit unpacked DOCX XML to apply precise tracked changes, whole-paragraph deletions, and nested comment anchors with correct WordprocessingML semantics.",
+     "difficulty": "medium",
+     "attempts": 1,
+     "authoring": {}
+    },
+    {
+     "id": "bench_02_styles-override-built-in-headings",
+     "status": "validated",
+     "title": "Repair Built-in Heading Styles in a DOCX",
+     "capability": "Override the built-in Heading1 and Heading2 style definitions in a DOCX so existing heading paragraphs pick up the required formatting and outline metadata document-wide.",
+     "difficulty": "medium",
+     "attempts": 2,
+     "authoring": {}
+    },
+    {
+     "id": "bench_03_hyperlinks-multi-column-layouts",
+     "status": "validated",
+     "title": "Create a Hyperlinked Two-Column Brief",
+     "capability": "Create a DOCX that uses real external and internal hyperlinks together with a controlled multi-column section layout and a forced next-column break.",
+     "difficulty": "medium",
+     "attempts": 1,
+     "authoring": {}
+    },
+    {
+     "id": "bench_04_docx-creation-editing-and-analysis-image",
+     "status": "validated",
+     "title": "Embed a PNG into an existing DOCX package",
+     "capability": "Edit an existing DOCX by embedding an image through the required OOXML media, relationship, content-type, and document.xml changes.",
+     "difficulty": "medium",
+     "attempts": 1,
+     "authoring": {}
+    },
+    {
+     "id": "bench_05_lists-never-use-unicode-bullets-tab-stop",
+     "status": "validated",
+     "title": "Repair Fake Lists and Tab-Aligned Lines",
+     "capability": "Convert typed bullets, manual numbers, and text separators in a DOCX into real Word list numbering and tab-stop structures.",
+     "difficulty": "medium",
+     "attempts": 1,
+     "authoring": {}
+    }
+   ],
+   "runs": [
+    {
+     "run_id": "20260706-164137-de6239",
+     "trials": 1,
+     "models": [
+      "moonshotai/kimi-k2.7-code",
+      "deepseek/deepseek-v4-flash",
+      "qwen/qwen3.6-35b-a3b"
+     ],
+     "results": [
+      {
+       "benchmark": "bench_01_step-2-edit-xml-tracked-changes-comments",
+       "model": "deepseek/deepseek-v4-flash",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 12.0,
+        "mean_tokens_in": 193095.0,
+        "mean_tokens_out": 10004.0,
+        "mean_wall_seconds": 168.1,
+        "total_cost_usd": 0.014175
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 9.0,
+        "mean_tokens_in": 45337.0,
+        "mean_tokens_out": 7151.0,
+        "mean_wall_seconds": 130.9,
+        "total_cost_usd": 0.004587
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/scripts/comment.py"
+       ]
+      },
+      {
+       "benchmark": "bench_01_step-2-edit-xml-tracked-changes-comments",
+       "model": "moonshotai/kimi-k2.7-code",
+       "with": 0.0,
+       "without": 1.0,
+       "uplift": -1.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 11.0,
+        "mean_tokens_in": 121711.0,
+        "mean_tokens_out": 3736.0,
+        "mean_wall_seconds": 71.0,
+        "total_cost_usd": 0.051527
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 8.0,
+        "mean_tokens_in": 28473.0,
+        "mean_tokens_out": 1564.0,
+        "mean_wall_seconds": 22.4,
+        "total_cost_usd": 0.014638
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/scripts/office/validate.py"
+       ]
+      },
+      {
+       "benchmark": "bench_01_step-2-edit-xml-tracked-changes-comments",
+       "model": "qwen/qwen3.6-35b-a3b",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 13.0,
+        "mean_tokens_in": 174544.0,
+        "mean_tokens_out": 6255.0,
+        "mean_wall_seconds": 116.5,
+        "total_cost_usd": 0.030691
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 12.0,
+        "mean_tokens_in": 65139.0,
+        "mean_tokens_out": 4218.0,
+        "mean_wall_seconds": 71.8,
+        "total_cost_usd": 0.013337
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_02_styles-override-built-in-headings",
+       "model": "deepseek/deepseek-v4-flash",
+       "with": 1.0,
+       "without": 1.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 12.0,
+        "mean_tokens_in": 132557.0,
+        "mean_tokens_out": 4415.0,
+        "mean_wall_seconds": 76.8,
+        "total_cost_usd": 0.006358
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 9.0,
+        "mean_tokens_in": 64346.0,
+        "mean_tokens_out": 5425.0,
+        "mean_wall_seconds": 131.5,
+        "total_cost_usd": 0.005692
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/scripts/office/pack.py",
+        "/skill/scripts/office/unpack.py"
+       ]
+      },
+      {
+       "benchmark": "bench_02_styles-override-built-in-headings",
+       "model": "moonshotai/kimi-k2.7-code",
+       "with": 1.0,
+       "without": 0.0,
+       "uplift": 1.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 14.0,
+        "mean_tokens_in": 150417.0,
+        "mean_tokens_out": 2374.0,
+        "mean_wall_seconds": 83.3,
+        "total_cost_usd": 0.059985
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 30.0,
+        "mean_tokens_in": 410124.0,
+        "mean_tokens_out": 11541.0,
+        "mean_wall_seconds": 200.1,
+        "total_cost_usd": 0.162429
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/scripts/office/unpack.py",
+        "/skill/scripts/office/validate.py"
+       ]
+      },
+      {
+       "benchmark": "bench_02_styles-override-built-in-headings",
+       "model": "qwen/qwen3.6-35b-a3b",
+       "with": 1.0,
+       "without": 1.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 16.0,
+        "mean_tokens_in": 203043.0,
+        "mean_tokens_out": 3389.0,
+        "mean_wall_seconds": 67.0,
+        "total_cost_usd": 0.031815
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 9.0,
+        "mean_tokens_in": 74642.0,
+        "mean_tokens_out": 4116.0,
+        "mean_wall_seconds": 54.9,
+        "total_cost_usd": 0.014566
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/scripts/office/pack.py",
+        "/skill/scripts/office/unpack.py"
+       ]
+      },
+      {
+       "benchmark": "bench_03_hyperlinks-multi-column-layouts",
+       "model": "deepseek/deepseek-v4-flash",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 30.0,
+        "mean_tokens_in": 396582.0,
+        "mean_tokens_out": 21985.0,
+        "mean_wall_seconds": 350.1,
+        "total_cost_usd": 0.024694
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 30.0,
+        "mean_tokens_in": 386556.0,
+        "mean_tokens_out": 37068.0,
+        "mean_wall_seconds": 488.6,
+        "total_cost_usd": 0.030941
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_03_hyperlinks-multi-column-layouts",
+       "model": "moonshotai/kimi-k2.7-code",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 30.0,
+        "mean_tokens_in": 487993.0,
+        "mean_tokens_out": 15522.0,
+        "mean_wall_seconds": 313.8,
+        "total_cost_usd": 0.1699
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 30.0,
+        "mean_tokens_in": 374513.0,
+        "mean_tokens_out": 12966.0,
+        "mean_wall_seconds": 171.4,
+        "total_cost_usd": 0.132686
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/node_modules",
+        "/skill/scripts/office/validate.py"
+       ]
+      },
+      {
+       "benchmark": "bench_03_hyperlinks-multi-column-layouts",
+       "model": "qwen/qwen3.6-35b-a3b",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 46683.0,
+        "mean_tokens_out": 10293.0,
+        "mean_wall_seconds": 137.9,
+        "total_cost_usd": 0.016829
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 29.0,
+        "mean_tokens_in": 295908.0,
+        "mean_tokens_out": 26857.0,
+        "mean_wall_seconds": 739.6,
+        "total_cost_usd": 0.068284
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_04_docx-creation-editing-and-analysis-image",
+       "model": "deepseek/deepseek-v4-flash",
+       "with": 1.0,
+       "without": 0.0,
+       "uplift": 1.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 16.0,
+        "mean_tokens_in": 287498.0,
+        "mean_tokens_out": 6527.0,
+        "mean_wall_seconds": 348.6,
+        "total_cost_usd": 0.0198
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 21.0,
+        "mean_tokens_in": 196134.0,
+        "mean_tokens_out": 15189.0,
+        "mean_wall_seconds": 395.3,
+        "total_cost_usd": 0.013872
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/scripts/office/unpack.py",
+        "/skill/scripts/office/validate.py"
+       ]
+      },
+      {
+       "benchmark": "bench_04_docx-creation-editing-and-analysis-image",
+       "model": "moonshotai/kimi-k2.7-code",
+       "with": 1.0,
+       "without": 1.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 28.0,
+        "mean_tokens_in": 384402.0,
+        "mean_tokens_out": 8537.0,
+        "mean_wall_seconds": 141.5,
+        "total_cost_usd": 0.119439
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 9.0,
+        "mean_tokens_in": 24851.0,
+        "mean_tokens_out": 2852.0,
+        "mean_wall_seconds": 82.0,
+        "total_cost_usd": 0.017141
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/scripts/office/schemas/ISO-IEC29500-4_2016",
+        "/skill/scripts/office/validate.py"
+       ]
+      },
+      {
+       "benchmark": "bench_04_docx-creation-editing-and-analysis-image",
+       "model": "qwen/qwen3.6-35b-a3b",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 0,
+        "mean_turns": 0.0,
+        "mean_tokens_in": 0.0,
+        "mean_tokens_out": 0.0,
+        "mean_wall_seconds": 0.0,
+        "total_cost_usd": null
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 10.0,
+        "mean_tokens_in": 29784.0,
+        "mean_tokens_out": 4214.0,
+        "mean_wall_seconds": 309.4,
+        "total_cost_usd": 0.008384
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_05_lists-never-use-unicode-bullets-tab-stop",
+       "model": "deepseek/deepseek-v4-flash",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 30.0,
+        "mean_tokens_in": 548244.0,
+        "mean_tokens_out": 27648.0,
+        "mean_wall_seconds": 516.3,
+        "total_cost_usd": 0.042923
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 21.0,
+        "mean_tokens_in": 180175.0,
+        "mean_tokens_out": 14647.0,
+        "mean_wall_seconds": 220.9,
+        "total_cost_usd": 0.013389
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/scripts/office/unpack.py"
+       ]
+      },
+      {
+       "benchmark": "bench_05_lists-never-use-unicode-bullets-tab-stop",
+       "model": "moonshotai/kimi-k2.7-code",
+       "with": 1.0,
+       "without": 0.0,
+       "uplift": 1.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 30.0,
+        "mean_tokens_in": 443199.0,
+        "mean_tokens_out": 10960.0,
+        "mean_wall_seconds": 308.5,
+        "total_cost_usd": 0.143517
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 13.0,
+        "mean_tokens_in": 64641.0,
+        "mean_tokens_out": 5503.0,
+        "mean_wall_seconds": 79.1,
+        "total_cost_usd": 0.041795
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/scripts/office/unpack.py",
+        "/skill/scripts/office/validate.py"
+       ]
+      },
+      {
+       "benchmark": "bench_05_lists-never-use-unicode-bullets-tab-stop",
+       "model": "qwen/qwen3.6-35b-a3b",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 30.0,
+        "mean_tokens_in": 469816.0,
+        "mean_tokens_out": 9320.0,
+        "mean_wall_seconds": 400.3,
+        "total_cost_usd": 0.075094
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 27.0,
+        "mean_tokens_in": 482449.0,
+        "mean_tokens_out": 18167.0,
+        "mean_wall_seconds": 569.1,
+        "total_cost_usd": 0.08571
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/scripts/office/pack.py",
+        "/skill/scripts/office/unpack.py"
+       ]
+      }
+     ]
+    }
+   ],
+   "n_chunks": 14,
+   "k_selected": 5,
+   "embedding": "google/gemini-embedding-2"
+  },
+  "internal-comms": {
+   "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident rep",
+   "benchmarks": [
+    {
+     "id": "bench_01_when-to-use-this-skill-how-to-use-this-s",
+     "status": "validated",
+     "title": "Choose the Right Internal Comms Guide",
+     "capability": "Select the correct internal communication guideline for a request and produce an output that follows that guide.",
+     "difficulty": "medium",
+     "attempts": 1,
+     "authoring": {}
+    },
+    {
+     "id": "bench_02_instructions-tools-available",
+     "status": "validated",
+     "title": "3P update: gather signal from Slack/Drive/Email/Calendar exports",
+     "capability": "Given raw exports from Slack, Google Drive, Email, and Calendar, produce a strictly-formatted 3P (Progress/Plans/Problems) update that surfaces the high-signal, on-topic, in-window items and omits low-engagement, off-topic, recurring, or out-of-windo",
+     "difficulty": "medium",
+     "attempts": 1,
+     "authoring": {
+      "backend": "claude",
+      "model": "sonnet",
+      "tokens_in": 49,
+      "tokens_out": 25306,
+      "cost_usd": 1.11452,
+      "attempts": 1
+     }
+    },
+    {
+     "id": "bench_03_instructions-tools-available",
+     "status": "validated",
+     "title": "Company-wide FAQ digest from Slack, email, and docs",
+     "capability": "Identify genuinely company-wide FAQs (vs. single-person/team noise) by synthesizing across Slack, email, and document sources, then answer them with grounded facts, source attribution, and explicit hedging when leadership hasn't officially resolved a",
+     "difficulty": "medium",
+     "attempts": 1,
+     "authoring": {
+      "backend": "claude",
+      "model": "sonnet"
+     }
+    },
+    {
+     "id": "bench_04_instructions-tools-to-use",
+     "status": "validated",
+     "title": "Company newsletter: triage multi-source signals into a sectioned, we-voiced update",
+     "capability": "Given raw exports from Slack, Email, Calendar, Documents, and external press, produce a company-wide newsletter that surfaces only company-wide-significant items (high-engagement announcements, executive/company-wide messages, well-attended meetings ",
+     "difficulty": "medium",
+     "attempts": 1,
+     "authoring": {
+      "backend": "claude",
+      "model": "sonnet",
+      "tokens_in": 57,
+      "tokens_out": 42028,
+      "cost_usd": 1.727223,
+      "attempts": 1
+     }
+    },
+    {
+     "id": "bench_05_examples-general-comms-md",
+     "status": "validated",
+     "title": "One-off internal announcement: lead with the ask, match company style",
+     "capability": "Given an unordered fact dump and past company announcements, draft a one-off internal announcement (not a 3P update, newsletter, or FAQ) that leads with the required action and deadline before background context, matches the demonstrated company styl",
+     "difficulty": "medium",
+     "attempts": 1,
+     "authoring": {
+      "backend": "claude",
+      "model": "sonnet"
+     }
+    }
+   ],
+   "runs": [
+    {
+     "run_id": "20260706-162946-0165be",
+     "trials": 1,
+     "models": [
+      "moonshotai/kimi-k2.7-code",
+      "deepseek/deepseek-v4-flash",
+      "qwen/qwen3.6-35b-a3b"
+     ],
+     "results": [
+      {
+       "benchmark": "bench_01_when-to-use-this-skill-how-to-use-this-s",
+       "model": "deepseek/deepseek-v4-flash",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 7.0,
+        "mean_tokens_in": 35541.0,
+        "mean_tokens_out": 5062.0,
+        "mean_wall_seconds": 130.1,
+        "total_cost_usd": 0.003716
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 6.0,
+        "mean_tokens_in": 28183.0,
+        "mean_tokens_out": 4107.0,
+        "mean_wall_seconds": 59.6,
+        "total_cost_usd": 0.003088
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_01_when-to-use-this-skill-how-to-use-this-s",
+       "model": "moonshotai/kimi-k2.7-code",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 7.0,
+        "mean_tokens_in": 31127.0,
+        "mean_tokens_out": 1534.0,
+        "mean_wall_seconds": 27.3,
+        "total_cost_usd": 0.020672
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 7.0,
+        "mean_tokens_in": 27837.0,
+        "mean_tokens_out": 1433.0,
+        "mean_wall_seconds": 25.2,
+        "total_cost_usd": 0.014952
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_01_when-to-use-this-skill-how-to-use-this-s",
+       "model": "qwen/qwen3.6-35b-a3b",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 6.0,
+        "mean_tokens_in": 29124.0,
+        "mean_tokens_out": 2748.0,
+        "mean_wall_seconds": 36.4,
+        "total_cost_usd": 0.006825
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 6.0,
+        "mean_tokens_in": 26686.0,
+        "mean_tokens_out": 2977.0,
+        "mean_wall_seconds": 38.0,
+        "total_cost_usd": 0.006713
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_02_instructions-tools-available",
+       "model": "deepseek/deepseek-v4-flash",
+       "with": 1.0,
+       "without": 1.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 14.0,
+        "mean_tokens_in": 60847.0,
+        "mean_tokens_out": 6115.0,
+        "mean_wall_seconds": 109.8,
+        "total_cost_usd": 0.004925
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 15.0,
+        "mean_tokens_in": 49889.0,
+        "mean_tokens_out": 18040.0,
+        "mean_wall_seconds": 207.0,
+        "total_cost_usd": 0.006947
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/examples/3p-updates.md"
+       ]
+      },
+      {
+       "benchmark": "bench_02_instructions-tools-available",
+       "model": "moonshotai/kimi-k2.7-code",
+       "with": 1.0,
+       "without": 1.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 13176.0,
+        "mean_tokens_out": 1098.0,
+        "mean_wall_seconds": 32.1,
+        "total_cost_usd": 0.009914
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 7512.0,
+        "mean_tokens_out": 997.0,
+        "mean_wall_seconds": 13.3,
+        "total_cost_usd": 0.006691
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/examples/3p-updates.md"
+       ]
+      },
+      {
+       "benchmark": "bench_02_instructions-tools-available",
+       "model": "qwen/qwen3.6-35b-a3b",
+       "with": 1.0,
+       "without": 1.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 9.0,
+        "mean_tokens_in": 28548.0,
+        "mean_tokens_out": 3514.0,
+        "mean_wall_seconds": 66.3,
+        "total_cost_usd": 0.007511
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 10.0,
+        "mean_tokens_in": 29563.0,
+        "mean_tokens_out": 4206.0,
+        "mean_wall_seconds": 68.9,
+        "total_cost_usd": 0.008345
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_03_instructions-tools-available",
+       "model": "deepseek/deepseek-v4-flash",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 14880.0,
+        "mean_tokens_out": 2271.0,
+        "mean_wall_seconds": 38.9,
+        "total_cost_usd": 0.001744
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 12882.0,
+        "mean_tokens_out": 2709.0,
+        "mean_wall_seconds": 32.1,
+        "total_cost_usd": 0.001733
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_03_instructions-tools-available",
+       "model": "moonshotai/kimi-k2.7-code",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 12432.0,
+        "mean_tokens_out": 913.0,
+        "mean_wall_seconds": 13.6,
+        "total_cost_usd": 0.008046
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 10165.0,
+        "mean_tokens_out": 906.0,
+        "mean_wall_seconds": 51.0,
+        "total_cost_usd": 0.00852
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_03_instructions-tools-available",
+       "model": "qwen/qwen3.6-35b-a3b",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 14575.0,
+        "mean_tokens_out": 1896.0,
+        "mean_wall_seconds": 35.6,
+        "total_cost_usd": 0.003936
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 12440.0,
+        "mean_tokens_out": 1869.0,
+        "mean_wall_seconds": 27.9,
+        "total_cost_usd": 0.003611
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_04_instructions-tools-to-use",
+       "model": "deepseek/deepseek-v4-flash",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 10.0,
+        "mean_tokens_in": 68283.0,
+        "mean_tokens_out": 17056.0,
+        "mean_wall_seconds": 199.2,
+        "total_cost_usd": 0.008827
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 13.0,
+        "mean_tokens_in": 84930.0,
+        "mean_tokens_out": 12592.0,
+        "mean_wall_seconds": 192.8,
+        "total_cost_usd": 0.008225
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/examples/company-newsletter.md",
+        "/skill/examples/general-comms.md"
+       ]
+      },
+      {
+       "benchmark": "bench_04_instructions-tools-to-use",
+       "model": "moonshotai/kimi-k2.7-code",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 14.0,
+        "mean_tokens_in": 147337.0,
+        "mean_tokens_out": 9833.0,
+        "mean_wall_seconds": 204.9,
+        "total_cost_usd": 0.087118
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 12.0,
+        "mean_tokens_in": 82445.0,
+        "mean_tokens_out": 6664.0,
+        "mean_wall_seconds": 163.1,
+        "total_cost_usd": 0.059554
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/examples/company-newsletter.md"
+       ]
+      },
+      {
+       "benchmark": "bench_04_instructions-tools-to-use",
+       "model": "qwen/qwen3.6-35b-a3b",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 22.0,
+        "mean_tokens_in": 204409.0,
+        "mean_tokens_out": 11419.0,
+        "mean_wall_seconds": 155.9,
+        "total_cost_usd": 0.040036
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 20.0,
+        "mean_tokens_in": 175252.0,
+        "mean_tokens_out": 13434.0,
+        "mean_wall_seconds": 199.3,
+        "total_cost_usd": 0.037969
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_05_examples-general-comms-md",
+       "model": "deepseek/deepseek-v4-flash",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 14.0,
+        "mean_tokens_in": 60948.0,
+        "mean_tokens_out": 11156.0,
+        "mean_wall_seconds": 140.5,
+        "total_cost_usd": 0.005973
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 13262.0,
+        "mean_tokens_out": 2992.0,
+        "mean_wall_seconds": 37.2,
+        "total_cost_usd": 0.001437
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/examples/general-comms.md"
+       ]
+      },
+      {
+       "benchmark": "bench_05_examples-general-comms-md",
+       "model": "moonshotai/kimi-k2.7-code",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 0,
+        "mean_turns": 0.0,
+        "mean_tokens_in": 0.0,
+        "mean_tokens_out": 0.0,
+        "mean_wall_seconds": 0.0,
+        "total_cost_usd": null
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 4.0,
+        "mean_tokens_in": 6959.0,
+        "mean_tokens_out": 1659.0,
+        "mean_wall_seconds": 18.6,
+        "total_cost_usd": 0.009487
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/examples/general-comms.md"
+       ]
+      },
+      {
+       "benchmark": "bench_05_examples-general-comms-md",
+       "model": "qwen/qwen3.6-35b-a3b",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 15842.0,
+        "mean_tokens_out": 4257.0,
+        "mean_wall_seconds": 56.6,
+        "total_cost_usd": 0.006475
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 4.0,
+        "mean_tokens_in": 9334.0,
+        "mean_tokens_out": 1903.0,
+        "mean_wall_seconds": 29.1,
+        "total_cost_usd": 0.00321
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      }
+     ]
+    },
+    {
+     "run_id": "20260706-183033-7d7fff",
+     "trials": 1,
+     "models": [
+      "moonshotai/kimi-k2.7-code",
+      "deepseek/deepseek-v4-flash",
+      "qwen/qwen3.6-35b-a3b"
+     ],
+     "results": [
+      {
+       "benchmark": "bench_01_when-to-use-this-skill-how-to-use-this-s",
+       "model": "deepseek/deepseek-v4-flash",
+       "with": 0.0,
+       "without": 1.0,
+       "uplift": -1.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 6.0,
+        "mean_tokens_in": 17980.0,
+        "mean_tokens_out": 2890.0,
+        "mean_wall_seconds": 45.4,
+        "total_cost_usd": 0.001899
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 7.0,
+        "mean_tokens_in": 16551.0,
+        "mean_tokens_out": 2697.0,
+        "mean_wall_seconds": 61.8,
+        "total_cost_usd": 0.001671
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_01_when-to-use-this-skill-how-to-use-this-s",
+       "model": "moonshotai/kimi-k2.7-code",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 4.0,
+        "mean_tokens_in": 8637.0,
+        "mean_tokens_out": 1267.0,
+        "mean_wall_seconds": 14.7,
+        "total_cost_usd": 0.008358
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 8620.0,
+        "mean_tokens_out": 770.0,
+        "mean_wall_seconds": 11.2,
+        "total_cost_usd": 0.006534
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_01_when-to-use-this-skill-how-to-use-this-s",
+       "model": "qwen/qwen3.6-35b-a3b",
+       "with": 1.0,
+       "without": 1.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 14974.0,
+        "mean_tokens_out": 2376.0,
+        "mean_wall_seconds": 75.9,
+        "total_cost_usd": 0.004472
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 11442.0,
+        "mean_tokens_out": 2222.0,
+        "mean_wall_seconds": 84.4,
+        "total_cost_usd": 0.003824
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_02_instructions-tools-available",
+       "model": "deepseek/deepseek-v4-flash",
+       "with": 1.0,
+       "without": 0.0,
+       "uplift": 1.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 4.0,
+        "mean_tokens_in": 14193.0,
+        "mean_tokens_out": 2277.0,
+        "mean_wall_seconds": 37.2,
+        "total_cost_usd": 0.001198
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 4.0,
+        "mean_tokens_in": 9733.0,
+        "mean_tokens_out": 2206.0,
+        "mean_wall_seconds": 30.6,
+        "total_cost_usd": 0.000877
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/examples/3p-updates.md"
+       ]
+      },
+      {
+       "benchmark": "bench_02_instructions-tools-available",
+       "model": "moonshotai/kimi-k2.7-code",
+       "with": 1.0,
+       "without": 1.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 4.0,
+        "mean_tokens_in": 12111.0,
+        "mean_tokens_out": 720.0,
+        "mean_wall_seconds": 18.9,
+        "total_cost_usd": 0.006723
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 4.0,
+        "mean_tokens_in": 7876.0,
+        "mean_tokens_out": 1000.0,
+        "mean_wall_seconds": 138.3,
+        "total_cost_usd": 0.008088
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/examples/3p-updates.md"
+       ]
+      },
+      {
+       "benchmark": "bench_02_instructions-tools-available",
+       "model": "qwen/qwen3.6-35b-a3b",
+       "with": 1.0,
+       "without": 1.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 4.0,
+        "mean_tokens_in": 14648.0,
+        "mean_tokens_out": 2073.0,
+        "mean_wall_seconds": 23.8,
+        "total_cost_usd": 0.003531
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 4.0,
+        "mean_tokens_in": 10311.0,
+        "mean_tokens_out": 1788.0,
+        "mean_wall_seconds": 21.3,
+        "total_cost_usd": 0.003123
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/examples/3p-updates.md"
+       ]
+      },
+      {
+       "benchmark": "bench_03_instructions-tools-available",
+       "model": "deepseek/deepseek-v4-flash",
+       "with": 1.0,
+       "without": 0.0,
+       "uplift": 1.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 6.0,
+        "mean_tokens_in": 29772.0,
+        "mean_tokens_out": 4827.0,
+        "mean_wall_seconds": 63.7,
+        "total_cost_usd": 0.003464
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 6.0,
+        "mean_tokens_in": 20990.0,
+        "mean_tokens_out": 3508.0,
+        "mean_wall_seconds": 43.5,
+        "total_cost_usd": 0.002745
+       },
+       "judge_questions": 1,
+       "skill_files_read": [
+        "/skill/examples/faq-answers.md"
+       ]
+      },
+      {
+       "benchmark": "bench_03_instructions-tools-available",
+       "model": "moonshotai/kimi-k2.7-code",
+       "with": 1.0,
+       "without": 1.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 6.0,
+        "mean_tokens_in": 23900.0,
+        "mean_tokens_out": 720.0,
+        "mean_wall_seconds": 22.4,
+        "total_cost_usd": 0.009953
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 15448.0,
+        "mean_tokens_out": 689.0,
+        "mean_wall_seconds": 18.7,
+        "total_cost_usd": 0.00867
+       },
+       "judge_questions": 2,
+       "skill_files_read": [
+        "/skill/examples/faq-answers.md"
+       ]
+      },
+      {
+       "benchmark": "bench_03_instructions-tools-available",
+       "model": "qwen/qwen3.6-35b-a3b",
+       "with": 1.0,
+       "without": 0.0,
+       "uplift": 1.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 22666.0,
+        "mean_tokens_out": 1653.0,
+        "mean_wall_seconds": 83.5,
+        "total_cost_usd": 0.004826
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 20927.0,
+        "mean_tokens_out": 1885.0,
+        "mean_wall_seconds": 77.4,
+        "total_cost_usd": 0.004815
+       },
+       "judge_questions": 1,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_04_instructions-tools-to-use",
+       "model": "deepseek/deepseek-v4-flash",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 27714.0,
+        "mean_tokens_out": 15397.0,
+        "mean_wall_seconds": 159.6,
+        "total_cost_usd": 0.005654
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 2.0,
+        "mean_tokens_in": 6037.0,
+        "mean_tokens_out": 8441.0,
+        "mean_wall_seconds": 77.6,
+        "total_cost_usd": 0.002246
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/examples/company-newsletter.md"
+       ]
+      },
+      {
+       "benchmark": "bench_04_instructions-tools-to-use",
+       "model": "moonshotai/kimi-k2.7-code",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 4.0,
+        "mean_tokens_in": 19581.0,
+        "mean_tokens_out": 7139.0,
+        "mean_wall_seconds": 97.4,
+        "total_cost_usd": 0.034375
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 8.0,
+        "mean_tokens_in": 37611.0,
+        "mean_tokens_out": 9109.0,
+        "mean_wall_seconds": 306.6,
+        "total_cost_usd": 0.042607
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/examples/company-newsletter.md"
+       ]
+      },
+      {
+       "benchmark": "bench_04_instructions-tools-to-use",
+       "model": "qwen/qwen3.6-35b-a3b",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 9.0,
+        "mean_tokens_in": 72110.0,
+        "mean_tokens_out": 11909.0,
+        "mean_wall_seconds": 109.3,
+        "total_cost_usd": 0.022456
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 2.0,
+        "mean_tokens_in": 6100.0,
+        "mean_tokens_out": 8383.0,
+        "mean_wall_seconds": 101.9,
+        "total_cost_usd": 0.009284
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/examples/company-newsletter.md"
+       ]
+      },
+      {
+       "benchmark": "bench_05_examples-general-comms-md",
+       "model": "deepseek/deepseek-v4-flash",
+       "with": 0.0,
+       "without": 1.0,
+       "uplift": -1.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 4.0,
+        "mean_tokens_in": 9152.0,
+        "mean_tokens_out": 1445.0,
+        "mean_wall_seconds": 21.2,
+        "total_cost_usd": 0.00118
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 4.0,
+        "mean_tokens_in": 7391.0,
+        "mean_tokens_out": 1677.0,
+        "mean_wall_seconds": 25.0,
+        "total_cost_usd": 0.000843
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_05_examples-general-comms-md",
+       "model": "moonshotai/kimi-k2.7-code",
+       "with": 1.0,
+       "without": 1.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 4.0,
+        "mean_tokens_in": 7472.0,
+        "mean_tokens_out": 378.0,
+        "mean_wall_seconds": 8.8,
+        "total_cost_usd": 0.004851
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 4.0,
+        "mean_tokens_in": 5712.0,
+        "mean_tokens_out": 363.0,
+        "mean_wall_seconds": 8.0,
+        "total_cost_usd": 0.003221
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_05_examples-general-comms-md",
+       "model": "qwen/qwen3.6-35b-a3b",
+       "with": 1.0,
+       "without": 1.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 4.0,
+        "mean_tokens_in": 9256.0,
+        "mean_tokens_out": 1008.0,
+        "mean_wall_seconds": 28.9,
+        "total_cost_usd": 0.002304
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 4.0,
+        "mean_tokens_in": 7404.0,
+        "mean_tokens_out": 893.0,
+        "mean_wall_seconds": 25.3,
+        "total_cost_usd": 0.00193
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      }
+     ]
+    }
+   ],
+   "n_chunks": 9,
+   "k_selected": 5,
+   "embedding": "google/gemini-embedding-2"
+  },
+  "mcp-builder": {
+   "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+   "benchmarks": [],
+   "runs": []
+  },
+  "pdf": {
+   "description": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, ext",
+   "benchmarks": [
+    {
+     "id": "bench_02_qpdf-advanced-features-pdfplumber-advanc",
+     "status": "validated",
+     "title": "Styled Sales Report Table with ReportLab",
+     "capability": "Generate a PDF report containing a computed data table styled with a distinct header background, banded/bordered grid lines, and correct row/column totals using reportlab's Table and TableStyle, rather than plain unstyled text.",
+     "difficulty": "medium",
+     "attempts": 1,
+     "authoring": {
+      "backend": "claude",
+      "model": "sonnet",
+      "tokens_in": 87,
+      "tokens_out": 27552,
+      "cost_usd": 1.616183,
+      "attempts": 1
+     }
+    }
+   ],
+   "runs": [
+    {
+     "run_id": "20260706-151226-00edbc",
+     "trials": 1,
+     "models": [
+      "openai/gpt-4.1-mini"
+     ],
+     "results": [
+      {
+       "benchmark": "bench_05_reportlab-create-pdfs-reportlab-advanced",
+       "model": "openai/gpt-4.1-mini",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": null,
+       "without_stats": null,
+       "judge_questions": 0,
+       "skill_files_read": []
+      }
+     ]
+    },
+    {
+     "run_id": "20260706-151332-00edbc",
+     "trials": 1,
+     "models": [
+      "openai/gpt-4.1-mini"
+     ],
+     "results": [
+      {
+       "benchmark": "bench_05_reportlab-create-pdfs-reportlab-advanced",
+       "model": "openai/gpt-4.1-mini",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": null,
+       "without_stats": null,
+       "judge_questions": 0,
+       "skill_files_read": []
+      }
+     ]
+    },
+    {
+     "run_id": "20260706-152016-1e3246",
+     "trials": 1,
+     "models": [
+      "moonshotai/kimi-k2.7-code",
+      "deepseek/deepseek-v4-flash",
+      "qwen/qwen3.6-35b-a3b"
+     ],
+     "results": [
+      {
+       "benchmark": "bench_05_reportlab-create-pdfs-reportlab-advanced",
+       "model": "deepseek/deepseek-v4-flash",
+       "with": 1.0,
+       "without": 1.0,
+       "uplift": 0.0,
+       "with_stats": null,
+       "without_stats": null,
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_05_reportlab-create-pdfs-reportlab-advanced",
+       "model": "moonshotai/kimi-k2.7-code",
+       "with": 1.0,
+       "without": 1.0,
+       "uplift": 0.0,
+       "with_stats": null,
+       "without_stats": null,
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_05_reportlab-create-pdfs-reportlab-advanced",
+       "model": "qwen/qwen3.6-35b-a3b",
+       "with": 1.0,
+       "without": 0.0,
+       "uplift": 1.0,
+       "with_stats": null,
+       "without_stats": null,
+       "judge_questions": 0,
+       "skill_files_read": []
+      }
+     ]
+    },
+    {
+     "run_id": "20260706-154143-342dea",
+     "trials": 1,
+     "models": [
+      "qwen/qwen3.6-35b-a3b"
+     ],
+     "results": [
+      {
+       "benchmark": "bench_05_reportlab-create-pdfs-reportlab-advanced",
+       "model": "qwen/qwen3.6-35b-a3b",
+       "with": 1.0,
+       "without": 0.0,
+       "uplift": 1.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 8.0,
+        "mean_tokens_in": 41317.0,
+        "mean_tokens_out": 2399.0,
+        "mean_wall_seconds": 26.8,
+        "total_cost_usd": 0.008183
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 9.0,
+        "mean_tokens_in": 24016.0,
+        "mean_tokens_out": 2670.0,
+        "mean_wall_seconds": 34.8,
+        "total_cost_usd": 0.006032
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      }
+     ]
+    }
+   ],
+   "n_chunks": 20,
+   "k_selected": 5,
+   "embedding": "google/gemini-embedding-2"
+  },
+  "slack-gif-creator": {
+   "description": "Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users request animated GIFs for Slack like \"make me a GIF of X doing Y for Slack.\"",
+   "benchmarks": [
+    {
+     "id": "bench_01_slack-gif-creator",
+     "status": "validated",
+     "title": "Create a Slack emoji GIF from an uploaded badge",
+     "capability": "Use the Slack GIF builder workflow to turn an uploaded PNG into a Slack-optimized emoji GIF without redrawing the source image.",
+     "difficulty": "medium",
+     "attempts": 2,
+     "authoring": {}
+    },
+    {
+     "id": "bench_02_drawing-from-scratch",
+     "status": "generating"
+    },
+    {
+     "id": "bench_03_making-graphics-look-good",
+     "status": "validated",
+     "title": "Polish a Slack Badge GIF",
+     "capability": "Turn a flat starter animation into a polished Slack emoji GIF using gradient depth, layered shapes, thick outlines, and contrasting detail.",
+     "difficulty": "medium",
+     "attempts": 1,
+     "authoring": {}
+    },
+    {
+     "id": "bench_04_philosophy",
+     "status": "validated",
+     "title": "Inspiration-Only Orb GIF",
+     "capability": "Create a Slack-ready GIF from scratch with PIL primitives while treating an uploaded image as inspiration only rather than reusing its pixels or relying on emoji/text rendering.",
+     "difficulty": "medium",
+     "attempts": 1,
+     "authoring": {}
+    },
+    {
+     "id": "bench_05_requirements-txt",
+     "status": "validated",
+     "title": "Infer Slack GIF Runtime Dependencies",
+     "capability": "Determine and encode the correct runtime Python dependencies for a Slack GIF project, including PyPI package-name mappings and the ffmpeg backend package.",
+     "difficulty": "medium",
+     "attempts": 1,
+     "authoring": {}
+    }
+   ],
+   "runs": [
+    {
+     "run_id": "20260706-163228-0165be",
+     "trials": 1,
+     "models": [
+      "moonshotai/kimi-k2.7-code",
+      "deepseek/deepseek-v4-flash",
+      "qwen/qwen3.6-35b-a3b"
+     ],
+     "results": [
+      {
+       "benchmark": "bench_01_slack-gif-creator",
+       "model": "deepseek/deepseek-v4-flash",
+       "with": 1.0,
+       "without": 0.0,
+       "uplift": 1.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 27.0,
+        "mean_tokens_in": 419456.0,
+        "mean_tokens_out": 11362.0,
+        "mean_wall_seconds": 240.6,
+        "total_cost_usd": 0.025742
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 22.0,
+        "mean_tokens_in": 109274.0,
+        "mean_tokens_out": 9405.0,
+        "mean_wall_seconds": 164.9,
+        "total_cost_usd": 0.009118
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill",
+        "/skill/core",
+        "/skill/core/frame_composer.py",
+        "/skill/core/gif_builder.py",
+        "/skill/imageio",
+        "/skill/requirements.txt"
+       ]
+      },
+      {
+       "benchmark": "bench_01_slack-gif-creator",
+       "model": "moonshotai/kimi-k2.7-code",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 30.0,
+        "mean_tokens_in": 247695.0,
+        "mean_tokens_out": 1852.0,
+        "mean_wall_seconds": 53.6,
+        "total_cost_usd": 0.064793
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 12.0,
+        "mean_tokens_in": 20051.0,
+        "mean_tokens_out": 2002.0,
+        "mean_wall_seconds": 31.6,
+        "total_cost_usd": 0.015802
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill",
+        "/skill/core/gif_builder.py",
+        "/skill/requirements.txt"
+       ]
+      },
+      {
+       "benchmark": "bench_01_slack-gif-creator",
+       "model": "qwen/qwen3.6-35b-a3b",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 21.0,
+        "mean_tokens_in": 246331.0,
+        "mean_tokens_out": 7793.0,
+        "mean_wall_seconds": 128.0,
+        "total_cost_usd": 0.042279
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 12.0,
+        "mean_tokens_in": 31582.0,
+        "mean_tokens_out": 3025.0,
+        "mean_wall_seconds": 47.3,
+        "total_cost_usd": 0.007446
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill",
+        "/skill/core",
+        "/skill/core/gif_builder.py"
+       ]
+      },
+      {
+       "benchmark": "bench_02_drawing-from-scratch",
+       "model": "deepseek/deepseek-v4-flash",
+       "with": 0.0,
+       "without": 1.0,
+       "uplift": -1.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 11.0,
+        "mean_tokens_in": 153622.0,
+        "mean_tokens_out": 8967.0,
+        "mean_wall_seconds": 124.8,
+        "total_cost_usd": 0.008186
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 7.0,
+        "mean_tokens_in": 15470.0,
+        "mean_tokens_out": 3197.0,
+        "mean_wall_seconds": 49.9,
+        "total_cost_usd": 0.001823
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/core/easing.py",
+        "/skill/core/frame_composer.py",
+        "/skill/core/gif_builder.py",
+        "/skill/core/validators.py"
+       ]
+      },
+      {
+       "benchmark": "bench_02_drawing-from-scratch",
+       "model": "moonshotai/kimi-k2.7-code",
+       "with": 0.0,
+       "without": 1.0,
+       "uplift": -1.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 18843.0,
+        "mean_tokens_out": 1770.0,
+        "mean_wall_seconds": 92.1,
+        "total_cost_usd": 0.013965
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 6.0,
+        "mean_tokens_in": 9310.0,
+        "mean_tokens_out": 1622.0,
+        "mean_wall_seconds": 29.8,
+        "total_cost_usd": 0.009834
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_02_drawing-from-scratch",
+       "model": "qwen/qwen3.6-35b-a3b",
+       "with": 0.0,
+       "without": 1.0,
+       "uplift": -1.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 15.0,
+        "mean_tokens_in": 122393.0,
+        "mean_tokens_out": 5581.0,
+        "mean_wall_seconds": 86.1,
+        "total_cost_usd": 0.022716
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 10462.0,
+        "mean_tokens_out": 4089.0,
+        "mean_wall_seconds": 57.7,
+        "total_cost_usd": 0.005554
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/core",
+        "/skill/core/gif_builder.py"
+       ]
+      },
+      {
+       "benchmark": "bench_03_making-graphics-look-good",
+       "model": "deepseek/deepseek-v4-flash",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 0,
+        "mean_turns": 0.0,
+        "mean_tokens_in": 0.0,
+        "mean_tokens_out": 0.0,
+        "mean_wall_seconds": 0.0,
+        "total_cost_usd": null
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 8.0,
+        "mean_tokens_in": 27720.0,
+        "mean_tokens_out": 4766.0,
+        "mean_wall_seconds": 70.3,
+        "total_cost_usd": 0.003251
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/core/easing.py",
+        "/skill/core/frame_composer.py",
+        "/skill/core/gif_builder.py",
+        "/skill/core/validators.py"
+       ]
+      },
+      {
+       "benchmark": "bench_03_making-graphics-look-good",
+       "model": "moonshotai/kimi-k2.7-code",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 6.0,
+        "mean_tokens_in": 30986.0,
+        "mean_tokens_out": 1676.0,
+        "mean_wall_seconds": 25.9,
+        "total_cost_usd": 0.01523
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 6.0,
+        "mean_tokens_in": 18444.0,
+        "mean_tokens_out": 1930.0,
+        "mean_wall_seconds": 22.9,
+        "total_cost_usd": 0.013795
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/core"
+       ]
+      },
+      {
+       "benchmark": "bench_03_making-graphics-look-good",
+       "model": "qwen/qwen3.6-35b-a3b",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 30.0,
+        "mean_tokens_in": 579608.0,
+        "mean_tokens_out": 22448.0,
+        "mean_wall_seconds": 351.7,
+        "total_cost_usd": 0.103593
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 6.0,
+        "mean_tokens_in": 20665.0,
+        "mean_tokens_out": 9116.0,
+        "mean_wall_seconds": 152.7,
+        "total_cost_usd": 0.012009
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/core",
+        "/skill/core/easing.py",
+        "/skill/core/frame_composer.py",
+        "/skill/core/gif_builder.py",
+        "/skill/core/validators.py"
+       ]
+      },
+      {
+       "benchmark": "bench_04_philosophy",
+       "model": "deepseek/deepseek-v4-flash",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 10.0,
+        "mean_tokens_in": 110124.0,
+        "mean_tokens_out": 5510.0,
+        "mean_wall_seconds": 88.9,
+        "total_cost_usd": 0.008118
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 11.0,
+        "mean_tokens_in": 31435.0,
+        "mean_tokens_out": 4412.0,
+        "mean_wall_seconds": 66.7,
+        "total_cost_usd": 0.002797
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/core/easing.py",
+        "/skill/core/frame_composer.py",
+        "/skill/core/gif_builder.py"
+       ]
+      },
+      {
+       "benchmark": "bench_04_philosophy",
+       "model": "moonshotai/kimi-k2.7-code",
+       "with": 1.0,
+       "without": 0.0,
+       "uplift": 1.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 8.0,
+        "mean_tokens_in": 34260.0,
+        "mean_tokens_out": 1661.0,
+        "mean_wall_seconds": 37.6,
+        "total_cost_usd": 0.01653
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 9509.0,
+        "mean_tokens_out": 1870.0,
+        "mean_wall_seconds": 47.8,
+        "total_cost_usd": 0.012241
+       },
+       "judge_questions": 0,
+       "skill_files_read": [
+        "/skill/core"
+       ]
+      },
+      {
+       "benchmark": "bench_04_philosophy",
+       "model": "qwen/qwen3.6-35b-a3b",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 7.0,
+        "mean_tokens_in": 35323.0,
+        "mean_tokens_out": 2797.0,
+        "mean_wall_seconds": 41.3,
+        "total_cost_usd": 0.007742
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 12.0,
+        "mean_tokens_in": 64934.0,
+        "mean_tokens_out": 7446.0,
+        "mean_wall_seconds": 132.8,
+        "total_cost_usd": 0.016537
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_05_requirements-txt",
+       "model": "deepseek/deepseek-v4-flash",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 18058.0,
+        "mean_tokens_out": 1498.0,
+        "mean_wall_seconds": 26.1,
+        "total_cost_usd": 0.001424
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 7538.0,
+        "mean_tokens_out": 1558.0,
+        "mean_wall_seconds": 31.7,
+        "total_cost_usd": 0.000964
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_05_requirements-txt",
+       "model": "moonshotai/kimi-k2.7-code",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 15525.0,
+        "mean_tokens_out": 349.0,
+        "mean_wall_seconds": 25.2,
+        "total_cost_usd": 0.005392
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 5060.0,
+        "mean_tokens_out": 275.0,
+        "mean_wall_seconds": 6.9,
+        "total_cost_usd": 0.003046
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      },
+      {
+       "benchmark": "bench_05_requirements-txt",
+       "model": "qwen/qwen3.6-35b-a3b",
+       "with": 0.0,
+       "without": 0.0,
+       "uplift": 0.0,
+       "with_stats": {
+        "trials": 1,
+        "mean_turns": 6.0,
+        "mean_tokens_in": 22897.0,
+        "mean_tokens_out": 1687.0,
+        "mean_wall_seconds": 30.7,
+        "total_cost_usd": 0.004893
+       },
+       "without_stats": {
+        "trials": 1,
+        "mean_turns": 5.0,
+        "mean_tokens_in": 7537.0,
+        "mean_tokens_out": 1287.0,
+        "mean_wall_seconds": 25.1,
+        "total_cost_usd": 0.002342
+       },
+       "judge_questions": 0,
+       "skill_files_read": []
+      }
+     ]
+    }
+   ],
+   "n_chunks": 5,
+   "k_selected": 5,
+   "embedding": "google/gemini-embedding-2"
+  },
+  "web-artifacts-builder": {
+   "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+   "benchmarks": [],
+   "runs": []
+  },
+  "webapp-testing": {
+   "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
+   "benchmarks": [],
+   "runs": []
+  }
+ }
+}

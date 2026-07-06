@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <rect x="0" y="0" width="1200" height="900" fill="#faf9f5" />
+  <rect x="0" y="0" width="1200" height="220" fill="#141413" />
+  <circle cx="240" cy="255" r="22" fill="#d97757" />
+  <circle cx="600" cy="255" r="22" fill="#6a9bcc" />
+  <circle cx="960" cy="255" r="22" fill="#788c5d" />
+  <rect x="80" y="300" width="320" height="260" fill="#e8e6dc" rx="18" />
+  <rect x="440" y="300" width="320" height="260" fill="#e8e6dc" rx="18" />
+  <rect x="800" y="300" width="320" height="260" fill="#e8e6dc" rx="18" />
+  <rect x="80" y="620" width="1040" height="170" fill="#141413" rx="20" />
+  <text x="80" y="105" font-family="Poppins, Arial, sans-serif" font-size="44" fill="#faf9f5">Claude Code Launch Checklist</text>
+  <text x="80" y="150" font-family="Lora, Georgia, serif" font-size="20" fill="#faf9f5">Operational guardrails for every release</text>
+  <text x="110" y="355" font-family="Poppins, Arial, sans-serif" font-size="28" fill="#141413">Brand Inputs</text>
+  <text x="110" y="405" font-family="Lora, Georgia, serif" font-size="18" fill="#141413">Use official colors</text>
+  <text x="110" y="440" font-family="Lora, Georgia, serif" font-size="18" fill="#141413">Preserve readable hierarchy</text>
+  <text x="470" y="355" font-family="Poppins, Arial, sans-serif" font-size="28" fill="#141413">Review Gates</text>
+  <text x="470" y="405" font-family="Lora, Georgia, serif" font-size="18" fill="#141413">Check typography by size</text>
+  <text x="470" y="440" font-family="Lora, Georgia, serif" font-size="18" fill="#141413">Validate contrast on every panel</text>
+  <text x="830" y="355" font-family="Poppins, Arial, sans-serif" font-size="28" fill="#141413">Release Signals</text>
+  <text x="830" y="405" font-family="Lora, Georgia, serif" font-size="18" fill="#141413">Cycle accents consistently</text>
+  <text x="830" y="440" font-family="Lora, Georgia, serif" font-size="18" fill="#141413">Ship one polished asset</text>
+  <text x="120" y="695" font-family="Poppins, Arial, sans-serif" font-size="30" fill="#faf9f5">Good defaults reduce review time.</text>
+  <text x="120" y="735" font-family="Lora, Georgia, serif" font-size="18" fill="#faf9f5">Anthropic launch principle</text>
+</svg>

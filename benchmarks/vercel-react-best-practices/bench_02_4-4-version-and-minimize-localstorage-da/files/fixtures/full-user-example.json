@@ -1,0 +1,15 @@
+{
+  "id": "usr_9f8c2d",
+  "email": "morgan@example.com",
+  "passwordHash": "$2b$12$KIXQ2f0z3n9mQeYh7ZzZ1O",
+  "authToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.mocked.token",
+  "internalFlags": ["beta_tester", "admin_override"],
+  "createdAt": "2024-01-15T10:30:00Z",
+  "billingPlan": "pro",
+  "preferences": {
+    "theme": "dark",
+    "language": "fr",
+    "notifications": true,
+    "marketingOptIn": false
+  }
+}

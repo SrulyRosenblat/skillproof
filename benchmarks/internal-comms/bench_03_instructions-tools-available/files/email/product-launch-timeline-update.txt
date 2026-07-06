@@ -1,0 +1,18 @@
+From: PM Team <pm-team@acmerobotics.example>
+To: all-employees@acmerobotics.example
+Date: 2026-07-02
+Subject: Atlas Launch Timeline Update
+
+Hi everyone,
+
+Quick update on the Atlas launch. Our LIDAR sensor supplier notified us of a
+component shortage that pushes their delivery out by roughly eight weeks. As a
+result, we're moving the Atlas public launch from August 2026 to October 2026.
+
+Nothing else about the launch plan is changing - same feature set, same go-to-market
+approach. Sales and Marketing leads have updated materials already and will be
+briefing their teams this week. We'll send a firm October date once the supplier
+confirms their revised delivery window.
+
+Thanks for your patience,
+PM Team

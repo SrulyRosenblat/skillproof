@@ -1,0 +1,28 @@
+schema_version: 1
+id: bench_01_step-2-edit-xml-tracked-changes-comments
+skill_name: docx
+title: Tracked OOXML replacement with nested comment reply
+capability: Edit unpacked DOCX XML to apply precise tracked changes, whole-paragraph
+  deletions, and nested comment anchors with correct WordprocessingML semantics.
+difficulty: medium
+provenance:
+  cluster_id: 2
+  cluster_label: 'Step 2: Edit XML / Tracked Changes / Comments'
+  chunk_ids:
+  - SKILL.md#docx-creation-editing-and-analysis-editing-existing-documents-step-2-edit-xml
+  - SKILL.md#docx-creation-editing-and-analysis-xml-reference-tracked-changes
+  - SKILL.md#docx-creation-editing-and-analysis-xml-reference-comments
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: true
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T16:08:19.843864Z'
+  codex_attempts: 1
