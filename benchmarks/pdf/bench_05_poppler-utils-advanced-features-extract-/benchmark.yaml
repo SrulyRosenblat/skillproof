@@ -1,0 +1,35 @@
+schema_version: 1
+id: bench_05_poppler-utils-advanced-features-extract-
+skill_name: pdf
+title: Extract embedded figures from a PDF at native resolution
+capability: Use poppler-utils (pdfimages) to extract every embedded raster image from
+  a PDF at its original native pixel resolution, rather than rasterizing whole pages,
+  and catalog each image's page number and dimensions.
+difficulty: medium
+provenance:
+  cluster_id: 4
+  cluster_label: poppler-utils Advanced Features / Extract Figures/Images from PDF
+  chunk_ids:
+  - reference.md#pdf-processing-advanced-reference-advanced-command-line-operations-poppler-utils-advanced-features
+  - reference.md#pdf-processing-advanced-reference-complex-workflows-extract-figures-images-from-pdf
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: true
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T22:42:08.408488Z'
+  codex_attempts: 1
+authoring:
+  backend: claude
+  model: sonnet
+  tokens_in: 59
+  tokens_out: 15518
+  cost_usd: 1.017429
+  attempts: 1

@@ -1,0 +1,39 @@
+schema_version: 1
+id: bench_03_pdf-processing-guide-pypdf-basic-operati
+skill_name: pdf
+title: Merge invoices, fix page rotation, and extract text/metadata with pypdf
+capability: Use pypdf to merge multiple single-page PDFs in order into one file, correct
+  an individual page's rotation before adding it to the merged output, and pull invoice
+  text content plus document metadata out of each source PDF into a structured summary.
+difficulty: medium
+provenance:
+  cluster_id: 2
+  cluster_label: PDF Processing Guide / pypdf - Basic Operations / pdfplumber - Text
+    and Table Extraction
+  chunk_ids:
+  - SKILL.md#pdf-processing-guide
+  - SKILL.md#pdf-processing-guide-python-libraries-pypdf-basic-operations
+  - SKILL.md#pdf-processing-guide-python-libraries-pdfplumber-text-and-table-extraction
+  - SKILL.md#pdf-processing-guide-python-libraries-reportlab-create-pdfs
+  - reference.md#pdf-processing-advanced-reference-complex-workflows-batch-pdf-processing-with-error-handling
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: true
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T22:33:48.911459Z'
+  codex_attempts: 1
+authoring:
+  backend: claude
+  model: sonnet
+  tokens_in: 67
+  tokens_out: 23890
+  cost_usd: 1.430766
+  attempts: 1

@@ -1,0 +1,37 @@
+schema_version: 1
+id: bench_04_pdf-processing-advanced-reference-pdf-li
+skill_name: pdf
+title: Selective page merge and page creation with pdf-lib
+capability: Use the pdf-lib JavaScript library to selectively copy specific non-contiguous
+  pages from source PDFs into a new document and append a newly created page with
+  drawn text.
+difficulty: medium
+provenance:
+  cluster_id: 3
+  cluster_label: PDF Processing Advanced Reference / pdf-lib (MIT License) / pdfjs-dist
+    (Apache License)
+  chunk_ids:
+  - reference.md#pdf-processing-advanced-reference
+  - reference.md#pdf-processing-advanced-reference-javascript-libraries-pdf-lib-mit-license
+  - reference.md#pdf-processing-advanced-reference-javascript-libraries-pdfjs-dist-apache-license
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: true
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T22:38:51.918047Z'
+  codex_attempts: 1
+authoring:
+  backend: claude
+  model: sonnet
+  tokens_in: 51
+  tokens_out: 25983
+  cost_usd: 1.207093
+  attempts: 1

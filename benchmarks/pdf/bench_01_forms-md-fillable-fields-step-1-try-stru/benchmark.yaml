@@ -1,0 +1,41 @@
+schema_version: 1
+id: bench_01_forms-md-fillable-fields-step-1-try-stru
+skill_name: pdf
+title: Fill a non-fillable PDF form using structure-based coordinates
+capability: Given a flattened (non-fillable) PDF form, extract the PDF's own text
+  structure to find each label's exact coordinates and derive correct entry-field
+  positions, rather than guessing a uniform grid or eyeballing placement, so values
+  land on the right line without overlapping labels or neighboring fields.
+difficulty: medium
+provenance:
+  cluster_id: 0
+  cluster_label: 'forms.md / Fillable fields / Step 1: Try Structure Extraction First'
+  chunk_ids:
+  - forms.md#top
+  - forms.md#fillable-fields
+  - forms.md#non-fillable-fields-step-1-try-structure-extraction-first
+  - forms.md#non-fillable-fields-approach-a-structure-based-coordinates-preferred-a-3-create-fields-json-with-pdf-coordinates
+  - forms.md#non-fillable-fields-approach-b-visual-estimation-fallback-b-3-zoom-refinement-critical-for-accuracy
+  - forms.md#non-fillable-fields-approach-b-visual-estimation-fallback-b-4-create-fields-json-with-refined-coordinates
+  - forms.md#non-fillable-fields-hybrid-approach-structure-visual
+timeouts:
+  agent_wall_seconds: 600
+  grader_seconds: 120
+limits:
+  max_turns: 30
+grader:
+  entrypoint: grader/grade.sh
+skill_assets_needed: true
+validation:
+  reference_passed: true
+  baseline_failed: true
+  determinism_checked: true
+  validated_at: '2026-07-06T22:28:40.340554Z'
+  codex_attempts: 1
+authoring:
+  backend: claude
+  model: sonnet
+  tokens_in: 67
+  tokens_out: 44709
+  cost_usd: 1.980417
+  attempts: 1

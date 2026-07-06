@@ -1,0 +1,149 @@
+%PDF-1.3
+%‚„œ”
+1 0 obj
+<<
+/Producer (pypdf)
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Count 1
+/Kids [ 4 0 R ]
+>>
+endobj
+3 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+4 0 obj
+<<
+/Contents 5 0 R
+/MediaBox [ 0 0 612 792 ]
+/Resources <<
+/Font <<
+/F1 6 0 R
+/F1-0 7 0 R
+/F2 8 0 R
+>>
+/ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+/Annots [ ]
+/Parent 2 0 R
+>>
+endobj
+5 0 obj
+<<
+/Length 818
+>>
+stream
+q
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT /F2 14 Tf 16.8 TL ET
+BT 1 0 0 1 72 740 Tm (Employee Onboarding Form) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 72 700 Tm (Full Name:) Tj T* ET
+n 135.174 698 m 500 698 l S
+BT 1 0 0 1 72 630 Tm (Employee ID:) Tj T* ET
+n 148.022 628 m 228.022 628 l S
+BT 1 0 0 1 258.022 630 Tm (Department:) Tj T* ET
+n 328.544 628 m 540 628 l S
+BT 1 0 0 1 72 580 Tm (Manager Name:) Tj T* ET
+n 160.859 578 m 500 578 l S
+BT 1 0 0 1 72 520 Tm (Start Date:) Tj T* ET
+n 134.58 518 m 300 518 l S
+ 
+
+Q
+
+q
+0.0 0.0 612 792 re
+W
+n
+1 0 0 1 0 0 cm
+BT
+/F1-0 12 Tf
+14.4 TL
+ET
+BT
+/F1-0 11 Tf
+13.2 TL
+ET
+BT
+1 0 0 1 133.174 700 Tm
+(Jordan Alvarez) Tj
+T*
+ET
+BT
+1 0 0 1 146.022 630 Tm
+(EMP\05548213) Tj
+T*
+ET
+BT
+1 0 0 1 326.544 630 Tm
+(Finance) Tj
+T*
+ET
+BT
+1 0 0 1 132.58 520 Tm
+(2026\05503\05516) Tj
+T*
+ET
+Q
+
+
+endstream
+endobj
+6 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+7 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+8 0 obj
+<<
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+/Name /F2
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000015 00000 n 
+0000000054 00000 n 
+0000000113 00000 n 
+0000000162 00000 n 
+0000000395 00000 n 
+0000001264 00000 n 
+0000001371 00000 n 
+0000001478 00000 n 
+trailer
+<<
+/Size 9
+/Root 3 0 R
+/Info 1 0 R
+>>
+startxref
+1590
+%%EOF

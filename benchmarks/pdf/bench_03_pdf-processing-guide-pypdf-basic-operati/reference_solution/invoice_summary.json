@@ -1,0 +1,20 @@
+[
+  {
+    "source_file": "invoice_1.pdf",
+    "invoice_number": "INV-1001",
+    "total_due": 245.0,
+    "author": "Acme Corp"
+  },
+  {
+    "source_file": "invoice_2.pdf",
+    "invoice_number": "INV-1002",
+    "total_due": 89.5,
+    "author": "Acme Corp"
+  },
+  {
+    "source_file": "invoice_3.pdf",
+    "invoice_number": "INV-1003",
+    "total_due": 1204.75,
+    "author": "Beta LLC"
+  }
+]
