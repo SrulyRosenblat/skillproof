@@ -387,6 +387,8 @@ a.source-chip:hover { color: var(--accent); border-color: color-mix(in srgb, var
   white-space: nowrap;
 }
 .skill-meta b { color: var(--text-muted); font-weight: 600; }
+.skill-uplift { display: inline-flex; align-items: center; gap: 6px; }
+.skill-uplift .badge-up { font-size: 0.78rem; }
 h3.results-h { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-faint); margin: 18px 0 8px; }
 
 .empty-note {
@@ -850,6 +852,15 @@ footer.site code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, m
     if (v < 0) return "neg";
     return "zero";
   }
+  // Mean uplift for a skill: latest run, averaged over its benchmark×model
+  // result rows (same basis as the per-skill mean in the overview stats).
+  function skillMeanUplift(skill) {
+    var runs = skill.runs;
+    if (!runs || !runs.length) return null;
+    var ups = runs[runs.length - 1].results.map(function (r) { return r.uplift; });
+    if (!ups.length) return null;
+    return ups.reduce(function (a, b) { return a + b; }, 0) / ups.length;
+  }
   var MODEL_NAMES = {
     "deepseek/deepseek-v4-flash": "DeepSeek V4 Flash",
     "moonshotai/kimi-k2.7-code": "Kimi K2.7 Code",
@@ -1268,12 +1279,17 @@ footer.site code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, m
     } else if (src.org) {
       sourceChip = '<span class="chip chip-run source-chip">' + esc(src.org) + "</span>";
     }
+    var mu = skillMeanUplift(skill);
+    var upBadge = mu === null ? "" :
+      '<span class="skill-uplift"><b>avg uplift</b> <span class="badge-up ' + ppClass(mu) +
+      ' tabular">' + ppStr(mu) + "</span></span>";
     return (
       '<section class="skill" id="skill-' + esc(name) + '">' +
       '<div class="skill-head"><div><span class="eyebrow">Skill</span>' +
       '<div class="skill-title-row"><h2>' + esc(name) + "</h2>" + sourceChip + "</div>" +
       '<div class="skill-desc">' + esc(skill.description) + "</div></div>" +
-      '<div class="skill-meta"><span><b>' + skill.n_chunks + "</b> chunks</span>" +
+      '<div class="skill-meta">' + upBadge +
+      '<span><b>' + skill.n_chunks + "</b> chunks</span>" +
       '<span><b>' + skill.k_selected + "</b> clusters selected</span>" +
       "<span>" + esc(skill.embedding || "") + "</span></div></div>" +
       (clusterRows
