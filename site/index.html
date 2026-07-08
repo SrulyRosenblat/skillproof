@@ -230,6 +230,32 @@ a.gh-link svg { width: 16px; height: 16px; fill: currentColor; }
   padding: 1px 6px;
   font-weight: 600;
 }
+.overall { margin: 8px 0 4px; }
+.overall .eyebrow { margin-bottom: 10px; }
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+}
+.stat {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px 16px;
+}
+.stat.hero { border-color: var(--green); background: var(--green-soft); }
+.stat .s-num {
+  font-size: 1.95rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--text);
+}
+.stat.hero .s-num { color: var(--green); }
+.stat .s-num .s-unit { font-size: 0.9rem; font-weight: 600; margin-left: 2px; }
+.stat .s-lab { margin-top: 7px; font-size: 0.76rem; color: var(--text-muted); }
+.overall .models-sub { margin-top: 12px; }
 .pipeline {
   display: flex;
   align-items: center;
@@ -620,6 +646,25 @@ footer.site code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, m
       </div>
     </div>
   </header>
+
+  <section class="overall">
+    <span class="eyebrow">Overall skill uplift</span>
+    <div class="stat-row">
+      <div class="stat hero">
+        <div class="s-num">+4<span class="s-unit">pp</span></div>
+        <div class="s-lab">Mean uplift &mdash; pass-rate gain from mounting the skill</div>
+      </div>
+      <div class="stat">
+        <div class="s-num">49<span class="s-unit">%</span></div>
+        <div class="s-lab">Pass rate <strong>with</strong> the skill</div>
+      </div>
+      <div class="stat">
+        <div class="s-num">45<span class="s-unit">%</span></div>
+        <div class="s-lab">Pass rate <strong>without</strong> the skill</div>
+      </div>
+    </div>
+    <p class="models-sub">Micro-averaged across all 35 benchmarks &times; 4 models (177 graded skill&#8202;/&#8202;benchmark&#8202;/&#8202;model results, 3 trials each). The mean hides wide variance: per-skill uplift ranges from <strong>&minus;38pp</strong> (frontend-design) to <strong>+50pp</strong> (brand-guidelines).</p>
+  </section>
 
   <section class="models">
     <span class="eyebrow">Models under test</span>
