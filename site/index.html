@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>skillbench — skill uplift benchmarks</title>
+<title>skillproof — skill uplift benchmarks</title>
 <style>
 :root {
   --bg: #eef1f5;
@@ -554,7 +554,7 @@ footer.site code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, m
   <header class="top">
     <div>
       <span class="eyebrow">Skill evaluation infrastructure</span>
-      <h1>skillbench</h1>
+      <h1>skillproof</h1>
       <div class="tagline">Auto-generates benchmarks from a SKILL.md folder, then measures the pass-rate delta an agent gets from having the skill mounted &mdash; its <strong>skill uplift</strong>.</div>
     </div>
     <div class="header-right">
@@ -577,11 +577,11 @@ footer.site code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, m
   <section class="section-block" id="how">
     <span class="eyebrow">Explainer</span>
     <h2>How it works</h2>
-    <p class="lede">skillbench turns a skill folder (a <code>SKILL.md</code> plus supporting scripts/references) into a set of graded, reproducible coding tasks, then measures whether mounting that skill actually changes an agent's pass rate. Nothing here is hand-written per skill &mdash; the whole pipeline below runs the same way for every skill, from chunking the docs to grading the final trial.</p>
+    <p class="lede">skillproof turns a skill folder (a <code>SKILL.md</code> plus supporting scripts/references) into a set of graded, reproducible coding tasks, then measures whether mounting that skill actually changes an agent's pass rate. Nothing here is hand-written per skill &mdash; the whole pipeline below runs the same way for every skill, from chunking the docs to grading the final trial.</p>
 
     <div class="how-block">
       <h3>a. Chunk &amp; cluster</h3>
-      <p>Each skill's markdown is split into heading-bounded chunks (one chunk per section/subsection). Every chunk is embedded with the configured embedding model, then clustered with k-means, sweeping <code>k</code> over a small range and keeping whichever <code>k</code> gives the best silhouette score. From those clusters, skillbench greedily selects the <code>k_benchmarks</code> most mutually dissimilar clusters (max-min selection on cluster-centroid distance) &mdash; the goal is one benchmark per genuinely distinct capability the skill covers, not five benchmarks that all probe the same paragraph.</p>
+      <p>Each skill's markdown is split into heading-bounded chunks (one chunk per section/subsection). Every chunk is embedded with the configured embedding model, then clustered with k-means, sweeping <code>k</code> over a small range and keeping whichever <code>k</code> gives the best silhouette score. From those clusters, skillproof greedily selects the <code>k_benchmarks</code> most mutually dissimilar clusters (max-min selection on cluster-centroid distance) &mdash; the goal is one benchmark per genuinely distinct capability the skill covers, not five benchmarks that all probe the same paragraph.</p>
       <details>
         <summary>View: chunk/cluster counts and embedding model, per skill</summary>
         <div id="how-cluster-example"></div>
@@ -634,7 +634,7 @@ footer.site code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, m
 
     <div class="how-block">
       <h3>f. LLM judge panel</h3>
-      <p>Some capabilities (tone, completeness, "did it avoid overclaiming") don't reduce to a substring match. For those, the grader exits with code 3 and prints one or more yes/no questions about the produced artifact; skillbench routes each question to a three-model judge panel and takes a majority vote. The panel is instructed to be strict: for a multi-condition question, every condition has to be satisfied for a YES, and any doubt resolves to NO &mdash; there's no partial credit for grading purposes.</p>
+      <p>Some capabilities (tone, completeness, "did it avoid overclaiming") don't reduce to a substring match. For those, the grader exits with code 3 and prints one or more yes/no questions about the produced artifact; skillproof routes each question to a three-model judge panel and takes a majority vote. The panel is instructed to be strict: for a multi-condition question, every condition has to be satisfied for a YES, and any doubt resolves to NO &mdash; there's no partial credit for grading purposes.</p>
       <details>
         <summary>Judge system prompt</summary>
         <pre class="code" id="how-judge"></pre>
@@ -1201,7 +1201,7 @@ footer.site code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, m
   var footerEl = document.getElementById("footer");
   if (footerEl) {
     footerEl.innerHTML =
-      "<span>Regenerate with: <code>skillbench</code> + export script.</span>" +
+      "<span>Regenerate with: <code>skillproof</code> + export script.</span>" +
       '<span class="tabular">Generated ' + esc(DATA.generated) + "</span>";
   }
 
