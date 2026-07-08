@@ -181,6 +181,55 @@ a.gh-link:hover {
   color: var(--accent-strong);
 }
 a.gh-link svg { width: 16px; height: 16px; fill: currentColor; }
+.models {
+  margin: 4px 0 8px;
+}
+.models .eyebrow { margin-bottom: 8px; }
+.models .models-sub {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin: 0 0 12px;
+  max-width: 82ch;
+}
+.model-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+.model-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 12px 14px;
+}
+.model-card .m-name {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text);
+  word-break: break-word;
+}
+.model-card .m-total {
+  margin-top: 8px;
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--accent-strong);
+  line-height: 1.1;
+}
+.model-card .m-total.na { color: var(--text-faint); }
+.model-card .m-active {
+  margin-top: 2px;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+.model-card .m-active .badge {
+  display: inline-block;
+  background: var(--neutral-badge);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-weight: 600;
+}
 .pipeline {
   display: flex;
   align-items: center;
@@ -571,6 +620,33 @@ footer.site code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, m
       </div>
     </div>
   </header>
+
+  <section class="models">
+    <span class="eyebrow">Models under test</span>
+    <p class="models-sub">The four coding agents benchmarked below, by parameter count. All except GPT&#8209;4.1&#8202;mini are open-weight mixture-of-experts models &mdash; the large "total" figure is the full parameter pool; "active" is what actually fires per token.</p>
+    <div class="model-grid">
+      <div class="model-card">
+        <div class="m-name">DeepSeek&#8209;V4&#8209;Flash</div>
+        <div class="m-total">284B</div>
+        <div class="m-active"><span class="badge">13B active</span> &middot; MoE</div>
+      </div>
+      <div class="model-card">
+        <div class="m-name">Kimi&#8209;K2.7&#8209;Code</div>
+        <div class="m-total">1T</div>
+        <div class="m-active"><span class="badge">32B active</span> &middot; MoE</div>
+      </div>
+      <div class="model-card">
+        <div class="m-name">Qwen3.6&#8209;35B&#8209;A3B</div>
+        <div class="m-total">35B</div>
+        <div class="m-active"><span class="badge">3B active</span> &middot; MoE</div>
+      </div>
+      <div class="model-card">
+        <div class="m-name">GPT&#8209;4.1&#8202;mini</div>
+        <div class="m-total na">&mdash;</div>
+        <div class="m-active">proprietary &middot; count not disclosed</div>
+      </div>
+    </div>
+  </section>
 
   <nav class="toc" id="toc"></nav>
 
