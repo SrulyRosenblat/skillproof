@@ -230,6 +230,18 @@ a.gh-link svg { width: 16px; height: 16px; fill: currentColor; }
   padding: 1px 6px;
   font-weight: 600;
 }
+.model-card .m-uplift {
+  margin-top: 10px;
+  padding-top: 9px;
+  border-top: 1px solid var(--border);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.model-card .m-uplift .badge-up { font-size: 0.76rem; }
+.model-card .m-uplift.na { color: var(--text-faint); }
 .overall { margin: 8px 0 4px; }
 .overall .eyebrow { margin-bottom: 10px; }
 .stat-row {
@@ -676,21 +688,25 @@ footer.site code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, m
         <div class="m-name">Kimi&#8209;K2.7&#8209;Code</div>
         <div class="m-total">1T</div>
         <div class="m-active"><span class="badge">32B active</span> &middot; MoE</div>
+        <div class="m-uplift"><span class="badge-up pos tabular">+4pp</span> mean skill uplift</div>
       </div>
       <div class="model-card">
         <div class="m-name">DeepSeek&#8209;V4&#8209;Flash</div>
         <div class="m-total">284B</div>
         <div class="m-active"><span class="badge">13B active</span> &middot; MoE</div>
+        <div class="m-uplift"><span class="badge-up pos tabular">+1pp</span> mean skill uplift</div>
       </div>
       <div class="model-card">
         <div class="m-name">Qwen3.6&#8209;35B&#8209;A3B</div>
         <div class="m-total">35B</div>
         <div class="m-active"><span class="badge">3B active</span> &middot; MoE</div>
+        <div class="m-uplift"><span class="badge-up pos tabular">+8pp</span> mean skill uplift</div>
       </div>
       <div class="model-card">
         <div class="m-name">GPT&#8209;4.1&#8202;mini</div>
         <div class="m-total na">&mdash;</div>
         <div class="m-active">proprietary &middot; count not disclosed</div>
+        <div class="m-uplift na">mean uplift n/a &middot; only 2 runs</div>
       </div>
     </div>
   </section>
