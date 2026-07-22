@@ -1,0 +1,13 @@
+domain: pdfs-word-docx
+origin: authored
+imported_from: null
+corpus_refs:
+- pdf/forms.md#non-fillable-fields-approach-a-structure-based-coordinates-preferred-a-3-create-fields-json-with-pdf-coordinates
+- pdf/forms.md#non-fillable-fields-approach-b-visual-estimation-fallback-b-4-create-fields-json-with-refined-coordinates
+- pdf/forms.md#fillable-fields
+difficulty_seed_score: 14.1533
+headroom:
+  probe_agent: moonshotai/kimi-k2.7-code
+  trials: 3
+  base_passes: 0
+  base_pass_rate: 0.0

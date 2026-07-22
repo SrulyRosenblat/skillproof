@@ -1,0 +1,13 @@
+{
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "OrderService/1.4"
+  },
+  "params": {},
+  "query": {},
+  "body": {
+    "order_id": "ORD-77821",
+    "customer_name": "Priya Nair",
+    "status": "confirmed"
+  }
+}

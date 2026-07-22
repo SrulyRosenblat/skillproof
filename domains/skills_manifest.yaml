@@ -1,0 +1,146 @@
+# Skills to import, cluster into domains, and generate benchmarks against.
+# Curated 2026-07-20 from the community directories toward ~125 diverse skills:
+#   - https://github.com/VoltAgent/awesome-agent-skills   (directory; repos mined from its README)
+#   - https://github.com/anthropics/skills                (official)
+#   - https://github.com/vercel-labs/agent-skills         (official)
+#
+# Entry keys: `path:` = local source (copied); `repo:` = git (shallow-cloned),
+# optional `subpath:` to a skills/ folder inside the repo; `include:` / `exclude:`
+# = skill folder names to keep/drop (any of subpath/include/exclude prunes the
+# cache entry to exactly the selected folders).
+#
+# Duplicate skill names across sources collapse at discovery time (first path-sorted
+# occurrence wins) — e.g. the 12 skillproof-local skills also exist upstream.
+
+skills_sources:
+  # Seed: the skills already vendored in this repo (local copy — no network).
+  # Pinned versions used by skillproof's published results.
+  - name: skillproof-local
+    path: skills
+
+  # Official Anthropic skills: documents (docx/pdf/pptx/xlsx), design, comms, MCP.
+  - name: anthropic-skills
+    repo: https://github.com/anthropics/skills
+    subpath: skills
+    exclude: [template-skill]
+
+  # Official Vercel skills: React/Next.js, deploy, web design, writing.
+  - name: vercel-agent-skills
+    repo: https://github.com/vercel-labs/agent-skills
+
+  # Agent process/workflow skills (TDD, debugging, planning, code review).
+  - name: obra-superpowers
+    repo: https://github.com/obra/superpowers
+    subpath: skills
+
+  # Scientific computing (149 available; diverse, sandbox-feasible subset).
+  - name: scientific-skills
+    repo: https://github.com/K-Dense-AI/claude-scientific-skills
+    subpath: skills
+    include:
+      - astropy
+      - biopython
+      - geopandas
+      - matplotlib
+      - networkx
+      - nextflow
+      - phylogenetics
+      - polars
+      - pymc
+      - rdkit
+      - scanpy
+      - scikit-learn
+      - seaborn
+      - statsmodels
+      - statistical-analysis
+      - sympy
+
+  # GPU / accelerated computing (300 available; small representative subset).
+  - name: nvidia-skills
+    repo: https://github.com/NVIDIA/skills
+    subpath: skills
+    include:
+      - accelerated-computing-cudf
+      - cudaq-guide
+      - cuopt-numerical-optimization-formulation
+      - cuopt-routing-api-python
+      - nemo-rl-docs
+      - omniverse-usd-performance-tuning
+
+  # Google Cloud (67 available; core services subset) + logging/monitoring DSLs.
+  - name: google-cloud-skills
+    repo: https://github.com/google/skills
+    subpath: skills
+    include:
+      - bigquery-basics
+      - bigquery-bigframes
+      - cloud-run-basics
+      - cloud-sql-basics
+      - cloud-logging-query-generation
+      - cloud-monitoring-metric-selection
+      - firebase-basics
+      - gke-basics
+      - gke-networking
+      - gke-security
+      - alloydb-basics
+      - bigtable-basics
+
+  # Test-framework knowledge skills (46 available; major frameworks subset).
+  - name: lambdatest-skills
+    repo: https://github.com/LambdaTest/agent-skills
+    include:
+      - playwright-skill
+      - cypress-skill
+      - selenium-skill
+      - jest-skill
+      - vitest-skill
+      - mocha-skill
+      - pytest-skill
+      - junit-5-skill
+      - robot-framework-skill
+      - webdriverio-skill
+
+  # Product management (68 available; artifact-producing subset).
+  - name: pm-skills
+    repo: https://github.com/phuryn/pm-skills
+    include:
+      - create-prd
+      - user-stories
+      - job-stories
+      - ab-test-analysis
+      - cohort-analysis
+      - market-sizing
+      - pricing-strategy
+      - competitor-analysis
+      - north-star-metric
+      - sprint-plan
+      - release-notes
+      - sql-queries
+
+  # Marketing (47 available; structured/verifiable-leaning subset).
+  - name: marketing-skills
+    repo: https://github.com/coreyhaines31/marketingskills
+    include:
+      - seo-audit
+      - schema
+      - programmatic-seo
+      - copywriting
+      - content-strategy
+      - cold-email
+      - emails
+      - ab-testing
+      - analytics
+      - pricing
+
+  # n8n workflow automation (JSON workflows — deterministically verifiable).
+  - name: n8n-skills
+    repo: https://github.com/czlonkowski/n8n-skills
+    subpath: skills
+
+  # Transactional email (Resend).
+  - name: resend-skills
+    repo: https://github.com/resend/resend-skills
+
+  # Official Angular skills.
+  - name: angular-skills
+    repo: https://github.com/angular/skills

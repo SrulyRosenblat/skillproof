@@ -1,0 +1,16 @@
+{
+  "company_name": "Acme Corp",
+  "report_title": "Quarterly Business Report",
+  "metrics": [
+    {"metric": "Revenue", "value": "$1.2M", "notes": "Up 15% QoQ"},
+    {"metric": "Churn Rate", "value": "3.2%", "notes": "Down from 4.1%"},
+    {"metric": "New Users", "value": "8,450", "notes": "Record high"},
+    {"metric": "NPS Score", "value": "62", "notes": "Up 4 points"}
+  ],
+  "takeaways": [
+    "Revenue growth exceeded forecast by 8 percentage points",
+    "Churn continued its downward trend for the third straight quarter",
+    "New user acquisition hit an all-time high driven by the referral program",
+    "Customer satisfaction improved alongside product reliability fixes"
+  ]
+}

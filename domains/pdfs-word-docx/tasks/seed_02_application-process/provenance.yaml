@@ -1,0 +1,12 @@
+domain: pdfs-word-docx
+origin: authored
+imported_from: null
+corpus_refs:
+- theme-factory/SKILL.md#theme-factory-skill-application-process
+- internal-comms/SKILL.md#how-to-use-this-skill
+- internal-comms/SKILL.md#how-to-use-this-skill
+difficulty_seed_score: 5.009
+headroom:
+  probe_agent: null
+  trials: 0
+  base_passes: 0

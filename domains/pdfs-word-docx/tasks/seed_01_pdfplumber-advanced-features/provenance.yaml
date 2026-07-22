@@ -1,0 +1,12 @@
+domain: pdfs-word-docx
+origin: authored
+imported_from: null
+corpus_refs:
+- pdf/reference.md#pdf-processing-advanced-reference-advanced-python-techniques-pdfplumber-advanced-features
+- pdf/reference.md#pdf-processing-advanced-reference-advanced-python-techniques-pdfplumber-advanced-features
+- pdf/SKILL.md#pdf-processing-guide-python-libraries-pdfplumber-text-and-table-extraction
+difficulty_seed_score: 10.6409
+headroom:
+  probe_agent: null
+  trials: 0
+  base_passes: 0

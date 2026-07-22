@@ -1,0 +1,13 @@
+domain: pdfs-word-docx
+origin: authored
+imported_from: null
+corpus_refs:
+- pdf/forms.md#non-fillable-fields-approach-b-visual-estimation-fallback-b-1-convert-pdf-to-images
+- pdf/forms.md#non-fillable-fields-approach-b-visual-estimation-fallback-b-1-convert-pdf-to-images
+- pdf/SKILL.md#pdf-processing-guide-common-tasks-extract-images
+difficulty_seed_score: 9.3333
+headroom:
+  probe_agent: moonshotai/kimi-k2.7-code
+  trials: 3
+  base_passes: 0
+  base_pass_rate: 0.0

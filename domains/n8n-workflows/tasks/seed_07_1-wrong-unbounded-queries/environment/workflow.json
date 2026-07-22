@@ -1,0 +1,127 @@
+{
+  "name": "Nightly Error Buffer Flush",
+  "nodes": [
+    {
+      "name": "Every Day",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [260, 300],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 24
+            }
+          ],
+          "hour": 9,
+          "minute": 0
+        }
+      }
+    },
+    {
+      "name": "Get Buffered Errors",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [480, 220],
+      "parameters": {
+        "resource": "row",
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "error_buffer"
+        },
+        "matchType": "anyCondition",
+        "filters": {
+          "conditions": []
+        },
+        "returnAll": true,
+        "options": {}
+      }
+    },
+    {
+      "name": "Delete Flushed Errors",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [700, 220],
+      "parameters": {
+        "resource": "row",
+        "operation": "delete",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "error_buffer"
+        },
+        "matchType": "anyCondition",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "id",
+              "condition": "isNotEmpty"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "name": "Record Flush Summary",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [920, 220],
+      "parameters": {
+        "resource": "row",
+        "operation": "insert",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "flush_runs"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "note": "flush completed"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      }
+    },
+    {
+      "name": "Dashboard Query",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [480, 420],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT * FROM error_log_archive"
+      }
+    }
+  ],
+  "connections": {
+    "Every Day": {
+      "main": [
+        [
+          { "node": "Get Buffered Errors", "type": "main", "index": 0 },
+          { "node": "Dashboard Query", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Get Buffered Errors": {
+      "main": [
+        [
+          { "node": "Delete Flushed Errors", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Delete Flushed Errors": {
+      "main": [
+        [
+          { "node": "Record Flush Summary", "type": "main", "index": 0 }
+        ]
+      ]
+    }
+  }
+}

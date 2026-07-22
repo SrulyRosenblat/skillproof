@@ -1,0 +1,11 @@
+SHIPPED THIS WEEK:
+- Migrated the billing service to v2 with zero downtime
+- Closed 12 long-standing support tickets
+
+COMING UP NEXT:
+- Start the onboarding redesign next sprint
+- Hire two additional support engineers
+
+CURRENTLY BLOCKING:
+- Vendor API rate limits are blocking integration testing
+- The staging environment has been flaky since Monday

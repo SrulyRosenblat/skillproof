@@ -1,0 +1,13 @@
+domain: pdfs-word-docx
+origin: authored
+imported_from: null
+corpus_refs:
+- docx/SKILL.md#docx-creation-editing-and-analysis-creating-with-docx-js-gotchas
+- docx/SKILL.md#docx-creation-editing-and-analysis-creating-new-documents-images
+- docx/SKILL.md#docx-creation-editing-and-analysis-creating-new-documents-styles-override-built-in-headings
+difficulty_seed_score: 12.8828
+headroom:
+  probe_agent: moonshotai/kimi-k2.7-code
+  trials: 3
+  base_passes: 0
+  base_pass_rate: 0.0

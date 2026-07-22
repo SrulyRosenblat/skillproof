@@ -1,0 +1,13 @@
+domain: pdfs-word-docx
+origin: authored
+imported_from: null
+corpus_refs:
+- pptx/SKILL.md#pptx-creation-editing-and-analysis-dependencies
+- xlsx/SKILL.md#xlsx-creation-editing-and-analysis-dependencies
+- docx/SKILL.md#docx-creation-editing-and-analysis-dependencies
+difficulty_seed_score: 11.2121
+headroom:
+  probe_agent: moonshotai/kimi-k2.7-code
+  trials: 3
+  base_passes: 1
+  base_pass_rate: 0.333

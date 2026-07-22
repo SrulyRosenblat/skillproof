@@ -1,0 +1,4 @@
+{
+  "_format": "one entry per corpus file: {\"<file>.md\": {\"origin\": url, \"license\": spdx-or-note, \"retrieved\": ISO-date, \"kind\": \"spec | platform-docs | user-requests | adapted-benchmark\"}} — imported tasks also get an entry keyed by their upstream id: {\"skillsbench:<task-id>\": {\"origin\": repo-url, \"commit\": sha, \"license\": ...}}",
+  "_rules": "independence: nothing authored by or derived from any skill under test; source at the need/spec level, not the how-to level; see ../../README.md § Corpus rules"
+}

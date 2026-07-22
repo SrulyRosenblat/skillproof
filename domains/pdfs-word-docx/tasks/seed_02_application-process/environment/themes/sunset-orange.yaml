@@ -1,0 +1,11 @@
+name: sunset-orange
+heading:
+  font_name: Trebuchet MS
+  font_color_hex: "B34700"
+  font_size_pt: 18
+  font_bold: false
+body:
+  font_name: Verdana
+  font_color_hex: "4D4D4D"
+  font_size_pt: 11
+  font_bold: true

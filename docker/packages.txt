@@ -18,6 +18,9 @@ pypdf==5.1.0
 reportlab==4.2.5
 openpyxl==3.1.5
 python-docx==1.1.2
+python-pptx==1.0.2
+networkx==3.4.2
+sympy==1.13.3
 pyyaml==6.0.2
 pillow==11.1.0
 beautifulsoup4==4.12.3

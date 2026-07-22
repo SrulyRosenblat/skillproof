@@ -1,0 +1,92 @@
+{
+  "name": "Invoice Processing",
+  "nodes": [
+    {
+      "id": "1",
+      "name": "Invoice Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [250, 300],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "invoice-upload",
+        "responseMode": "onReceived",
+        "binaryPropertyName": "invoice"
+      }
+    },
+    {
+      "id": "2",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [500, 300],
+      "parameters": {
+        "mode": "manual",
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "customerId",
+              "type": "string",
+              "value": "={{$json.body.customerId}}"
+            },
+            {
+              "id": "2",
+              "name": "status",
+              "type": "string",
+              "value": "processed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "3",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [750, 300],
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "numberOfInputs": 2
+      }
+    },
+    {
+      "id": "4",
+      "name": "Send Invoice Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [1000, 300],
+      "parameters": {
+        "toEmail": "billing@example.com",
+        "subject": "Invoice update for {{$json.customerId}}",
+        "binaryPropertyName": "data"
+      }
+    }
+  ],
+  "connections": {
+    "Invoice Webhook": {
+      "main": [
+        [
+          {"node": "Edit Fields", "type": "main", "index": 0}
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {"node": "Merge", "type": "main", "index": 1}
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {"node": "Send Invoice Email", "type": "main", "index": 0}
+        ]
+      ]
+    }
+  },
+  "active": false
+}

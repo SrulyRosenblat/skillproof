@@ -1,0 +1,13 @@
+domain: n8n-workflows
+origin: authored
+imported_from: null
+corpus_refs:
+- n8n-code-python/STANDARD_LIBRARY.md#standard-library-reference-python-code-node-module-1-json-json-operations-parse-json-string
+- n8n-code-python/STANDARD_LIBRARY.md#standard-library-reference-python-code-node-module-1-json-json-operations-generate-json-string
+- n8n-code-python/STANDARD_LIBRARY.md#standard-library-reference-python-code-node-module-1-json-json-operations-handle-json-errors
+difficulty_seed_score: 14.4
+headroom:
+  probe_agent: moonshotai/kimi-k2.7-code
+  trials: 3
+  base_passes: 0
+  base_pass_rate: 0.0

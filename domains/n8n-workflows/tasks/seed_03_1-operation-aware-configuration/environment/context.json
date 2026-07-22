@@ -1,0 +1,8 @@
+{
+  "targetChannel": "#general",
+  "originalMessageTs": "1690000000.123456",
+  "contact": {
+    "name": "Ada Lovelace",
+    "email": "ada.lovelace@example.com"
+  }
+}

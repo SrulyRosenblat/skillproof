@@ -1,0 +1,37 @@
+{
+  "page_number": 1,
+  "pdf_width": 612,
+  "pdf_height": 792,
+  "form_type": "non_fillable",
+  "row_right_boundary": 566,
+  "default_row_height": 18,
+  "rows": [
+    {
+      "row_id": "row_1",
+      "row_bottom_boundary": 214,
+      "labels": [
+        {"field_label": "First Name", "bounding_box": [46, 196, 96, 208]},
+        {"field_label": "Last Name", "bounding_box": [216, 196, 266, 208]}
+      ]
+    },
+    {
+      "row_id": "row_2",
+      "row_bottom_boundary": null,
+      "labels": [
+        {"field_label": "Email Address", "bounding_box": [46, 226, 122, 238]}
+      ]
+    }
+  ],
+  "checkboxes": [
+    {
+      "field_label": "US Citizen - Yes",
+      "label_bounding_box": [300, 258, 330, 268],
+      "checkbox_bounding_box": [336, 257, 346, 267]
+    },
+    {
+      "field_label": "US Citizen - No",
+      "label_bounding_box": [360, 258, 384, 268],
+      "checkbox_bounding_box": [390, 257, 400, 267]
+    }
+  ]
+}

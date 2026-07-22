@@ -1,0 +1,7 @@
+{
+  "name": "seed_08_pdf-lib-mit-license-workspace",
+  "private": true,
+  "dependencies": {
+    "pdf-lib": "1.17.1"
+  }
+}

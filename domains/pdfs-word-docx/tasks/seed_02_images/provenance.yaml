@@ -1,0 +1,13 @@
+domain: pdfs-word-docx
+origin: authored
+imported_from: null
+corpus_refs:
+- docx/SKILL.md#docx-creation-editing-and-analysis-xml-reference-images
+- docx/SKILL.md#docx-creation-editing-and-analysis-xml-reference-schema-compliance
+- docx/SKILL.md#docx-creation-editing-and-analysis-xml-reference-comments
+difficulty_seed_score: 15.9055
+headroom:
+  probe_agent: moonshotai/kimi-k2.7-code
+  trials: 3
+  base_passes: 1
+  base_pass_rate: 0.333

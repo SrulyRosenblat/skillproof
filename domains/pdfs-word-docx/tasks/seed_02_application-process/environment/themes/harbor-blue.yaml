@@ -1,0 +1,11 @@
+name: harbor-blue
+heading:
+  font_name: Georgia
+  font_color_hex: "1F4E79"
+  font_size_pt: 20
+  font_bold: true
+body:
+  font_name: Cambria
+  font_color_hex: "333333"
+  font_size_pt: 10
+  font_bold: false

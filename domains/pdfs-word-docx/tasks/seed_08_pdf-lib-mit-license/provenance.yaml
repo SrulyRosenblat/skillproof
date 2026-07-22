@@ -1,0 +1,12 @@
+domain: pdfs-word-docx
+origin: authored
+imported_from: null
+corpus_refs:
+- pdf/reference.md#pdf-processing-advanced-reference-javascript-libraries-pdf-lib-mit-license
+- pdf/reference.md#pdf-processing-advanced-reference-javascript-libraries-pdf-lib-mit-license
+- pdf/reference.md#pdf-processing-advanced-reference-javascript-libraries-pdfjs-dist-apache-license
+difficulty_seed_score: 13.0133
+headroom:
+  probe_agent: null
+  trials: 0
+  base_passes: 0

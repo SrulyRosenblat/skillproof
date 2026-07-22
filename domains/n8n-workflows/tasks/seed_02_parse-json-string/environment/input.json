@@ -1,0 +1,38 @@
+[
+  {
+    "json": {
+      "id": 1,
+      "payload": "{\"name\": \"Alice\", \"age\": 30, \"active\": true}"
+    }
+  },
+  {
+    "json": {
+      "id": 2,
+      "payload": "{\"scores\": [10, 20, 30], \"avg\": 20.0}"
+    }
+  },
+  {
+    "json": {
+      "id": 3,
+      "payload": "{\"greeting\": \"caf\\u00e9 \\u2603\"}"
+    }
+  },
+  {
+    "json": {
+      "id": 4,
+      "payload": "not valid json at all"
+    }
+  },
+  {
+    "json": {
+      "id": 5,
+      "payload": "[1, 2, \"three\", null]"
+    }
+  },
+  {
+    "json": {
+      "id": 6,
+      "payload": "{'oops': 'single-quoted'}"
+    }
+  }
+]

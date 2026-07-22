@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "finalResult": "success",
+  "testCaseCount": 6,
+  "metrics": {
+    "promptTokens": 2048,
+    "completionTokens": 512,
+    "totalTokens": 2560,
+    "executionTime": 14.7,
+    "accuracy": 0.875,
+    "helpfulness": 0.92,
+    "toxicity": 0.02
+  }
+}

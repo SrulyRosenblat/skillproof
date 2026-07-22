@@ -1,0 +1,13 @@
+domain: n8n-workflows
+origin: authored
+imported_from: null
+corpus_refs:
+- n8n-mcp-tools-expert/WORKFLOW_GUIDE.md#workflow-management-tools-guide-n8n-update-partial-workflow-most-used-19-operation-types
+- n8n-mcp-tools-expert/WORKFLOW_GUIDE.md#workflow-management-tools-guide-n8n-update-partial-workflow-most-used-smart-parameters
+- n8n-mcp-tools-expert/WORKFLOW_GUIDE.md#workflow-management-tools-guide-n8n-evaluations-evaluation-test-runs-get-a-run-aggregated-metrics
+difficulty_seed_score: 17.5052
+headroom:
+  probe_agent: moonshotai/kimi-k2.7-code
+  trials: 3
+  base_passes: 1
+  base_pass_rate: 0.333

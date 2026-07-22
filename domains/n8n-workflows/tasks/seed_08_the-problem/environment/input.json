@@ -1,0 +1,19 @@
+[
+  {
+    "json": {
+      "headers": {
+        "content-type": "application/json",
+        "x-forwarded-for": "203.0.113.7"
+      },
+      "params": {},
+      "query": {},
+      "body": {
+        "customer": "Acme Corp",
+        "orders": [
+          {"item": "Widget", "amount": 19.99, "quantity": 3},
+          {"item": "Gadget", "amount": 49.5, "quantity": 1}
+        ]
+      }
+    }
+  }
+]

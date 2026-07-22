@@ -1,0 +1,43 @@
+{
+  "name": "Task Notification Workflow",
+  "nodes": [
+    {
+      "id": "1",
+      "name": "Post Task Notification",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [250, 300],
+      "parameters": {
+        "resource": "message",
+        "operation": "post",
+        "text": "New task assigned to Dana"
+      }
+    },
+    {
+      "id": "2",
+      "name": "Update Task Status",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [500, 300],
+      "parameters": {
+        "resource": "message",
+        "operation": "update",
+        "channel": "#tasks",
+        "text": "Status changed to Done"
+      }
+    },
+    {
+      "id": "3",
+      "name": "Send Contact Webhook",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [750, 300],
+      "parameters": {
+        "method": "POST",
+        "url": "https://hooks.example.com/contact"
+      }
+    }
+  ],
+  "connections": {},
+  "active": false
+}

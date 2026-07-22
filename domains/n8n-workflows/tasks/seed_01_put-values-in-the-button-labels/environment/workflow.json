@@ -1,0 +1,46 @@
+{
+  "name": "Customer Support Refund Assistant",
+  "nodes": [
+    {
+      "id": "agent1",
+      "name": "Refund Assistant",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [0, 0],
+      "parameters": {
+        "promptType": "define",
+        "text": "You are a customer support agent handling refund requests. Before finalizing a refund, get sign-off through the review tool."
+      }
+    },
+    {
+      "id": "tool_refund",
+      "name": "Process Customer Refund",
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [300, -80],
+      "parameters": {
+        "customerName": "Morgan Chen",
+        "refundAmount": 85,
+        "url": "https://internal.example.com/api/refunds"
+      }
+    },
+    {
+      "id": "hitl_review",
+      "name": "Tool",
+      "type": "n8n-nodes-base.slackHitlTool",
+      "typeVersion": 1,
+      "position": [300, 80],
+      "parameters": {}
+    }
+  ],
+  "connections": {
+    "agent1": {
+      "ai_tool": [
+        [
+          { "node": "tool_refund", "type": "ai_tool", "index": 0 },
+          { "node": "hitl_review", "type": "ai_tool", "index": 0 }
+        ]
+      ]
+    }
+  }
+}

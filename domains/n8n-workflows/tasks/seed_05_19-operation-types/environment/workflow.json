@@ -1,0 +1,125 @@
+{
+  "name": "Order Routing",
+  "active": false,
+  "tags": [],
+  "nodes": [
+    {
+      "id": "1",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [200, 400],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "orders",
+        "responseMode": "onReceived"
+      }
+    },
+    {
+      "id": "2",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [450, 300],
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {"value1": "={{$json.priority}}", "value2": "high"}
+          ]
+        }
+      }
+    },
+    {
+      "id": "3",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [450, 500],
+      "parameters": {
+        "dataPropertyName": "region",
+        "rules": {
+          "rules": [
+            {"value2": "east"},
+            {"value2": "central"},
+            {"value2": "west"}
+          ]
+        }
+      }
+    },
+    {
+      "id": "4",
+      "name": "On True",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [700, 200],
+      "parameters": {
+        "value": "pending"
+      }
+    },
+    {
+      "id": "5",
+      "name": "On False",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [700, 400],
+      "parameters": {
+        "value": "pending"
+      }
+    },
+    {
+      "id": "6",
+      "name": "Case A",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [700, 500],
+      "parameters": {
+        "value": "east-queue"
+      }
+    },
+    {
+      "id": "7",
+      "name": "Case C",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [700, 700],
+      "parameters": {
+        "value": "west-queue"
+      }
+    },
+    {
+      "id": "8",
+      "name": "Legacy Logger",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [450, 700],
+      "parameters": {}
+    },
+    {
+      "id": "9",
+      "name": "Archive",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [700, 800],
+      "parameters": {}
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {"node": "IF", "type": "main", "index": 0},
+          {"node": "Switch", "type": "main", "index": 0},
+          {"node": "Legacy Logger", "type": "main", "index": 0},
+          {"node": "Old Notify", "type": "main", "index": 0}
+        ]
+      ]
+    },
+    "Legacy Logger": {
+      "main": [
+        [
+          {"node": "Archive", "type": "main", "index": 0}
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,63 @@
+[
+  {
+    "type": "addNode",
+    "node": {
+      "id": "10",
+      "name": "Notify Ops",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [950, 300],
+      "parameters": {}
+    }
+  },
+  {
+    "type": "updateNode",
+    "name": "On True",
+    "changes": {
+      "parameters.value": "true-branch-hit",
+      "parameters.meta.updatedBy": "diff-engine"
+    }
+  },
+  {
+    "type": "addConnection",
+    "source": "IF",
+    "target": "On True",
+    "branch": "true"
+  },
+  {
+    "type": "addConnection",
+    "source": "IF",
+    "target": "On False",
+    "branch": "false"
+  },
+  {
+    "type": "addConnection",
+    "source": "Switch",
+    "target": "Case A",
+    "case": 0
+  },
+  {
+    "type": "addConnection",
+    "source": "Switch",
+    "target": "Case C",
+    "case": 2
+  },
+  {
+    "type": "removeNode",
+    "name": "Legacy Logger"
+  },
+  {
+    "type": "cleanStaleConnections"
+  },
+  {
+    "type": "updateName",
+    "name": "Order Routing v2"
+  },
+  {
+    "type": "addTag",
+    "tag": "reviewed"
+  },
+  {
+    "type": "activateWorkflow"
+  }
+]

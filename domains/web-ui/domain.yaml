@@ -1,0 +1,58 @@
+# Domain manifest — see ../README.md for schema and rules.
+schema_version: 1
+name: web-ui
+title: Web UI construction
+description: >
+  Building, styling, and structuring web user interfaces: single-file pages,
+  multi-component applications, visual design execution, and
+  performance-conscious React/Next.js work.
+status: pilot                  # pilot | active | frozen
+
+# Skills claiming this domain. `claim` is the skill's SKILL.md `description`
+# frontmatter, quoted verbatim — the same text that routes skill selection in
+# production. This list is the ONLY place skills and tasks are associated.
+# Skill packages live outside the task tree (currently ../../skills/<name>/).
+skills:
+  - name: frontend-design
+    claim: >-
+      Guidance for distinctive, intentional visual design when building new UI
+      or reshaping an existing one. Helps with aesthetic direction, typography,
+      and making choices that don't read as templated defaults.
+  - name: web-artifacts-builder
+    claim: >-
+      Suite of tools for creating elaborate, multi-component claude.ai HTML
+      artifacts using modern frontend web technologies (React, Tailwind CSS,
+      shadcn/ui). Use for complex artifacts requiring state management,
+      routing, or shadcn/ui components - not for simple single-file HTML/JSX
+      artifacts.
+  - name: vercel-react-best-practices
+    claim: >-
+      React and Next.js performance optimization guidelines from Vercel
+      Engineering. This skill should be used when writing, reviewing, or
+      refactoring React/Next.js code to ensure optimal performance patterns.
+      Triggers on tasks involving React components, Next.js pages, data
+      fetching, bundle optimization, or performance improvements.
+
+tasks: []                      # explicit pool membership: ids under ../tasks/
+                               # (flat task tree; membership is declared, not inferred)
+
+corpus:
+  sources_manifest: corpus/SOURCES.json
+  frozen: false                # true once the pool is published; changes then bump pool.version
+
+pool:
+  version: 0
+  target_size: 15              # 15-25; cross-skill comparison on 5 tasks is noise
+
+headroom_probe:                # validation gate 5 — skill-blind, see ../README.md
+  probe_agent: terminus:moonshotai/kimi-k2.7-code   # <harbor agent>:<model>, strongest base config
+  trials: 3
+  max_base_pass_rate: 0.34     # accept iff unaided pass rate ≤ 1/3; cap, don't zero — keeps harm visible
+
+interchange:                   # mapping into upstream SkillsBench metadata
+  skillsbench_category: null   # TODO: pick from upstream taxonomy.yaml before first export/import
+  skillsbench_subcategory: null
+  schema_version_pinned: '1.3' # upstream task.md schema this project's template tracks
+  import_candidates:           # upstream tasks to audit for this pool (not yet imported)
+    - data-to-d3
+    - fix-visual-stability

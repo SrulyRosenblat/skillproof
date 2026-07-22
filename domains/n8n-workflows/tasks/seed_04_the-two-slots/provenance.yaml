@@ -1,0 +1,13 @@
+domain: n8n-workflows
+origin: authored
+imported_from: null
+corpus_refs:
+- n8n-binary-and-data/SKILL.md#n8n-binary-and-data-the-two-slots
+- n8n-binary-and-data/BINARY_BASICS.md#binary-basics-the-slot-shape
+- n8n-binary-and-data/MERGE_FOR_CONTEXT.md#merge-for-keeping-binary-in-context-wiring-it-with-n8n-mcp
+difficulty_seed_score: 14.8295
+headroom:
+  probe_agent: moonshotai/kimi-k2.7-code
+  trials: 3
+  base_passes: 1
+  base_pass_rate: 0.333

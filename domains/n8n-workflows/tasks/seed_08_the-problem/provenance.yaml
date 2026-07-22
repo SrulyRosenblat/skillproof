@@ -1,0 +1,13 @@
+domain: n8n-workflows
+origin: authored
+imported_from: null
+corpus_refs:
+- n8n-code-python/ERROR_PATTERNS.md#error-patterns-python-code-node-error-5-incorrect-return-format-the-problem
+- n8n-code-python/COMMON_PATTERNS.md#common-patterns-python-code-node-best-practices-4-return-proper-format
+- n8n-code-python/README.md#n8n-code-python-skill-what-this-skill-teaches-core-concepts
+difficulty_seed_score: 20.7725
+headroom:
+  probe_agent: moonshotai/kimi-k2.7-code
+  trials: 3
+  base_passes: 1
+  base_pass_rate: 0.333

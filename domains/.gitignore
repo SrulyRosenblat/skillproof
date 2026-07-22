@@ -1,0 +1,8 @@
+# Generated pipeline artifacts (reproducible; not source of truth)
+.skills_cache/
+domain_map.yaml
+*/seeds.json
+*/match_plan.json
+*/runs/
+**/.probe/
+**/.codex_logs/

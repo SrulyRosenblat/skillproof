@@ -1,0 +1,19 @@
+# Project sidecar — everything domain-pool-specific, kept OUT of task.md so the
+# task package stays strictly upstream-valid. Dropped on export; ignored upstream.
+domain: TODO                  # must match a <domain>/domain.yaml that lists this task
+origin: authored              # authored | imported
+imported_from: null           # "skillsbench:<task-id>@<commit>" when origin: imported
+corpus_refs:                  # authored tasks: corpus chunks this task derives from
+  - corpus/example-source.md#example-heading
+authoring: {}                 # backend/model/tokens/cost, written by the authoring harness
+validation:
+  oracle_reward: null         # gate 2: must be 1.0
+  baseline_reward: null       # gate 3: verifier on untouched environment; must be 0.0
+  determinism_checked: false  # gate 4
+  validated_at: null
+headroom:                     # gate 5: skill-blind probe (cap 1/3, never probe with-skill)
+  probe_agent: null           # "<harbor agent>:<model>", e.g. "terminus:moonshotai/kimi-k2.7-code"
+  trials: 0
+  base_passes: 0
+  probed_at: null
+pool_version: 0

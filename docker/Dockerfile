@@ -16,14 +16,20 @@ RUN pip install --no-cache-dir \
         reportlab==4.2.5 \
         openpyxl==3.1.5 \
         python-docx==1.1.2 \
+        python-pptx==1.0.2 \
+        networkx==3.4.2 \
+        sympy==1.13.3 \
         pyyaml==6.0.2 \
         pillow==11.1.0 \
         beautifulsoup4==4.12.3 \
         lxml==5.3.0 \
         requests==2.32.3
 
-RUN useradd -m -u 1001 agent && mkdir -p /workspace /skill /grader \
-    && chown agent:agent /workspace
+# /workspace /skill /grader: skillproof mounts. /verifier /oracle /logs/verifier:
+# Harbor task mount points for the domains/ pipeline (agent runs as non-root and
+# cannot create dirs at /, so they must pre-exist; /logs is agent-writable for reward.txt).
+RUN useradd -m -u 1001 agent && mkdir -p /workspace /skill /grader /verifier /oracle /logs/verifier \
+    && chown -R agent:agent /workspace /logs
 
 ENV TZ=UTC LC_ALL=C.UTF-8 LANG=C.UTF-8 PYTHONHASHSEED=0 SOURCE_DATE_EPOCH=0
 USER agent
